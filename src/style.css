@@ -4,9 +4,24 @@
   font-weight: 400;
   box-sizing: border-box;
   font-size: 62.5%;
+  --text-color: 0, 0, 0;
+  --bg-color: 255, 255, 255;
+  --accent-color: rgb(150, 1, 117);
 }
 body {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
+  color: var(--text-color);
   padding: 1.5rem 3rem;
+  background-image: linear-gradient(
+      rgba(var(--bg-color), 0.85),
+      rgba(var(--bg-color), 1)
+    ),
+    url(assets/umberto-bg-picture.jpeg);
+  background-repeat: no-repeat;
+  background-size: 100vw 200vh, cover;
+}
+h2 {
+  font-size: 1.8rem;
+  color: var(--accent-color);
 }
