@@ -8,6 +8,10 @@ import Contact from "./components/Contact.vue";
 </script>
 
 <template>
+  <link
+    rel="stylesheet"
+    href="https://unicons.iconscout.com/release/v4.0.0/css/unicons.css"
+  />
   <Navigation />
   <Home />
   <About />

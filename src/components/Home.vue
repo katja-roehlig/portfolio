@@ -22,4 +22,7 @@
   text-transform: uppercase;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
+.heading__sub {
+  color: var(--text-color);
+}
 </style>

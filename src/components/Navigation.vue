@@ -1,7 +1,11 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import HamburgerMenu from "./icons/HamburgerMenu.vue";
+let longMenu = false;
+</script>
 
 <template>
-  <ul class="nav-list">
+  <nav class="nav-container"><HamburgerMenu class="nav-menu" /></nav>
+  <ul class="nav-list" v-if="longMenu">
     <li class="nav-list__item">Home</li>
     <li class="nav-list__item">About</li>
     <li class="nav-list__item">Skills</li>
@@ -16,5 +20,13 @@
   display: flex;
   justify-content: flex-end;
   gap: 2rem;
+}
+.nav-menu {
+  fill: var(--accent-color);
+  width: 2rem;
+}
+.nav-container {
+  display: flex;
+  justify-content: flex-end;
 }
 </style>
