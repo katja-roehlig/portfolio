@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import Github from "./icons/Github.vue";
 const props = defineProps({
   phone: {
     type: String,
@@ -21,11 +22,19 @@ const props = defineProps({
       <div class="phone__button"></div>
     </div>
     <div class="description__container">
-      <article><slot>Description of the project</slot></article>
-
-      <button>Show more</button
-      ><button><a :href="props.github"> Github</a></button
-      ><button><a :href="props.web">Website</a></button>
+      <article>
+        <slot>Description of the project</slot
+        ><a class="link" href="">more...</a>
+      </article>
+      <div class="button__container">
+        <button class="btn">
+          <a class="btn-link" :href="props.github">
+            <Github class="github-icon" />Github</a
+          ></button
+        ><button class="btn">
+          <a class="btn-link" :href="props.web">Website</a>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -53,6 +62,7 @@ const props = defineProps({
   left: 3%;
   top: 2%;
 }
+
 .phone__button {
   width: 20%;
   height: 3%;
@@ -65,9 +75,42 @@ const props = defineProps({
 }
 .project__container {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 0.5rem;
   justify-content: center;
   align-items: center;
+}
+.github-icon {
+  width: 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  padding-right: 0.5rem;
+  justify-content: center;
+}
+.link,
+.btn-link {
+  text-decoration: none;
+  color: var(--text-color);
+}
+.link:hover {
+  color: var(--accent-color);
+  transform: scale(2);
+}
+
+.btn {
+  all: unset;
+  padding: 0.6rem 2rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 1rem;
+}
+.btn:hover {
+  background-color: var(--accent-color);
+  color: rgb(var(--bg-color));
+}
+
+.button__container {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
 }
 </style>

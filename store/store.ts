@@ -3,6 +3,7 @@ import { defineStore } from "pinia";
 type projectStructure = [
   {
     id: number;
+    visible: boolean;
     name: string;
     phoneImg: string;
     text: string;
@@ -16,6 +17,7 @@ export const projectStore = defineStore("store", {
     projects: [
       {
         id: 0,
+        visible: true,
         name: "Sock-o-mat",
         phoneImg: "url(src/assets/Sockomat.webp)",
         text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempoinvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
@@ -24,6 +26,7 @@ export const projectStore = defineStore("store", {
       },
       {
         id: 1,
+        visible: false,
         name: "Tic Tac Toe",
         phoneImg: "url(src/assets/Tictactoe_Phone.webp)",
         text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempoinvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
@@ -32,6 +35,7 @@ export const projectStore = defineStore("store", {
       },
       {
         id: 2,
+        visible: false,
         name: "Shopping List",
         phoneImg: "url(src/assets/ShoppingList_Phone.webp)",
         text: "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempoinvidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et",
