@@ -19,7 +19,7 @@ body {
     ),
     url(assets/umberto-bg-picture.jpeg);
   background-repeat: no-repeat;
-  background-size: 100vw 200vh, cover;
+  background-size: cover, cover;
 }
 h2 {
   font-size: 1.8rem;
