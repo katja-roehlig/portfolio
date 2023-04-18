@@ -3,6 +3,10 @@ const props = defineProps({
   phone: {
     type: String,
   },
+  github: {
+    type: String,
+  },
+  web: { type: String },
 });
 </script>
 
@@ -19,19 +23,22 @@ const props = defineProps({
     <div class="description__container">
       <article><slot>Description of the project</slot></article>
 
-      <button>Show more</button><button>Github</button><button>Website</button>
+      <button>Show more</button
+      ><button><a :href="props.github"> Github</a></button
+      ><button><a :href="props.web">Website</a></button>
     </div>
   </div>
 </template>
 <style scoped>
 .phone__container {
   background-color: black;
-  width: 11rem;
-  height: 20rem;
+  width: 14rem;
+  height: 25rem;
   border-radius: 1rem;
   position: relative;
   box-shadow: inset 0px 0px 2px 0.5px rgba(255, 255, 255, 0.661),
     inset 0px 0px 1px 2px rgba(144, 144, 144, 0.803);
+  flex-shrink: 0;
 }
 .phone__screen {
   background-size: 100% 100%;
@@ -60,5 +67,7 @@ const props = defineProps({
   display: flex;
   flex-direction: row;
   gap: 2rem;
+  justify-content: center;
+  align-items: center;
 }
 </style>

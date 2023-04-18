@@ -1,17 +1,22 @@
 <script setup lang="ts">
+import { projectStore } from "../../store/store";
 import Smartphone from "./Smartphone.vue";
 import Tablet from "./Tablet.vue";
+
+const store = projectStore();
 </script>
 <template>
   <h2>Projects</h2>
   <div class="container">
-    <Smartphone phone="url(src/assets/Tictactoe_Phone.webp)"
-      ><h3>Tic Tac Toe Game</h3>
-      <p>Game for one or two players</p></Smartphone
+    <!--  phone="url(src/assets/Tictactoe_Phone.webp)" -->
+    <Smartphone
+      :phone="item.phoneImg"
+      :github="item.github"
+      :web="item.web"
+      v-for="item in store.projects"
+      ><h3>{{ item.name }}</h3>
+      <p>{{ item.text }}</p></Smartphone
     >
-    <Smartphone phone="url(src/assets/ShoppingList_Phone.webp)" />
-    <Smartphone phone="url(src/assets/Birthday_1_1_Phone.webp)" />
-    <Smartphone phone="url(src/assets/Sockomat.webp)" />
     <Tablet />
   </div>
 </template>
