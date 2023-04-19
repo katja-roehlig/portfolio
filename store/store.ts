@@ -1,21 +1,19 @@
 import { defineStore } from "pinia";
 //import Projects from "../src/components/Projects.vue";
-type projectStructure = [
-  {
-    id: number;
-    visible: boolean;
-    name: string;
-    phoneImg: string;
-    text: string;
-    web: string;
-    github: string;
-  }
-];
+type projectStructure = {
+  id: number;
+  visible: boolean;
+  name: string;
+  phoneImg: string;
+  text: string;
+  web: string;
+  github: string;
+};
 
 export const projectStore = defineStore("store", {
   state: () => ({
     projects: [
-      {
+      <projectStructure>{
         id: 0,
         visible: true,
         name: "Sock-o-mat",
@@ -24,7 +22,7 @@ export const projectStore = defineStore("store", {
         web: "https://sockomat.netlify.app",
         github: "https://github.com/katja-roehlig/sock-o-mat",
       },
-      {
+      <projectStructure>{
         id: 1,
         visible: false,
         name: "Tic Tac Toe",
@@ -33,7 +31,7 @@ export const projectStore = defineStore("store", {
         web: "https://tictactoe-x.netlify.app",
         github: "https://github.com/katja-roehlig/tic-tac-toe-vite",
       },
-      {
+      <projectStructure>{
         id: 2,
         visible: false,
         name: "Shopping List",

@@ -4,12 +4,12 @@ import Smartphone from "./Smartphone.vue";
 import Tablet from "./Tablet.vue";
 
 const store = projectStore();
-function swiping(): void {
+function swiping(event: Event): void {
   let projectBox = store.projects;
   let position = projectBox.findIndex((element) => element.visible === true);
   projectBox[position].visible = false;
-
-  if (event!.target.className === "back") {
+  const target = event.target as HTMLElement;
+  if (target.className === "back") {
     if (position !== 0) {
       position--;
       projectBox[position].visible = true;
@@ -31,7 +31,7 @@ function swiping(): void {
     <a href="">☞ view all projects</a>
   </div>
   <div class="container">
-    <button class="button back" @click="swiping()">◀︎</button>
+    <button class="button back" @click="swiping($event)">◀︎</button>
     <template v-for="item in store.projects" :key="item.id">
       <Smartphone
         v-if="item.visible === true"
@@ -44,7 +44,7 @@ function swiping(): void {
       >
     </template>
 
-    <button class="button forward" @click="swiping()">►</button>
+    <button class="button forward" @click="swiping($event)">►</button>
   </div>
   <Tablet />
 </template>
