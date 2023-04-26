@@ -64,6 +64,7 @@ function largeMenu() {
   padding-inline-start: 0px;
   background-color: var(--accent-color);
   color: rgb(var(--bg-color));
+  z-index: 1;
 }
 @keyframes nav-list-appear {
   0% {
@@ -79,8 +80,10 @@ function largeMenu() {
   position: absolute;
   top: 0;
   right: 0;
-  padding-top: 1rem;
-  padding-right: 1.5rem;
+  padding: 0rem 0.9rem;
+  background-color: rgb(234, 232, 232);
+  color: var(--accent-color);
+  font-size: 1.6rem;
 }
 @media (min-width: 768px) {
   .nav__menu {

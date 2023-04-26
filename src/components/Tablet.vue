@@ -10,8 +10,8 @@
 </template>
 <style scoped>
 .big__container {
-  width: 30rem;
-  height: 20rem;
+  width: 24rem;
+  height: 16rem;
   background-color: black;
   position: relative;
   border-radius: 12%;

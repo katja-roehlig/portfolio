@@ -20,4 +20,8 @@ import Contact from "./components/Contact.vue";
   <Contact />
 </template>
 
-<style scoped></style>
+<style scoped>
+.main__component {
+  margin-top: 5rem;
+}
+</style>

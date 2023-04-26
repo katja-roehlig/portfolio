@@ -17,12 +17,13 @@
   margin: 0;
 }
 .heading__main {
+  -webkit-text-stroke: 2px var(--accent-color);
   color: rgb(var(--bg-color));
-  -webkit-text-stroke: 1.5px var(--accent-color);
   text-transform: uppercase;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-.heading__sub {
-  color: var(--text-color);
+  font-family: "AtmaBo";
+  font-size: 4rem;
+  margin-top: 1.5rem;
+  filter: drop-shadow(0px 4px 4px var(--accent-color));
+  letter-spacing: 0.2rem;
 }
 </style>

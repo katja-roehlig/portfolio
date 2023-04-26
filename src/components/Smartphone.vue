@@ -12,7 +12,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="project__container">
+  <div class="media__container">
     <div class="phone__container">
       <div
         class="phone__screen"
@@ -73,7 +73,7 @@ const props = defineProps({
   right: 42%;
   bottom: 2.5%;
 }
-.project__container {
+.media__container {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

@@ -1,20 +1,22 @@
 <script setup lang="ts">
-import Css from "./icons/Css.vue";
-import Javascript from "./icons/Javascript.vue";
-import Typescript from "./icons/Typescript.vue";
-import Vue from "./icons/Vue.vue";
-import Sass from "./icons/Sass.vue";
-import Html from "./icons/Html.vue";
-import Git from "./icons/Git.vue";
+import Css from "./icons/skills/Css.vue";
+import Javascript from "./icons/skills/Javascript.vue";
+import Typescript from "./icons/skills/Typescript.vue";
+import Vue from "./icons/skills/Vue.vue";
+import Sass from "./icons/skills/Sass.vue";
+import Html from "./icons/skills/Html.vue";
+import Git from "./icons/skills/Git.vue";
 import Github from "./icons/Github.vue";
-import Vscode from "./icons/Vscode.vue";
-import Responsive from "./icons/Responsive.vue";
-import Api from "./icons/Api.vue";
+import Vscode from "./icons/skills/Vscode.vue";
+import Responsive from "./icons/skills/Responsive.vue";
+import Api from "./icons/skills/Api.vue";
 </script>
+
 <template>
-  <h2>Skills</h2>
-  <div class="container">
-    <h3>My tech skills and tools</h3>
+  <div class="skills__container">
+    <h3>Skills</h3>
+
+    <h4>My tech skills and tools</h4>
 
     <ul class="tech-list">
       <li class="tech-list-item"><Vue class="icon-style" />Vue.js</li>
@@ -45,7 +47,7 @@ import Api from "./icons/Api.vue";
       </li>
     </ul>
   </div>
-  <h3>My soft skills</h3>
+  <!-- <h4>My soft skills</h4> -->
 </template>
 
 <style scoped>
@@ -71,16 +73,19 @@ import Api from "./icons/Api.vue";
   width: 2.5rem;
   fill: var(--accent-color);
 }
-/* .container {
-  padding: 1.5rem 1.5rem 1.5rem 2rem;
-  box-shadow: 0px 0px 6px var(--accent-color);
-  background-color: rgba(var(--bg-color), 0.6);
-  border-radius: 0.5rem;
-} */
+
 .bigger {
   width: 3rem;
 }
 .smaller {
   width: 2.2rem;
+}
+.skills__container {
+  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  box-shadow: 0px 6px 6px var(--accent-color-transparent),
+    0px -4px 8px rgba(var(--text-color), 0.2);
+  background-color: rgba(var(--bg-color), 0.6);
+  border-radius: 0.7rem;
+  margin-top: 3rem;
 }
 </style>
