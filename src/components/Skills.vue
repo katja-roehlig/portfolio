@@ -13,7 +13,7 @@ import Api from "./icons/skills/Api.vue";
 </script>
 
 <template>
-  <div class="skills__container">
+  <article class="skills__container" id="skills">
     <h3>Skills</h3>
 
     <h4>My tech skills and tools</h4>
@@ -46,7 +46,7 @@ import Api from "./icons/skills/Api.vue";
         <Responsive class="icon-style bigger" />Responsive <br />Websites
       </li>
     </ul>
-  </div>
+  </article>
   <!-- <h4>My soft skills</h4> -->
 </template>
 

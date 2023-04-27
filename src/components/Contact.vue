@@ -1,5 +1,74 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Mail from "./icons/contacts/Mail.vue";
+import Location from "./icons/contacts/Location.vue";
+import LinkedIn from "./icons/contacts/LinkedIn.vue";
+import Xing from "./icons/contacts/Xing.vue";
+import Github from "./icons/Github.vue";
+</script>
+
 <template>
-  <h2>Contact</h2>
+  <article class="contact__container" id="contact">
+    <h3>Contact</h3>
+
+    <div class="contact__content">
+      <a href="mailto:katja-roehlig@mail.de" class="contact__link"
+        ><Mail class="contact__icon" /> katja-roehlig@mail.de</a
+      >
+      <a
+        href="https://de.linkedin.com/in/katja-r%C3%B6hlig-379a96259"
+        class="contact__link"
+        ><LinkedIn class="contact__icon" />LinkedIn</a
+      >
+
+      <a
+        href="https://www.xing.com/profile/Katja_Roehlig/cv"
+        class="contact__link"
+      >
+        <Xing class="contact__icon" />Xing</a
+      >
+
+      <a
+        href="https://www.xing.com/profile/Katja_Roehlig/cv"
+        class="contact__link"
+      >
+        <Github class="contact__icon" />Github</a
+      >
+      <div class="contact__link">
+        <Location class="contact__icon" />
+        <p class="contact__location">Leipzig</p>
+      </div>
+    </div>
+  </article>
 </template>
-<style scoped></style>
+<style scoped>
+.contact__container {
+  padding: 1.5rem 1.5rem 2.5rem 1.5rem;
+  box-shadow: 0px 6px 6px var(--accent-color-transparent),
+    0px -4px 8px rgba(var(--text-color), 0.2);
+  background-color: rgba(var(--bg-color), 0.6);
+  border-radius: 0.7rem;
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact__link {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  gap: 2rem;
+  justify-content: left;
+  padding-block: 0.5rem;
+  font-family: "RobotoReg";
+}
+.contact__icon {
+  height: 2rem;
+  width: 2rem;
+  color: var(--accent-color);
+  fill: var(--accent-color);
+}
+
+.contact__location {
+  margin: 0;
+}
+</style>

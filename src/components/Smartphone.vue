@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Github from "./icons/Github.vue";
+import Website from "./icons/Website.vue";
 const props = defineProps({
   phone: {
     type: String,
@@ -29,10 +30,12 @@ const props = defineProps({
       <div class="button__container">
         <button class="btn">
           <a class="btn-link" :href="props.github">
-            <Github class="github-icon" />Github</a
+            <Github class="btn-icon" />Github</a
           ></button
         ><button class="btn">
-          <a class="btn-link" :href="props.web">Website</a>
+          <a class="btn-link" :href="props.web"
+            ><Website class="btn-icon" />Website</a
+          >
         </button>
       </div>
     </div>
@@ -80,17 +83,26 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
 }
-.github-icon {
+.btn-icon {
   width: 1.5rem;
-  display: inline-flex;
-  justify-content: center;
-  padding-right: 0.5rem;
-  justify-content: center;
+  color: var(--accent-color);
+  fill: var(--accent-color);
+}
+.btn-icon:hover {
+  color: rgb(var(--bg-color));
+  fill: rgb(var(--bg-color));
 }
 .link,
 .btn-link {
   text-decoration: none;
   color: var(--text-color);
+  font-family: RobotoReg;
+}
+.btn-link {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
 }
 .link:hover {
   color: var(--accent-color);

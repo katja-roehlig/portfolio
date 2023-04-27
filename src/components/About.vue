@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <article class="about__container">
+  <article class="about__container" id="about">
     <h3>About Me</h3>
     <div class="about__content">
       <img

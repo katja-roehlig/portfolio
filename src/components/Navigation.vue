@@ -20,8 +20,10 @@ function largeMenu() {
     </div>
 
     <ul class="nav__list" :class="{ opacity: isVisible }">
-      <li class="nav__list-item">Home</li>
-      <li class="nav__list-item">About</li>
+      <li class="nav__list-item"><a href="#home" class="nav__link">Home</a></li>
+      <li class="nav__list-item">
+        <a href="#about" class="nav__link">About</a>
+      </li>
       <li class="nav__list-item" v-if="isVisible"></li>
       <li
         class="nav__list-item nav__list-item-close"
@@ -30,9 +32,15 @@ function largeMenu() {
       >
         X
       </li>
-      <li class="nav__list-item">Skills</li>
-      <li class="nav__list-item">Projects</li>
-      <li class="nav__list-item">Contact</li>
+      <li class="nav__list-item">
+        <a href="#skills" class="nav__link">Skills</a>
+      </li>
+      <li class="nav__list-item">
+        <a href="#projects" class="nav__link">Projects</a>
+      </li>
+      <li class="nav__list-item">
+        <a href="#contact" class="nav__link">Contact</a>
+      </li>
     </ul>
   </nav>
 </template>
@@ -48,6 +56,14 @@ function largeMenu() {
 .nav__container {
   display: flex;
   justify-content: flex-end;
+}
+.nav__link {
+  color: inherit;
+  text-decoration: none;
+}
+nav__link:hover {
+  background-color: rgb(var(--bg-color));
+  color: var(--accent-color);
 }
 .opacity {
   display: grid;
@@ -80,10 +96,12 @@ function largeMenu() {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0rem 0.9rem;
+  padding: 0.2rem 1.2rem;
   background-color: rgb(234, 232, 232);
   color: var(--accent-color);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-family: "AtmaMed";
+  border-radius: 0rem 0rem 0rem 0.5rem;
 }
 @media (min-width: 768px) {
   .nav__menu {
@@ -93,6 +111,12 @@ function largeMenu() {
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
+  }
+  .nav__link:hover {
+    color: var(--accent-color);
+  }
+  .nav__link:visited {
+    color: var(--accent-color-transparent);
   }
 }
 </style>

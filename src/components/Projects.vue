@@ -31,7 +31,7 @@ function swiping(event: Event): void {
 }
 </script>
 <template>
-  <div class="project__container">
+  <article class="project__container" id="projects">
     <h3>Projects</h3>
 
     <!--  <a href="">☞ view all projects</a> -->
@@ -47,34 +47,36 @@ function swiping(event: Event): void {
           class="smartphone"
         >
           <div class="icon__container">
-            <PhoneIcon class="view-icon" />
-            <TabletIcon class="view-icon" />
-            <LaptopIcon class="view-icon" />
+            <div class="icon">
+              <PhoneIcon class="view-icon" />
+            </div>
+            <div class="icon">
+              <TabletIcon class="view-icon" />
+            </div>
+            <div class="icon">
+              <LaptopIcon class="view-icon" />
+            </div>
           </div>
-          <h4>{{ item.name }}</h4>
+          <h4 class="project__heading">{{ item.name }}</h4>
           <p class="project__description">{{ item.text }}</p></Smartphone
         >
       </template>
 
       <ArrowRight class="arrow forward" @click="swiping($event)" />
     </div>
-  </div>
+  </article>
   <!--  <Tablet /> -->
 </template>
 
 <style scoped>
-h3 {
-  text-align: center;
-  margin-block: 2rem 0rem;
-}
 .content__container {
   display: flex;
   flex-direction: row;
 }
 .arrow {
   position: relative;
-  width: 40px;
-  padding-bottom: 20rem;
+  width: 4rem;
+  padding-bottom: 28rem;
 }
 .back {
   left: 15%;
@@ -94,12 +96,15 @@ h3 {
 .icon__container {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  gap: 1rem;
-  padding: 0.5rem 1rem;
-  box-shadow: -1px -1px 10px rgba(189, 188, 188, 0.557);
-  width: 8rem;
-  margin: 0.5rem auto 0 auto;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.icon {
+  padding: 0.6rem 0.4rem 0.2rem 0.7rem;
+  box-shadow: 0px 1px 4px var(--accent-color-transparent),
+    0px -1px 8px rgba(var(--text-color), 0.1);
+  width: 2.5rem;
   border-radius: 0.5rem;
 }
 .phone-icon {
@@ -114,11 +119,14 @@ h3 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  padding: 1.5rem 1.5rem 2.5rem 2rem;
   box-shadow: 0px 6px 6px var(--accent-color-transparent),
     0px -4px 8px rgba(var(--text-color), 0.2);
   background-color: rgba(var(--bg-color), 0.6);
   border-radius: 0.7rem;
+  margin-top: 3rem;
+}
+.project__heading {
   margin-top: 3rem;
 }
 </style>

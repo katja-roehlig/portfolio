@@ -1,6 +1,6 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="heading">
+  <div class="heading" id="home">
     <h1 class="heading__main">Katja Röhlig</h1>
     <h2 class="heading__sub">Frontend Developer</h2>
   </div>
