@@ -1,8 +1,15 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-    <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-    <path
-      d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
-    />
-  </svg>
+  <div class="square"></div>
 </template>
+
+<style scoped>
+.square {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 0.2rem;
+  border-right: 3px solid var(--accent-color);
+  border-top: 3px solid var(--accent-color);
+  transform: rotate(45deg);
+  margin-right: 1rem;
+}
+</style>

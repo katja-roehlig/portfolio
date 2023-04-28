@@ -8,10 +8,6 @@ import Contact from "./components/Contact.vue";
 </script>
 
 <template>
-  <link
-    rel="stylesheet"
-    href="https://unicons.iconscout.com/release/v4.0.0/css/unicons.css"
-  />
   <Navigation />
   <Home />
   <About />
@@ -20,8 +16,4 @@ import Contact from "./components/Contact.vue";
   <Contact />
 </template>
 
-<style scoped>
-.main__component {
-  margin-top: 5rem;
-}
-</style>
+<style scoped></style>

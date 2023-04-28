@@ -29,7 +29,7 @@
 <style scoped>
 .about__container {
   text-align: center;
-  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  padding: 1.5rem 2.5rem 2.5rem 2rem;
   box-shadow: 0px 6px 6px var(--accent-color-transparent),
     0px -4px 8px rgba(var(--text-color), 0.2);
   background-color: rgba(var(--bg-color), 0.6);
@@ -44,7 +44,7 @@
   align-items: center;
 }
 .about__foto {
-  height: 20rem;
+  height: 18rem;
   border-radius: 0.6rem;
   box-shadow: 0px 2px 6px var(--accent-color-transparent),
     0px -2px 4px rgba(var(--text-color), 0.2);
