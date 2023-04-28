@@ -65,14 +65,14 @@ body {
 h2 {
   font-family: "AtmaMed";
   color: var(--text-color);
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   text-transform: none;
   letter-spacing: 0.1rem;
 }
 
 h3 {
   font-family: "AtmaMed";
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   color: var(--accent-color);
   margin-block: 2rem 1.5rem;
   --text-transform: uppercase;
@@ -85,7 +85,7 @@ h4 {
   font-family: "AtmaMed";
   font-size: 1.5rem;
   color: var(--accent-color-light);
-  margin-block: 2rem 0.8rem;
+  margin-block: 2rem 1.3rem;
   --text-transform: uppercase;
   letter-spacing: 0.08rem;
   text-transform: uppercase;

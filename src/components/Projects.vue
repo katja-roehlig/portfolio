@@ -42,19 +42,16 @@ function changeView(event: Event): void {
   const target = event.target as HTMLElement;
 
   if (target.id === "tablet") {
-    console.log("Tablet");
     phoneView.value = false;
     desktopView.value = false;
     tabletView.value = true;
   }
   if (target.id === "desktop") {
-    console.log("Desktop");
     phoneView.value = false;
     desktopView.value = true;
     tabletView.value = false;
   }
   if (target.id === "phone") {
-    console.log("phone");
     phoneView.value = true;
     desktopView.value = false;
     tabletView.value = false;
@@ -78,13 +75,25 @@ function changeView(event: Event): void {
           <div class="icon__container">
             <ArrowLeft @click="swiping($event)" />
             <div class="view__container">
-              <div class="icon" @click="changeView($event)">
+              <div
+                class="icon"
+                @click="changeView($event)"
+                v-if="item.phoneImg !== ''"
+              >
                 <PhoneIcon class="view-icon" id="phone" />
               </div>
-              <div class="icon" @click="changeView($event)">
+              <div
+                class="icon"
+                @click="changeView($event)"
+                v-if="item.tabletImg !== ''"
+              >
                 <TabletIcon class="view-icon" id="tablet" />
               </div>
-              <div class="icon" @click="changeView($event)">
+              <div
+                class="icon"
+                @click="changeView($event)"
+                v-if="item.desktopImg !== ''"
+              >
                 <LaptopIcon class="view-icon" id="desktop" />
               </div>
             </div>
@@ -97,13 +106,16 @@ function changeView(event: Event): void {
             >
           </div>
           <p class="project__description">
-            {{ item.text }}
-          </p></ProjectDescription
-        >
+            {{ item.text1 }} <br />
+            {{ item.text2 }}
+          </p>
+          <p class="project__stack">
+            <span class="bold"> Tech Stack: </span> {{ item.techStack }}
+          </p>
+        </ProjectDescription>
       </div>
     </template>
   </article>
-  <!--  <Tablet /> -->
 </template>
 
 <style scoped>
@@ -127,12 +139,9 @@ function changeView(event: Event): void {
 
 .project__description {
   margin-block: 0.5rem 0;
+  text-align: center;
 }
-/* .project__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-} */
+
 .icon__container {
   display: flex;
   justify-content: space-between;
@@ -164,7 +173,7 @@ function changeView(event: Event): void {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 2.5rem 2.5rem 3rem;
+  padding: 1.5rem 2.5rem 3rem 3rem;
   box-shadow: 0px 6px 6px var(--accent-color-transparent),
     0px -4px 8px rgba(var(--text-color), 0.2);
   background-color: rgba(var(--bg-color), 0.6);
@@ -180,6 +189,13 @@ function changeView(event: Event): void {
   bottom: 20%;
   right: 0%;
   font-size: 1.3rem;
+  font-family: "RobotoReg";
+}
+.project__stack {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.bold {
   font-family: "RobotoReg";
 }
 </style>

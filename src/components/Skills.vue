@@ -9,7 +9,8 @@ import Git from "./icons/skills/Git.vue";
 import Github from "./icons/Github.vue";
 import Vscode from "./icons/skills/Vscode.vue";
 import Responsive from "./icons/skills/Responsive.vue";
-import Api from "./icons/skills/Api.vue";
+import Api from "./icons/skills/Figma.vue";
+import Figma from "./icons/skills/Api.vue";
 </script>
 
 <template>
@@ -45,6 +46,7 @@ import Api from "./icons/skills/Api.vue";
       <li class="tech-list-item">
         <Responsive class="icon-style bigger" />Responsive <br />Websites
       </li>
+      <li class="tech-list-item"><Figma class="icon-style" />Figma</li>
     </ul>
   </article>
   <!-- <h4>My soft skills</h4> -->
@@ -61,7 +63,7 @@ import Api from "./icons/skills/Api.vue";
 .tech-list-item {
   display: flex;
   flex-direction: column;
-  padding: 2rem 1.2rem 2rem 0.2rem;
+  padding: 1rem 1.2rem 2rem 0.2rem;
   justify-content: space-evenly;
   align-items: center;
   font-size: 1.4rem;
@@ -81,7 +83,7 @@ import Api from "./icons/skills/Api.vue";
   width: 2.2rem;
 }
 .skills__container {
-  padding: 1.5rem 1.5rem 1.5rem 2rem;
+  padding: 1.5rem 1.5rem 1rem 2rem;
   box-shadow: 0px 6px 6px var(--accent-color-transparent),
     0px -4px 8px rgba(var(--text-color), 0.2);
   background-color: rgba(var(--bg-color), 0.6);

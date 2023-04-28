@@ -30,14 +30,14 @@ const props = defineProps({
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-block: 5rem 4.7rem;
+  margin-block: 5.7rem 4rem;
 }
 .desktop__screen {
   width: 94%;
   height: 94%;
   background-color: white;
-  position: absolute;
-  top: 3%;
+  --position: absolute;
+  --top: 3%;
   border-radius: 0.5rem;
 }
 .desktop__keyboard {

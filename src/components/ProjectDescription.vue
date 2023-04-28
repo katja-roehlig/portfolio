@@ -13,8 +13,7 @@ const props = defineProps({
   <div class="media__container">
     <div class="description__container">
       <article>
-        <slot>Description of the project</slot
-        ><a class="link" href="">more...</a>
+        <slot>Description of the project</slot>
       </article>
       <div class="button__container">
         <button class="btn">
