@@ -33,11 +33,14 @@ const props = defineProps({
   margin-block: 5.7rem 4rem;
 }
 .desktop__screen {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 150% 100%;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.586);
+
   width: 94%;
   height: 94%;
-  background-color: white;
-  --position: absolute;
-  --top: 3%;
+
   border-radius: 0.5rem;
 }
 .desktop__keyboard {

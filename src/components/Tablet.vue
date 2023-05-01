@@ -31,9 +31,13 @@ const props = defineProps({
   align-items: center;
 }
 .tablet__screen {
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.586);
+
   width: 90%;
   height: 94%;
-  background-color: white;
   border-radius: 7%;
 }
 </style>

@@ -18,6 +18,9 @@ function swiping(event: Event): void {
   let position = projectBox.findIndex((element) => element.visible === true);
   projectBox[position].visible = false;
   const target = event.target as HTMLElement;
+  phoneView.value = true;
+  tabletView.value = false;
+  desktopView.value = false;
   if (target.className === "back") {
     if (position !== 0) {
       position--;
