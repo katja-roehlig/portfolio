@@ -18,13 +18,9 @@ function swiping(event: Event): void {
   let position = projectBox.findIndex((element) => element.visible === true);
   projectBox[position].visible = false;
   const target = event.target as HTMLElement;
-  phoneView.value = true;
-  tabletView.value = false;
-  desktopView.value = false;
   if (target.className === "back") {
     if (position !== 0) {
-      position--;
-      projectBox[position].visible = true;
+      projectBox[position - 1].visible = true;
     } else {
       projectBox[projectBox.length].visible = true;
     }
@@ -35,6 +31,9 @@ function swiping(event: Event): void {
       store.projects[0].visible = true;
     }
   }
+  phoneView.value = true;
+  tabletView.value = false;
+  desktopView.value = false;
 }
 
 let phoneView = ref(true);

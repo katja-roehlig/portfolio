@@ -1,9 +1,9 @@
 <template>
-  <div class="square"></div>
+  <div class="back"></div>
 </template>
 
 <style scoped>
-.square {
+.back {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 0.2rem;

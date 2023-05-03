@@ -11,28 +11,28 @@
 /* fonts *********************************************************/
 @font-face {
   font-family: "AtmaBo";
-  src: url(./src/assets/fonts/Atma-Bold.woff2);
+  src: url(/fonts/Atma-Bold.woff2);
   font-weight: 900;
 }
 @font-face {
   font-family: "AtmaSeBo";
-  src: url(./src/assets/fonts/Atma-SemiBold.woff2);
+  src: url(/fonts/Atma-SemiBold.woff2);
   font-weight: 600;
 }
 @font-face {
   font-family: "AtmaMed";
-  src: url(./src/assets/fonts/Atma-Medium.woff2);
+  src: url(/fonts/Atma-Medium.woff2);
   font-weight: 500;
 }
 
 @font-face {
   font-family: "AtmaRe";
-  src: url(./src/assets/fonts/Atma-Regular.woff2);
+  src: url(/fonts/Atma-Regular.woff2);
   font-weight: 400;
 }
 @font-face {
   font-family: "RobotoReg";
-  src: url(./src/assets/fonts/Roboto-Regular.woff2);
+  src: url(/fonts/Roboto-Regular.woff2);
   font-weight: 400;
 }
 /*@font-face {
@@ -43,7 +43,7 @@
 */
 @font-face {
   font-family: "RobotoLi";
-  src: url(./src/assets/fonts/Roboto-Light.woff2);
+  src: url(/fonts/Roboto-Light.woff2);
   font-weight: 300;
 }
 
