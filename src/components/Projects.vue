@@ -59,15 +59,36 @@ function changeView(event: Event): void {
     tabletView.value = false;
   }
 }
+
+let isZoomed = ref(false);
+function zoomImage(): boolean {
+  return (isZoomed.value = !isZoomed.value);
+}
 </script>
+
 <template>
   <article class="project__container" id="projects">
     <h3>Projects</h3>
     <template v-for="item in store.projects" :key="item.id">
       <div class="content__container" v-if="item.visible === true">
-        <Phone :phone="item.phoneImg" v-if="phoneView" />
-        <Tablet :tablet="item.tabletImg" v-if="tabletView" />
-        <Desktop :desktop="item.desktopImg" v-if="desktopView" />
+        <Phone
+          :phone="item.phoneImg"
+          v-if="phoneView"
+          @click="zoomImage"
+          :class="{ zoom: isZoomed }"
+        />
+        <Tablet
+          :tablet="item.tabletImg"
+          v-if="tabletView"
+          @click="zoomImage"
+          :class="{ big: isZoomed }"
+        />
+        <Desktop
+          :desktop="item.desktopImg"
+          v-if="desktopView"
+          @click="zoomImage"
+          :class="{ big: isZoomed }"
+        />
 
         <ProjectDescription
           :github="item.github"
@@ -79,6 +100,7 @@ function changeView(event: Event): void {
             <div class="view__container">
               <div
                 class="icon"
+                :class="{ active: phoneView }"
                 @click="changeView($event)"
                 v-if="item.phoneImg !== ''"
               >
@@ -86,6 +108,7 @@ function changeView(event: Event): void {
               </div>
               <div
                 class="icon"
+                :class="{ active: tabletView }"
                 @click="changeView($event)"
                 v-if="item.tabletImg !== ''"
               >
@@ -93,6 +116,7 @@ function changeView(event: Event): void {
               </div>
               <div
                 class="icon"
+                :class="{ active: desktopView }"
                 @click="changeView($event)"
                 v-if="item.desktopImg !== ''"
               >
@@ -168,6 +192,10 @@ function changeView(event: Event): void {
 
 .icon:hover {
   color: rgb(var(--bg-color));
+  background-color: rgb(var(--text-color));
+}
+.active {
+  color: rgb(var(--bg-color));
   background-color: var(--accent-color);
 }
 .project__container {
@@ -199,5 +227,18 @@ function changeView(event: Event): void {
 }
 .bold {
   font-family: "RobotoReg";
+}
+
+.zoom {
+  transition: transform 1s ease-out;
+  transform: scale(1.8);
+  transform-origin: 50% 10%;
+  z-index: 1;
+}
+.big {
+  transition: transform 1s ease-out;
+  transform: scale(1.5);
+  transform-origin: 50% 60%;
+  z-index: 1;
 }
 </style>

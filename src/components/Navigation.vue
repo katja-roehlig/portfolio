@@ -4,7 +4,7 @@ import { ref, computed } from "vue";
 
 let isVisible = ref(false);
 
-function largeMenu() {
+function largeMenu(): boolean {
   return (isVisible.value = !isVisible.value);
 }
 </script>
