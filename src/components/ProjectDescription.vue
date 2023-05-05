@@ -66,7 +66,9 @@ const props = defineProps({
 .btn {
   all: unset;
   padding: 0.6rem 2rem;
-  border: 2px solid var(--accent-color);
+  --border: 2px solid var(--accent-color);
+  box-shadow: 0px 1px 4px var(--accent-color-transparent),
+    0px -1px 8px rgba(var(--text-color), 0.1);
   border-radius: 1rem;
 }
 .btn:hover {

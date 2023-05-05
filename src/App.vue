@@ -9,7 +9,7 @@ import ArrowUp from "./components/icons/ArrowUp.vue";
 import { ref, onBeforeMount } from "vue";
 
 let scrollOn = ref(false);
-function scrollButton(event: Event) {
+function scrollButton(event: Event): void {
   scrollOn.value = true;
   if (window.scrollY === 0) {
     scrollOn.value = false;
@@ -36,23 +36,27 @@ onBeforeMount(() => {
 <style scoped>
 .btn-scroll {
   all: unset;
-  background-color: rgba(var(--bg-color), 0.95);
-  box-shadow: 0px 1px 5px var(--accent-color),
-    0px -2px 10px rgba(var(--text-color), 0.1);
-  border-radius: 10rem;
-  width: 1.5rem;
+  background-color: rgba(var(--bg-color), 0.9);
+  border-radius: 1rem;
+  box-shadow: 0px 2px 6px var(--accent-color-transparent),
+    0px -2px 8px rgba(var(--text-color), 0.1);
+  width: 2.5rem;
   height: 1.5rem;
   display: flex;
   justify-content: center;
   align-items: end;
-  padding: 1.8rem 1.4rem 1rem 1.4rem;
+  padding: 1.2rem 1.2rem 0.3rem 1.2rem;
   position: fixed;
   bottom: 10%;
-  right: 15%;
+  right: 3%;
 }
+.btn-scroll:hover {
+  background-color: rgba(var(--text-color), 0.1);
+  border-color: var(--accent-color-light);
+}
+
 .arrow {
-  border-left: 4px solid var(--accent-color);
-  border-top: 4px solid var(--accent-color);
-  border-radius: 3px;
+  border-color: var(--accent-color-light);
+  border-color: var(--accent-color-light);
 }
 </style>
