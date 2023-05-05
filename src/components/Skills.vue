@@ -14,39 +14,65 @@ import Figma from "./icons/skills/Api.vue";
 </script>
 
 <template>
-  <article class="skills__container" id="skills">
+  <article class="skills__container container" id="skills">
     <h3>Skills</h3>
 
     <h4>My tech skills and tools</h4>
 
     <ul class="tech-list">
-      <li class="tech-list-item"><Vue class="icon-style" />Vue.js</li>
-      <li class="tech-list-item"><Css class="icon-style" />Css3</li>
-      <li class="tech-list-item"><Sass class="icon-style bigger" />Scss</li>
       <li class="tech-list-item">
-        <Javascript class="icon-style" />Java <br />Script
+        <Vue class="icon-style" />
+        <p class="icon-text">Vue.js</p>
       </li>
       <li class="tech-list-item">
-        <Typescript class="icon-style" />Type <br />
-        Script
+        <Css class="icon-style" />
+        <p class="icon-text">CSS3</p>
       </li>
-
-      <li class="tech-list-item"><Html class="icon-style smaller" />Html5</li>
       <li class="tech-list-item">
-        <Api class="icon-style" />RESTful<br />
-        APIs
+        <Sass class="icon-style" />
+        <p class="icon-text">SCSS</p>
       </li>
-      <li class="tech-list-item"><Git class="icon-style" />Git</li>
-      <li class="tech-list-item"><Github class="icon-style" />Github</li>
       <li class="tech-list-item">
-        <Vscode class="icon-style bigger" />VS<br />
-        Code
+        <Javascript class="icon-style" />
+        <p class="icon-text">Java <br />Script</p>
+      </li>
+      <li class="tech-list-item">
+        <Typescript class="icon-style" />
+        <p class="icon-text">Type <br />Script</p>
       </li>
 
       <li class="tech-list-item">
-        <Responsive class="icon-style bigger" />Responsive <br />Websites
+        <Html class="icon-style" />
+        <p class="icon-text">HTML5</p>
       </li>
-      <li class="tech-list-item"><Figma class="icon-style" />Figma</li>
+      <li class="tech-list-item">
+        <Api class="icon-style" />
+        <p class="icon-text">
+          RESTful<br />
+          APIs
+        </p>
+      </li>
+      <li class="tech-list-item">
+        <Git class="icon-style" />
+        <p class="icon-text">Git</p>
+      </li>
+      <li class="tech-list-item">
+        <Github class="icon-style" />
+        <p class="icon-text">Github</p>
+      </li>
+      <li class="tech-list-item">
+        <Vscode class="icon-style" />
+        <p class="icon-text">VS<br />Code</p>
+      </li>
+
+      <li class="tech-list-item">
+        <Responsive class="icon-style" />
+        <p class="icon-text">Responsive <br />Websites</p>
+      </li>
+      <li class="tech-list-item">
+        <Figma class="icon-style" />
+        <p class="icon-text">Figma</p>
+      </li>
     </ul>
   </article>
   <!-- <h4>My soft skills</h4> -->
@@ -56,38 +82,69 @@ import Figma from "./icons/skills/Api.vue";
 .tech-list {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-
+  grid-template-columns: 25% 25% 25% 25%;
   padding: 0;
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 3rem;
+
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .tech-list-item {
+  height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1rem 1.2rem 2rem 0.2rem;
-  justify-content: space-evenly;
+  padding: 1rem 1.2rem 1.5rem 0.2rem;
+  justify-content: space-around;
   align-items: center;
   font-size: 1.4rem;
   text-align: center;
-  line-height: 1.6rem;
-  gap: 1rem;
+
+  gap: 0.5rem;
 }
 .icon-style {
-  width: 2.5rem;
   fill: var(--accent-color);
+  width: 45%;
 }
-
-.bigger {
-  width: 3rem;
-}
-.smaller {
-  width: 2.2rem;
+.icon-text {
+  margin: 0;
 }
 .skills__container {
-  padding: 1.5rem 1.5rem 1rem 2rem;
-  box-shadow: 0px 6px 6px var(--accent-color-transparent),
-    0px -4px 8px rgba(var(--text-color), 0.2);
-  background-color: rgba(var(--bg-color), 0.6);
-  border-radius: 0.7rem;
-  margin-top: 3rem;
+  padding: 2.5rem 1.5rem 1rem 3rem;
+}
+
+/* media-queries ************************************************************ */
+@media (min-width: 768px) {
+  .icon-style {
+    width: 35%;
+  }
+  .tech-list {
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-column-gap: 0.1rem;
+  }
+  .tech-list-item {
+    font-size: 1.5rem;
+  }
+  .skills__container {
+    padding-bottom: 3.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .icon-style {
+    width: 30%;
+  }
+  .tech-list {
+    grid-template-columns: repeat(6, 1fr);
+    grid-column-gap: 0.1rem;
+  }
+  .tech-list-item {
+    font-size: 1.6rem;
+  }
+  .skills__container {
+    padding-bottom: 4.8rem;
+  }
 }
 </style>

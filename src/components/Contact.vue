@@ -7,7 +7,7 @@ import Github from "./icons/Github.vue";
 </script>
 
 <template>
-  <article class="contact__container" id="contact">
+  <article class="contact__container container" id="contact">
     <h3>Contact</h3>
 
     <div class="contact__content">
@@ -42,12 +42,7 @@ import Github from "./icons/Github.vue";
 </template>
 <style scoped>
 .contact__container {
-  padding: 1.5rem 1.5rem 2.5rem 1.5rem;
-  box-shadow: 0px 6px 6px var(--accent-color-transparent),
-    0px -4px 8px rgba(var(--text-color), 0.2);
-  background-color: rgba(var(--bg-color), 0.6);
-  border-radius: 0.7rem;
-  margin-top: 3rem;
+  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;

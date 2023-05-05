@@ -67,7 +67,7 @@ function zoomImage(): boolean {
 </script>
 
 <template>
-  <article class="project__container" id="projects">
+  <article class="project__container container" id="projects">
     <h3>Projects</h3>
     <template v-for="item in store.projects" :key="item.id">
       <div class="content__container" v-if="item.visible === true">
@@ -203,12 +203,7 @@ function zoomImage(): boolean {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem 2.5rem 3rem 3rem;
-  box-shadow: 0px 6px 6px var(--accent-color-transparent),
-    0px -4px 8px rgba(var(--text-color), 0.2);
-  background-color: rgba(var(--bg-color), 0.6);
-  border-radius: 0.7rem;
-  margin-top: 3rem;
+  padding: 2.5rem 2.5rem 3rem 3rem;
 }
 .project__heading__container {
   position: relative;
