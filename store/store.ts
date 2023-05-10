@@ -32,7 +32,7 @@ export const projectStore = defineStore("store", {
 
       <projectStructure>{
         id: 2,
-        visible: false,
+        visible: true,
         name: "Shopping List",
         phoneImg: "url(/img/Shopping_Phone.webp)",
         tabletImg: "url(/img/Shopping_Tablet.webp)",

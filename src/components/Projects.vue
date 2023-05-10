@@ -18,7 +18,7 @@ function swiping(event: Event): void {
   let position = projectBox.findIndex((element) => element.visible === true);
   projectBox[position].visible = false;
   const target = event.target as HTMLElement;
-  if (target.className === "back") {
+  if (target.id === "back") {
     if (position !== 0) {
       projectBox[position - 1].visible = true;
     } else {
@@ -65,85 +65,95 @@ function zoomImage(): boolean {
   return (isZoomed.value = !isZoomed.value);
 }
 </script>
-
+<!--* HTML ************************************************************************************************************** -->
 <template>
   <article class="project__container container" id="projects">
     <h3>Projects</h3>
-    <template v-for="item in store.projects" :key="item.id">
-      <div class="content__container" v-if="item.visible === true">
-        <Phone
-          :phone="item.phoneImg"
-          v-if="phoneView"
-          @click="zoomImage"
-          :class="{ zoom: isZoomed }"
-        />
-        <Tablet
-          :tablet="item.tabletImg"
-          v-if="tabletView"
-          @click="zoomImage"
-          :class="{ big: isZoomed }"
-        />
-        <Desktop
-          :desktop="item.desktopImg"
-          v-if="desktopView"
-          @click="zoomImage"
-          :class="{ big: isZoomed }"
-        />
 
-        <ProjectDescription
-          :github="item.github"
-          :web="item.web"
-          class="smartphone"
-        >
-          <div class="icon__container">
-            <ArrowLeft @click="swiping($event)" />
-            <div class="view__container">
-              <div
-                class="icon"
-                :class="{ active: phoneView }"
-                @click="changeView($event)"
-                v-if="item.phoneImg !== ''"
-              >
-                <PhoneIcon class="view-icon" id="phone" />
+    <div class="flex__container">
+      <ArrowLeft class="desktop-arrow" />
+      <template v-for="item in store.projects" :key="item.id">
+        <div class="content__container" v-if="item.visible === true">
+          <Phone
+            :phone="item.phoneImg"
+            v-if="phoneView"
+            @click="zoomImage"
+            :class="{ zoom: isZoomed }"
+          />
+          <Tablet
+            :tablet="item.tabletImg"
+            v-if="tabletView"
+            @click="zoomImage"
+            :class="{ big: isZoomed }"
+          />
+          <Desktop
+            :desktop="item.desktopImg"
+            v-if="desktopView"
+            @click="zoomImage"
+            :class="{ big: isZoomed }"
+          />
+
+          <ProjectDescription
+            :github="item.github"
+            :web="item.web"
+            class="smartphone"
+          >
+            <div class="icon__container">
+              <ArrowLeft @click="swiping($event)" id="back" class="mobile" />
+              <div class="view__container">
+                <div
+                  class="icon"
+                  :class="{ active: phoneView }"
+                  @click="changeView($event)"
+                  v-if="item.phoneImg !== ''"
+                >
+                  <PhoneIcon class="view-icon" id="phone" />
+                </div>
+                <div
+                  class="icon"
+                  :class="{ active: tabletView }"
+                  @click="changeView($event)"
+                  v-if="item.tabletImg !== ''"
+                >
+                  <TabletIcon class="view-icon" id="tablet" />
+                </div>
+                <div
+                  class="icon"
+                  :class="{ active: desktopView }"
+                  @click="changeView($event)"
+                  v-if="item.desktopImg !== ''"
+                >
+                  <LaptopIcon class="view-icon" id="desktop" />
+                </div>
               </div>
-              <div
-                class="icon"
-                :class="{ active: tabletView }"
-                @click="changeView($event)"
-                v-if="item.tabletImg !== ''"
-              >
-                <TabletIcon class="view-icon" id="tablet" />
-              </div>
-              <div
-                class="icon"
-                :class="{ active: desktopView }"
-                @click="changeView($event)"
-                v-if="item.desktopImg !== ''"
-              >
-                <LaptopIcon class="view-icon" id="desktop" />
-              </div>
+              <ArrowRight
+                @click="swiping($event)"
+                id="forward"
+                class="mobile"
+              />
             </div>
-            <ArrowRight @click="swiping($event)" />
-          </div>
-          <div class="project__heading__container">
-            <h4 class="project__heading">{{ item.name }}</h4>
-            <span class="counter"
-              >{{ item.id }} / {{ store.projects.length }}</span
-            >
-          </div>
-          <p class="project__description">
-            {{ item.text1 }} <br />
-            {{ item.text2 }}
-          </p>
-          <p class="project__stack">
-            <span class="bold"> Tech Stack: </span> {{ item.techStack }}
-          </p>
-        </ProjectDescription>
-      </div>
-    </template>
+            <div class="project__heading__container">
+              <h4 class="project__heading">{{ item.name }}</h4>
+              <span class="counter"
+                >{{ item.id }} / {{ store.projects.length }}</span
+              >
+            </div>
+            <p class="project__description">
+              {{ item.text1 }} <br />
+              {{ item.text2 }}
+            </p>
+            <p class="project__stack">
+              <span class="bold"> Tech Stack: </span> {{ item.techStack }}
+            </p>
+          </ProjectDescription>
+        </div>
+      </template>
+      <ArrowRight class="desktop-arrow" />
+    </div>
   </article>
 </template>
 
+<!--* CSS ************************************************************************************************************** -->
 <style scoped>
 .content__container {
   display: flex;
@@ -151,18 +161,16 @@ function zoomImage(): boolean {
   justify-content: center;
   align-items: center;
 }
-.arrow {
-  position: relative;
-  width: 4rem;
-  padding-bottom: 28rem;
-}
-.back {
+
+#back {
   left: 15%;
 }
-.forward {
+#forward {
   right: 15%;
 }
-
+.desktop-arrow {
+  display: none;
+}
 .project__description {
   margin-block: 0.5rem 0;
   text-align: center;
@@ -235,5 +243,35 @@ function zoomImage(): boolean {
   transform: scale(1.5);
   transform-origin: 50% 60%;
   z-index: 1;
+}
+
+@media (min-width: 1100px) {
+  .flex__container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .content__container {
+    max-width: 30vw;
+    justify-content: flex-start;
+    padding: 2.5rem 2.5rem 3rem 2rem;
+    box-shadow: 0px 6px 6px var(--accent-color-transparent),
+      0px -4px 8px rgba(var(--text-color), 0.2);
+    background-color: rgba(var(--bg-color), 0.6);
+    border-radius: 0.7rem;
+  }
+  .mobile {
+    display: none;
+  }
+  .icon__container {
+    justify-content: center;
+  }
+  .desktop-arrow {
+    display: inline-block;
+    align-self: center;
+    width: 1.7rem;
+    height: 1.7rem;
+    border-width: 4px;
+  }
 }
 </style>

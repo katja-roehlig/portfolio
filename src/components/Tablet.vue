@@ -40,4 +40,11 @@ const props = defineProps({
   height: 94%;
   border-radius: 7%;
 }
+/* media-queries ************************************************************* */
+@media (min-width: 768px) {
+  .tablet__container {
+    height: 21rem;
+    width: 30.1875rem;
+  }
+}
 </style>
