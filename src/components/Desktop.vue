@@ -51,4 +51,11 @@ const props = defineProps({
   bottom: 0%;
   border-radius: 1rem 1rem 50rem 50rem;
 }
+/* media-queries ************************************************************* */
+@media (min-width: 768px) {
+  .desktop__container {
+    height: 20.3rem;
+    width: 30.5149rem;
+  }
+}
 </style>

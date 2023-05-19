@@ -24,8 +24,10 @@ onBeforeMount(() => {
 <template>
   <Navigation />
   <Home />
-  <About />
-  <Skills />
+
+  <About class="about" />
+  <Skills class="skills" />
+
   <Projects />
   <Contact />
   <div v-if="scrollOn">
@@ -59,4 +61,16 @@ onBeforeMount(() => {
   border-color: var(--accent-color-light);
   border-color: var(--accent-color-light);
 }
+
+/*media-queries *******************************************************/
+/* @media (min-width: 768px) {
+  .first__container {
+    display: flex;
+    gap: 5rem;
+  }
+  .about,
+  .skills {
+    flex: 1 1 50%;
+  }
+} */
 </style>

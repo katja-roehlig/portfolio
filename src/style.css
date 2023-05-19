@@ -62,14 +62,6 @@ body {
   background-size: cover, cover;
 }
 
-h2 {
-  font-family: "AtmaMed";
-  color: var(--text-color);
-  font-size: 1.9rem;
-  text-transform: none;
-  letter-spacing: 0.1rem;
-}
-
 h3 {
   font-family: "AtmaMed";
   font-size: 1.8rem;
@@ -86,8 +78,43 @@ h4 {
   font-size: 1.5rem;
   color: var(--accent-color-light);
   margin-block: 2rem 1.3rem;
-  --text-transform: uppercase;
   letter-spacing: 0.08rem;
   text-transform: uppercase;
   text-align: center;
+}
+.container {
+  padding: 2.5rem 2.5rem 3rem 2rem;
+  box-shadow: 0px 6px 6px var(--accent-color-transparent),
+    0px -4px 8px rgba(var(--text-color), 0.2);
+  background-color: rgba(var(--bg-color), 0.6);
+  border-radius: 0.7rem;
+  margin-top: 3rem;
+}
+/* media-queries ******************************************************** */
+@media (min-width: 768px) {
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1.8rem;
+  }
+  body {
+    font-size: 1.65rem;
+    padding: 2.5rem 6rem;
+  }
+}
+@media (min-width: 1100px) {
+  h3 {
+    font-size: 3rem;
+    margin-bottom: 3.5rem;
+  }
+  body {
+    font-size: 1.8rem;
+    padding: 2.5rem 8rem;
+    width: 80vw;
+    margin-inline: auto;
+  }
+  .container {
+    margin-top: 4rem;
+  }
 }

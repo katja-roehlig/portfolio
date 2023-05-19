@@ -49,4 +49,12 @@ const props = defineProps({
   right: 42%;
   bottom: 2.5%;
 }
+
+/* media-queries ************************************************************* */
+@media (min-width: 768px) {
+  .phone__container {
+    height: 30rem;
+    width: 16.79rem;
+  }
+}
 </style>

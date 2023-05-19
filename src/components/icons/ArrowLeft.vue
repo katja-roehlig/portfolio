@@ -1,9 +1,9 @@
 <template>
-  <div class="back"></div>
+  <div class="arrow"></div>
 </template>
 
 <style scoped>
-.back {
+.arrow {
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 0.2rem;
