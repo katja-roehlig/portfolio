@@ -18,7 +18,7 @@ function readMore() {
         class="about__foto"
       />
       <div class="about__info">
-        <div clas="text-left">
+        <div class="text-left">
           <h4 class="about__subheading">Hey there,</h4>
           <p class="about__text text">
             I'm Katja. I am a frontend developer with a lot of passion for
@@ -72,7 +72,6 @@ function readMore() {
 }
 .about__container {
   text-align: center;
-  line-height: 2.1rem;
 }
 .about__content {
   display: flex;
@@ -88,6 +87,9 @@ function readMore() {
 }
 .about__text {
   margin-top: 0;
+}
+.text {
+  line-height: 2.1rem;
 }
 .about__subheading {
   font-size: 1.4rem;
@@ -109,7 +111,6 @@ function readMore() {
   }
   .about__foto {
     height: 25rem;
-    margin-top: 4rem;
   }
   .foldout {
     display: block;
@@ -118,14 +119,16 @@ function readMore() {
     display: none;
   }
 }
+.about__subheading {
+  margin-top: 0;
+}
 
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   .about__foto {
     height: 30rem;
-    margin-top: 4rem;
   }
   .about__container {
-    padding: 2.5rem 9.5rem 5rem 9rem;
+    padding: 3.5rem 9.5rem 5rem 9rem;
   }
   .about__content {
     gap: 9rem;

@@ -41,8 +41,8 @@
     letter-spacing: 0.4rem;
   }
   .heading__sub {
-    font-size: 2.5rem;
-    margin-block: 4rem 1rem;
+    font-size: 3rem;
+    margin-block: 2rem 1.5rem;
   }
 }
 </style>

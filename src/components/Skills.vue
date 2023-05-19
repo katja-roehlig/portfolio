@@ -150,9 +150,9 @@ import Figma from "./icons/skills/Api.vue";
     padding-bottom: 4.8rem;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1100px) {
   .skills__container {
-    padding: 2.5rem 9.5rem 5rem 9rem;
+    padding: 3.5rem 9.5rem 5rem 9rem;
   }
 }
 </style>

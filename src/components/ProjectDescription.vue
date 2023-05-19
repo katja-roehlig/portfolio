@@ -11,22 +11,22 @@ const props = defineProps({
 
 <template>
   <div class="media__container">
-    <div class="description__container">
-      <article>
-        <slot>Description of the project</slot>
-      </article>
-      <div class="button__container">
-        <button class="btn">
-          <a class="btn-link" :href="props.github">
-            <Github class="btn-icon" />Github</a
-          ></button
-        ><button class="btn">
-          <a class="btn-link" :href="props.web"
-            ><Website class="btn-icon" />Website</a
-          >
-        </button>
-      </div>
+    <!-- <div class="description__container"> -->
+    <article>
+      <slot>Description of the project</slot>
+    </article>
+    <div class="button__container">
+      <button class="btn">
+        <a class="btn-link" :href="props.github">
+          <Github class="btn-icon" />Github</a
+        ></button
+      ><button class="btn">
+        <a class="btn-link" :href="props.web"
+          ><Website class="btn-icon" />Website</a
+        >
+      </button>
     </div>
+    <!-- </div> -->
   </div>
 </template>
 <style scoped>
@@ -34,8 +34,9 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  min-height: 30rem;
 }
 .btn-icon {
   width: 1.5rem;
@@ -79,6 +80,9 @@ const props = defineProps({
 .button__container {
   margin-top: 1.5rem;
   display: flex;
+  width: 100%;
   justify-content: space-between;
+  position: relative;
+  bottom: 5%;
 }
 </style>
