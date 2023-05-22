@@ -320,7 +320,7 @@ function zoomImage(id: number): any {
     padding: 4rem 2.5rem 3rem 2rem;
     box-shadow: 0px 6px 6px var(--accent-color-transparent),
       0px -4px 8px rgba(var(--text-color), 0.2);
-    background-color: rgba(var(--bg-color), 0.6);
+    background-color: var(--bg-color-lightest);
     border-radius: 0.7rem;
   }
   .mobile {

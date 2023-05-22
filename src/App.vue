@@ -18,11 +18,43 @@ function scrollButton(event: Event): void {
 
 onBeforeMount(() => {
   window.addEventListener("scroll", scrollButton);
+  const initUserTheme = getTheme() || getMediaPreference();
+  setTheme(initUserTheme);
 });
+let userTheme = "light-theme";
+function toggleTheme() {
+  const activeTheme = localStorage.getItem("user-theme");
+  if (activeTheme === "light-theme") {
+    setTheme("dark-theme");
+  } else {
+    setTheme("light-theme");
+  }
+}
+function getTheme() {
+  return localStorage.getItem("user-theme");
+}
+
+function setTheme(theme: string) {
+  localStorage.setItem("user-theme", theme);
+  userTheme = theme;
+  document.documentElement.className = theme;
+}
+
+function getMediaPreference() {
+  const hasDarkPreference = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+  if (hasDarkPreference) {
+    return "dark-theme";
+  } else {
+    return "light-theme";
+  }
+}
 </script>
 
 <template>
   <Navigation />
+  <button @click="toggleTheme">Toggle</button>
   <Home />
 
   <About class="about" />
@@ -35,7 +67,27 @@ onBeforeMount(() => {
   </div>
 </template>
 
-<style scoped>
+<style>
+:root.light-theme {
+  --text-color: 0, 0, 0;
+  --bg-color: 255, 255, 255;
+  --bg-color-light: rgba(255, 255, 255, 0.6);
+  --bg-color-lightest: rgba(255, 255, 255, 0.6);
+  --shadow-color: 255, 255, 255;
+  --accent-color: rgb(150, 1, 117);
+  --accent-color-transparent: rgba(150, 1, 117, 0.4);
+  --accent-color-light: rgb(151, 104, 136);
+}
+:root.dark-theme {
+  --text-color: 255, 255, 240;
+  --bg-color: 18, 18, 25;
+  --bg-color-light: rgba(23, 23, 29, 0.7);
+  --bg-color-lightest: rgba(28, 28, 33, 0.702);
+  --shadow-color: 18, 18, 18;
+  --accent-color: rgb(156, 56, 135);
+  --accent-color-transparent: rgba(156, 56, 135, 0.6);
+  --accent-color-light: rgb(151, 104, 136);
+}
 .btn-scroll {
   all: unset;
   background-color: rgba(var(--bg-color), 0.9);

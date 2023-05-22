@@ -1,11 +1,16 @@
 <script setup lang="ts">
 import HamburgerMenu from "./icons/HamburgerMenu.vue";
+import DarkMode from "./icons/DarkMode.vue";
+import LightMode from "./icons/LightMode.vue";
 import { ref, computed } from "vue";
 
 let isVisible = ref(false);
 
 function largeMenu(): boolean {
   return (isVisible.value = !isVisible.value);
+}
+function changeMode() {
+  console.log("Dark");
 }
 </script>
 
@@ -42,12 +47,14 @@ function largeMenu(): boolean {
         <a href="#contact" class="nav__link">Contact</a>
       </li>
     </ul>
+    <DarkMode class="nav__mode" @click="changeMode" />
   </nav>
 </template>
 <style scoped>
 .nav__list {
   list-style: none;
   display: none;
+  margin: 0;
 }
 .nav__menu {
   fill: var(--accent-color);
@@ -55,15 +62,20 @@ function largeMenu(): boolean {
 }
 .nav__container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  margin-top: 2rem;
 }
 .nav__link {
   color: inherit;
   text-decoration: none;
 }
-nav__link:hover {
+.nav__link:hover {
   background-color: rgb(var(--bg-color));
   color: var(--accent-color);
+}
+.nav__mode {
+  padding-inline: 0.5rem 0rem;
+  order: -1;
 }
 .opacity {
   display: grid;
@@ -106,6 +118,13 @@ nav__link:hover {
 @media (min-width: 768px) {
   .nav__menu {
     display: none;
+  }
+  .nav__mode {
+    padding-inline: 3rem 0rem;
+    order: 0;
+  }
+  .nav__container {
+    justify-content: flex-end;
   }
   .nav__list {
     display: flex;
