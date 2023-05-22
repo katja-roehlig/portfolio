@@ -21,6 +21,7 @@ onBeforeMount(() => {
   const initUserTheme = getTheme() || getMediaPreference();
   setTheme(initUserTheme);
 });
+
 let userTheme = "light-theme";
 function toggleTheme() {
   const activeTheme = localStorage.getItem("user-theme");
