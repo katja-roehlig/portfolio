@@ -132,6 +132,7 @@ function zoomImage(id: number): any {
             v-if="item.phoneView"
             @click="zoomImage(item.id)"
             :class="{ zoom: item.isZoomed }"
+            class="media"
           />
 
           <Tablet
@@ -150,7 +151,7 @@ function zoomImage(id: number): any {
           <ProjectDescription
             :github="item.github"
             :web="item.web"
-            class="smartphone"
+            class="description"
           >
             <div class="icon__container">
               <ArrowLeft @click="swiping($event)" id="back" class="mobile" />
@@ -218,15 +219,24 @@ function zoomImage(id: number): any {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100%;
   position: relative;
+  padding: 4rem 1.5rem 3rem 1.5rem;
 }
-
+.flex__container {
+  padding-inline: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+.mobile {
+  position: absolute;
+}
 #back {
-  left: 15%;
+  left: 2%;
+  top: 1.5rem;
 }
 #forward {
-  right: 15%;
+  right: 2%;
+  top: 1.5rem;
 }
 .desktop-arrow {
   display: none;
@@ -237,20 +247,20 @@ function zoomImage(id: number): any {
 }
 
 .icon__container {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center; */
 
   margin-top: 1rem;
 }
 .view__container {
   display: flex;
+  justify-content: center;
   gap: 0.8rem;
 }
 .icon {
   padding: 0.4rem 0.2rem 0rem 0.5rem;
-  box-shadow: 0px 1px 4px var(--accent-color-transparent),
-    0px -1px 8px rgba(var(--text-color), 0.1);
+  box-shadow: var(--box-shadow-middle);
   width: 2.5rem;
   border-radius: 0.5rem;
 }
@@ -259,19 +269,20 @@ function zoomImage(id: number): any {
 }
 
 .icon:hover {
-  color: rgb(var(--bg-color));
-  background-color: rgb(var(--text-color));
+  color: var(--bg-color);
+  background-color: var(--text-color);
 }
 .active {
-  color: rgb(var(--bg-color));
-  background-color: var(--accent-color);
+  color: var(--bg-color);
+  background-color: var(--icon-color);
 }
 .project__container {
-  display: flex;
+  /*  display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  padding: 2.5rem 2.5rem 3rem 3rem;
+  align-items: center; */
+  padding: 0rem 0rem 3rem 0rem;
+  position: relative;
 }
 .project__heading__container {
   position: relative;
@@ -304,24 +315,37 @@ function zoomImage(id: number): any {
   transform-origin: 50% 60%;
   z-index: 1;
 }
+.description {
+  width: 95%;
 
+  position: relative;
+}
+@media (min-width: 580px) {
+  .content__container {
+    background-color: var(--bg-color-second-level);
+    box-shadow: var(--box-shadow-small);
+    border-radius: 0.7rem;
+  }
+}
 @media (min-width: 1100px) {
   .flex__container {
-    display: flex;
     flex-direction: row;
     gap: 3rem;
   }
   .project__container {
-    padding: 3.5rem 1rem 5rem 1rem;
+    padding: 0rem 0rem 5rem 0rem;
   }
   .content__container {
     max-width: 30vw;
     justify-content: flex-start;
     padding: 4rem 2.5rem 3rem 2rem;
-    box-shadow: 0px 6px 6px var(--accent-color-transparent),
-      0px -4px 8px rgba(var(--text-color), 0.2);
-    background-color: var(--bg-color-lightest);
     border-radius: 0.7rem;
+    background-color: var(--bg-color-first-level);
+    box-shadow: var(--box-shadow);
+  }
+  .flex__container {
+    padding-inline: 9.5rem 9rem;
+    margin-top: 5rem;
   }
   .mobile {
     display: none;
@@ -338,11 +362,11 @@ function zoomImage(id: number): any {
   }
   #left {
     position: absolute;
-    left: 12%;
+    left: 2%;
   }
   #right {
     position: absolute;
-    right: 12%;
+    right: 2%;
   }
 }
 </style>

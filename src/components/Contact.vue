@@ -9,43 +9,45 @@ import Github from "./icons/Github.vue";
 <template>
   <article class="contact__container container" id="contact">
     <h3>Contact</h3>
+    <div class="content__container">
+      <div class="contact__content">
+        <a href="mailto:katja-roehlig@mail.de" class="contact__link"
+          ><Mail class="contact__icon" /> katja-roehlig@mail.de</a
+        >
+        <a
+          href="https://de.linkedin.com/in/katja-r%C3%B6hlig-379a96259"
+          class="contact__link"
+          ><LinkedIn class="contact__icon" />LinkedIn</a
+        >
 
-    <div class="contact__content">
-      <a href="mailto:katja-roehlig@mail.de" class="contact__link"
-        ><Mail class="contact__icon" /> katja-roehlig@mail.de</a
-      >
-      <a
-        href="https://de.linkedin.com/in/katja-r%C3%B6hlig-379a96259"
-        class="contact__link"
-        ><LinkedIn class="contact__icon" />LinkedIn</a
-      >
+        <a
+          href="https://www.xing.com/profile/Katja_Roehlig/cv"
+          class="contact__link"
+        >
+          <Xing class="contact__icon" />Xing</a
+        >
 
-      <a
-        href="https://www.xing.com/profile/Katja_Roehlig/cv"
-        class="contact__link"
-      >
-        <Xing class="contact__icon" />Xing</a
-      >
-
-      <a
-        href="https://www.xing.com/profile/Katja_Roehlig/cv"
-        class="contact__link"
-      >
-        <Github class="contact__icon" />Github</a
-      >
-      <div class="contact__link">
-        <Location class="contact__icon" />
-        <p class="contact__location">Leipzig</p>
+        <a
+          href="https://www.xing.com/profile/Katja_Roehlig/cv"
+          class="contact__link"
+        >
+          <Github class="contact__icon" />Github</a
+        >
+        <div class="contact__link">
+          <Location class="contact__icon" />
+          <p class="contact__location">Leipzig</p>
+        </div>
       </div>
     </div>
   </article>
 </template>
 <style scoped>
-.contact__container {
-  padding: 2.5rem 1.5rem 2.5rem 1.5rem;
+.content__container {
+  padding: 0rem 0rem 2.5rem 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
 .contact__link {
   color: inherit;
@@ -59,8 +61,8 @@ import Github from "./icons/Github.vue";
 .contact__icon {
   height: 2rem;
   width: 2rem;
-  color: var(--accent-color);
-  fill: var(--accent-color);
+  color: var(--icon-color);
+  fill: var(--icon-color);
 }
 
 .contact__location {
@@ -70,7 +72,7 @@ import Github from "./icons/Github.vue";
 /*media-queries ************************************************************/
 @media (min-width: 1100px) {
   .contact__container {
-    padding-block: 3.5rem 5rem;
+    padding-block: 0rem 5rem;
     width: 50rem;
     margin-inline: auto;
   }

@@ -70,31 +70,52 @@ function getMediaPreference() {
 
 <style>
 :root.light-theme {
-  --text-color: 0, 0, 0;
-  --bg-color: 255, 255, 255;
+  --text-color: rgb(0, 0, 0);
+  --text-color-inverse: rgb(150, 1, 117);
+  --bg-color: rgb(255, 255, 255);
+  --bg-color-transparent: rgba(255, 255, 255, 0.85);
+  --bg-color-first-level: rgba(255, 255, 255, 0.6);
+  --bg-color-second-level: rgba(255, 255, 255, 0);
+  --bg-color-third-level: rgba(255, 255, 255, 0);
   --bg-color-light: rgba(255, 255, 255, 0.6);
-  --bg-color-lightest: rgba(255, 255, 255, 0.6);
-  --shadow-color: 255, 255, 255;
-  --accent-color: rgb(150, 1, 117);
-  --accent-color-transparent: rgba(150, 1, 117, 0.4);
-  --accent-color-light: rgb(151, 104, 136);
+  --drop-shadow-color: rgba(150, 1, 117);
+
+  --icon-color: rgb(150, 1, 117);
+  --heading-color: rgb(150, 1, 117);
+  --h4-color: rgb(151, 104, 136);
+  --h3-color: rgb(151, 104, 136);
+  --box-shadow: 0px 6px 6px rgba(150, 1, 117, 0.4),
+    0px -4px 8px rgba(0, 0, 0, 0.15);
+  --box-shadow-small: none;
+  --box-shadow-middle: 0px 1px 4px rgba(150, 1, 117, 0.4),
+    0px -1px 8px rgba(0, 0, 0, 0.15);
+  --bg-color-toggle: #ffffff;
 }
 :root.dark-theme {
-  --text-color: 255, 255, 240;
-  --bg-color: 18, 18, 25;
+  --text-color: rgb(255, 255, 240);
+  --text-color-inverse: #212121;
+  --bg-color: #212121;
+  --bg-color-first-level: rgba(255, 255, 255, 0.07);
+  --bg-color-second-level: rgba(255, 255, 255, 0.08);
+  --bg-color-third-level: rgba(255, 255, 255, 0.11);
+  --bg-color-transparent: rgba(18, 18, 25);
   --bg-color-light: rgba(23, 23, 29, 0.7);
-  --bg-color-lightest: rgba(28, 28, 33, 0.702);
-  --shadow-color: 18, 18, 18;
-  --accent-color: rgb(156, 56, 135);
-  --accent-color-transparent: rgba(156, 56, 135, 0.6);
-  --accent-color-light: rgb(151, 104, 136);
+  --bg-color-toggle: hsl(185, 27%, 55%);
+  --drop-shadow-color: #000;
+  --drop-shadow-color-dark: #000;
+  --icon-color: hsl(185, 37%, 55%);
+  --heading-color: hsl(319, 35%, 55%);
+  --h4-color: hsl(319, 42%, 54%);
+  --h3-color: hsl(185, 35%, 55%);
+  --box-shadow: 0px 6px 6px black, 0px -4px 8px rgba(0, 0, 0, 0.056);
+  --box-shadow-small: 0px 2px 3px black, 0px -2px 4px rgba(0, 0, 0, 0.056);
+  --box-shadow-middle: 0px 2px 4px #212121, 0px -1px 8px rgba(0, 0, 0, 0.056);
 }
 .btn-scroll {
   all: unset;
-  background-color: rgba(var(--bg-color), 0.9);
+  background-color: hsl(319, 42%, 54%);
   border-radius: 1rem;
-  box-shadow: 0px 2px 6px var(--accent-color-transparent),
-    0px -2px 8px rgba(var(--text-color), 0.1);
+  box-shadow: var(--box-shadow-small);
   width: 2.5rem;
   height: 1.5rem;
   display: flex;
@@ -106,13 +127,7 @@ function getMediaPreference() {
   right: 3%;
 }
 .btn-scroll:hover {
-  background-color: rgba(var(--text-color), 0.1);
-  border-color: var(--accent-color-light);
-}
-
-.arrow {
-  border-color: var(--accent-color-light);
-  border-color: var(--accent-color-light);
+  background-color: var(--text-color);
 }
 
 /*media-queries *******************************************************/

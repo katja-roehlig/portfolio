@@ -40,41 +40,38 @@ const props = defineProps({
 }
 .btn-icon {
   width: 1.5rem;
-  color: var(--accent-color);
-  fill: var(--accent-color);
+  color: var(--text-color);
+  fill: var(--text-color);
 }
 .btn-icon:hover {
-  color: rgb(var(--bg-color));
-  fill: rgb(var(--bg-color));
+  color: var(--bg-color);
+  fill: var(--bg-color);
 }
 .link,
 .btn-link {
   text-decoration: none;
-  color: var(--text-color);
+  color: black;
   font-family: RobotoReg;
-}
-.btn-link {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
 }
 .link:hover {
-  color: var(--accent-color);
+  color: var(--icon-color);
   transform: scale(2);
 }
 
 .btn {
   all: unset;
   padding: 0.6rem 2rem;
-  --border: 2px solid var(--accent-color);
-  box-shadow: 0px 1px 4px var(--accent-color-transparent),
-    0px -1px 8px rgba(var(--text-color), 0.1);
+  box-shadow: var(--box-shadow-middle);
   border-radius: 1rem;
+  background-color: var(--bg-color-toggle);
 }
 .btn:hover {
-  background-color: var(--accent-color);
-  color: rgb(var(--bg-color));
+  background-color: var(--icon-color);
+  color: var(--bg-color);
 }
 
 .button__container {

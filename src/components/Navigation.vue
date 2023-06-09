@@ -57,7 +57,7 @@ function changeMode() {
   margin: 0;
 }
 .nav__menu {
-  fill: var(--accent-color);
+  fill: var(--icon-color);
   width: 2rem;
 }
 .nav__container {
@@ -71,7 +71,7 @@ function changeMode() {
 }
 .nav__link:hover {
   background-color: rgb(var(--bg-color));
-  color: var(--accent-color);
+  color: var(--icon-color);
 }
 .nav__mode {
   padding-inline: 0.5rem 0rem;
@@ -90,7 +90,7 @@ function changeMode() {
   left: 0;
   margin: 0;
   padding-inline-start: 0px;
-  background-color: var(--accent-color);
+  background-color: var(--icon-color);
   color: rgb(var(--bg-color));
   z-index: 1;
 }
@@ -110,7 +110,7 @@ function changeMode() {
   right: 0;
   padding: 0.2rem 1.2rem;
   background-color: rgb(234, 232, 232);
-  color: var(--accent-color);
+  color: var(--icon-color);
   font-size: 1.8rem;
   font-family: "AtmaMed";
   border-radius: 0rem 0rem 0rem 0.5rem;
@@ -132,10 +132,10 @@ function changeMode() {
     gap: 2rem;
   }
   .nav__link:hover {
-    color: var(--accent-color);
+    color: var(--icon-color);
   }
   .nav__link:visited {
-    color: var(--accent-color-transparent);
+    color: var(--h4-color);
   }
 }
 </style>
