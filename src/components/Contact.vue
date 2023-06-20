@@ -26,17 +26,19 @@ import Github from "./icons/Github.vue";
         >
           <Xing class="contact__icon" />Xing</a
         >
+      <a
+        href="https://www.xing.com/profile/Katja_Roehlig/cv"
+        class="contact__link"
+      >
+        <Xing class="contact__icon" />Xing</a
+      >
 
-        <a
-          href="https://www.xing.com/profile/Katja_Roehlig/cv"
-          class="contact__link"
-        >
-          <Github class="contact__icon" />Github</a
-        >
-        <div class="contact__link">
-          <Location class="contact__icon" />
-          <p class="contact__location">Leipzig</p>
-        </div>
+      <a href="https://github.com/katja-roehlig" class="contact__link">
+        <Github class="contact__icon" />Github</a
+      >
+      <div class="contact__link">
+        <Location class="contact__icon" />
+        <p class="contact__location">Leipzig</p>
       </div>
     </div>
   </article>
