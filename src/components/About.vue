@@ -80,16 +80,16 @@ function readMore() {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-inline: 3rem;
-  padding-bottom: 3rem;
+  padding: var(--spacing-small) 3rem 3rem 3rem;
 }
 .about__foto {
   height: 18rem;
   border-radius: 0.6rem;
   box-shadow: var(--box-shadow-middle);
+  margin-bottom: 1rem;
 }
 .about__text {
-  margin-top: 0;
+  margin-top: 0rem;
 }
 .text {
   line-height: 2.1rem;
@@ -101,6 +101,7 @@ function readMore() {
 }
 
 /* media-queries **************************************************** */
+
 @media (min-width: 768px) {
   .about__content {
     display: flex;

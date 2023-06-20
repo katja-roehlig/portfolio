@@ -248,6 +248,7 @@ function zoomImage(id: number): any {
   box-shadow: var(--box-shadow-middle);
   width: 2.5rem;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 .phone-icon {
   padding-bottom: 0.2rem;

@@ -27,6 +27,7 @@ const props = defineProps({
     </div>
   </div>
 </template>
+
 <style scoped>
 .media__container {
   display: flex;
@@ -46,7 +47,6 @@ const props = defineProps({
   color: var(--bg-color);
   fill: var(--bg-color);
 }
-.link,
 .btn-link {
   text-decoration: none;
   color: black;
@@ -56,10 +56,6 @@ const props = defineProps({
   justify-content: center;
   align-items: center;
 }
-.link:hover {
-  color: var(--icon-color);
-  transform: scale(2);
-}
 
 .btn {
   all: unset;
@@ -67,10 +63,12 @@ const props = defineProps({
   box-shadow: var(--box-shadow-middle);
   border-radius: 1rem;
   background-color: var(--bg-color-toggle);
+  cursor: pointer;
 }
-.btn:hover {
-  background-color: var(--icon-color);
-  color: var(--bg-color);
+.btn:hover,
+.btn-link:hover {
+  background-color: var(--heading-color);
+  color: white;
 }
 
 .button__container {

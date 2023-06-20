@@ -69,7 +69,7 @@ import Github from "./icons/Github.vue";
 /*media-queries ************************************************************/
 @media (min-width: 1100px) {
   .contact__container {
-    padding-block: 2rem 5rem;
+    padding-block: 0rem 5rem;
     width: 50rem;
     margin-inline: auto;
   }

@@ -79,6 +79,9 @@ import Figma from "./icons/skills/Api.vue";
 </template>
 
 <style scoped>
+h4 {
+  margin-top: var(--spacing-small);
+}
 .tech-list {
   list-style: none;
   display: grid;
@@ -101,9 +104,9 @@ import Figma from "./icons/skills/Api.vue";
   align-items: center;
   font-size: 1.4rem;
   text-align: center;
-  background-color: var(--bg-color-second-level);
+  background-color: var(--bg-color-third-level);
   border-radius: 0.7rem;
-  box-shadow: var(--box-shadow-middle);
+  box-shadow: var(--box-shadow-small);
   gap: 0.5rem;
 }
 .icon-style {
@@ -122,9 +125,12 @@ import Figma from "./icons/skills/Api.vue";
   .tech-list {
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-column-gap: 0.1rem;
+    padding-inline: 3.5rem 2.5rem;
   }
   .tech-list-item {
     font-size: 1.5rem;
+    background-color: var(--bg-color-second-level);
+    box-shadow: var(--box-shadow-middle);
   }
   .skills__container {
     padding-bottom: 3.8rem;

@@ -86,18 +86,8 @@ function getMediaPreference() {
         <a href="#contact" class="nav__link">Contact</a>
       </li>
     </ul>
-    <DarkIcon
-      class="nav__mode"
-      id="dark"
-      @click="toggleTheme"
-      v-if="!darkMode"
-    />
-    <LightIcon
-      class="nav__mode light"
-      id="light"
-      @click="toggleTheme"
-      v-if="darkMode"
-    />
+    <DarkIcon class="nav__mode" @click="toggleTheme" v-if="!darkMode" />
+    <LightIcon class="nav__mode" @click="toggleTheme" v-if="darkMode" />
   </nav>
 </template>
 <style scoped>
@@ -105,6 +95,7 @@ function getMediaPreference() {
   list-style: none;
   display: none;
   margin: 0;
+  cursor: pointer;
 }
 .nav__menu {
   fill: var(--icon-color);
@@ -116,17 +107,24 @@ function getMediaPreference() {
   margin-top: 2rem;
 }
 .nav__link {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
   font-family: "RobotoReg";
+  padding: 1rem 1rem;
 }
 .nav__link:hover {
-  background-color: rgb(var(--bg-color));
+  background-color: var(--bg-color);
   color: var(--icon-color);
+  transform: scale(1.2);
 }
 .nav__mode {
   padding-inline: 0.5rem 0rem;
   order: -1;
+  transition: transform 300ms ease-in-out;
+}
+
+.nav__mode:hover {
+  transform: scale(1.3);
 }
 .opacity {
   display: grid;
@@ -171,7 +169,7 @@ function getMediaPreference() {
     display: none;
   }
   .nav__mode {
-    padding-inline: 3rem 0rem;
+    padding-inline: 3rem 1rem;
     order: 0;
   }
   .nav__container {
@@ -180,10 +178,7 @@ function getMediaPreference() {
   .nav__list {
     display: flex;
     justify-content: flex-end;
-    gap: 2rem;
-  }
-  .nav__link:hover {
-    color: var(--icon-color);
+    gap: 1rem;
   }
   .nav__link:visited {
     color: var(--h4-color);
