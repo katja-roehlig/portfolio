@@ -43,7 +43,7 @@ import Github from "./icons/Github.vue";
 </template>
 <style scoped>
 .content__container {
-  padding: 0rem 0rem 2.5rem 0rem;
+  padding: var(--spacing-small) 0rem 2rem 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -72,7 +72,7 @@ import Github from "./icons/Github.vue";
 /*media-queries ************************************************************/
 @media (min-width: 1100px) {
   .contact__container {
-    padding-block: 0rem 5rem;
+    padding-block: 2rem 5rem;
     width: 50rem;
     margin-inline: auto;
   }

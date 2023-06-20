@@ -1,16 +1,55 @@
 <script setup lang="ts">
 import HamburgerMenu from "./icons/HamburgerMenu.vue";
-import DarkMode from "./icons/DarkMode.vue";
-import LightMode from "./icons/LightMode.vue";
-import { ref, computed } from "vue";
+import DarkIcon from "./icons/DarkIcon.vue";
+import LightIcon from "./icons/LightIcon.vue";
+import { ref, onBeforeMount } from "vue";
 
+//fold-out-menu
 let isVisible = ref(false);
-
 function largeMenu(): boolean {
   return (isVisible.value = !isVisible.value);
 }
-function changeMode() {
-  console.log("Dark");
+
+//toggle light and dark mode
+onBeforeMount(() => {
+  const initUserTheme = getTheme() || getMediaPreference();
+  setTheme(initUserTheme);
+});
+
+let userTheme: string = "light-theme";
+let darkMode = ref(false);
+
+function toggleTheme() {
+  const activeTheme = localStorage.getItem("user-theme");
+  if (activeTheme === "light-theme") {
+    setTheme("dark-theme");
+    darkMode.value = true;
+  } else {
+    setTheme("light-theme");
+    darkMode.value = false;
+  }
+}
+function getTheme() {
+  return localStorage.getItem("user-theme");
+}
+
+function setTheme(theme: string) {
+  localStorage.setItem("user-theme", theme);
+  userTheme = theme;
+  document.documentElement.className = theme;
+}
+
+function getMediaPreference() {
+  const hasDarkPreference = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+  if (hasDarkPreference) {
+    darkMode.value = true;
+    return "dark-theme";
+  } else {
+    darkMode.value = false;
+    return "light-theme";
+  }
 }
 </script>
 
@@ -47,7 +86,18 @@ function changeMode() {
         <a href="#contact" class="nav__link">Contact</a>
       </li>
     </ul>
-    <DarkMode class="nav__mode" @click="changeMode" />
+    <DarkIcon
+      class="nav__mode"
+      id="dark"
+      @click="toggleTheme"
+      v-if="!darkMode"
+    />
+    <LightIcon
+      class="nav__mode light"
+      id="light"
+      @click="toggleTheme"
+      v-if="darkMode"
+    />
   </nav>
 </template>
 <style scoped>
@@ -66,8 +116,9 @@ function changeMode() {
   margin-top: 2rem;
 }
 .nav__link {
-  color: inherit;
+  color: white;
   text-decoration: none;
+  font-family: "RobotoReg";
 }
 .nav__link:hover {
   background-color: rgb(var(--bg-color));

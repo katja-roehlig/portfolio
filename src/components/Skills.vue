@@ -17,7 +17,7 @@ import Figma from "./icons/skills/Api.vue";
   <article class="skills__container container" id="skills">
     <h3>Skills</h3>
 
-    <h4 class="skills__subheading">My tech skills and tools</h4>
+    <h4>My tech skills and tools</h4>
 
     <ul class="tech-list">
       <li class="tech-list-item">
@@ -96,14 +96,14 @@ import Figma from "./icons/skills/Api.vue";
   display: flex;
   flex-direction: column;
   margin: 1rem 1.2rem 1.5rem 0.2rem;
-  padding: 0.2rem 0.1rem;
+  padding: 0.3rem 0.1rem;
   justify-content: space-around;
   align-items: center;
   font-size: 1.4rem;
   text-align: center;
   background-color: var(--bg-color-second-level);
   border-radius: 0.7rem;
-  box-shadow: var(--box-shadow-small);
+  box-shadow: var(--box-shadow-middle);
   gap: 0.5rem;
 }
 .icon-style {
@@ -135,9 +135,7 @@ import Figma from "./icons/skills/Api.vue";
   .icon-style {
     width: 20%;
   }
-  .skills__subheading {
-    margin-bottom: 5rem;
-  }
+
   .tech-list {
     grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 0.7rem;

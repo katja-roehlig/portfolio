@@ -47,13 +47,17 @@ function readMore() {
         <ArrowUp
           :class="{ 'arrow-down': !isViewable, 'arrow-up': isViewable }"
           @click="readMore"
-          class="invisible"
+          class="foldout-arrow"
         />
       </div>
     </div>
   </article>
 </template>
 <style scoped>
+.foldout-arrow {
+  border-left-color: var(--icon-color);
+  border-top-color: var(--icon-color);
+}
 .arrow-down {
   display: block;
 }
@@ -69,20 +73,15 @@ function readMore() {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-inline: 3rem;
 }
-/* .about__container {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-} */
+
 .about__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-inline: 3rem;
+  padding-bottom: 3rem;
 }
 .about__foto {
   height: 18rem;
@@ -108,6 +107,7 @@ function readMore() {
     flex-direction: row;
     align-items: center;
     gap: 5rem;
+    padding-inline: 4.5rem 4rem;
   }
   .about__container {
     text-align: left;
@@ -124,10 +124,6 @@ function readMore() {
   }
 }
 
-.about__content {
-  padding-inline: 4.5rem 4rem;
-}
-
 @media (min-width: 1100px) {
   .about__foto {
     height: 30rem;
@@ -137,11 +133,11 @@ function readMore() {
   }
   .about__content {
     gap: 9rem;
-    padding-inline: 9.5rem 9rem;
+    padding: 2rem 9.5rem 0rem 9rem;
   }
-}
-.text {
-  max-width: 60ch;
-  line-height: 2.5rem;
+  .text {
+    max-width: 60ch;
+    line-height: 2.5rem;
+  }
 }
 </style>

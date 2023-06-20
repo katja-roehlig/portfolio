@@ -11,7 +11,6 @@ const props = defineProps({
 
 <template>
   <div class="media__container">
-    <!-- <div class="description__container"> -->
     <article>
       <slot>Description of the project</slot>
     </article>
@@ -26,7 +25,6 @@ const props = defineProps({
         >
       </button>
     </div>
-    <!-- </div> -->
   </div>
 </template>
 <style scoped>
@@ -36,7 +34,8 @@ const props = defineProps({
   gap: 0.5rem;
   justify-content: space-between;
   align-items: center;
-  min-height: 30rem;
+  height: calc(20rem + 50%);
+  margin-top: 0.8rem;
 }
 .btn-icon {
   width: 1.5rem;

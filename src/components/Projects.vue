@@ -72,20 +72,10 @@ function swiping(event: Event): void {
       projectBox[0].visible = true;
     }
   }
-  /* phoneView = true;
-  tabletView.value = false;
-  desktopView.value = false; */
 }
-
-// change screen-view of projects
-/* let phoneView = ref(true);
-let tabletView = ref(false);
-let desktopView = ref(false); */
 
 function changeView(event: Event, id: number): void {
   const target = event.target as HTMLElement;
-  console.dir(target);
-  console.log(id);
   let currentProject = projectBox.findIndex((element) => element.id === id);
   let image = projectBox[currentProject];
   {
@@ -132,7 +122,6 @@ function zoomImage(id: number): any {
             v-if="item.phoneView"
             @click="zoomImage(item.id)"
             :class="{ zoom: item.isZoomed }"
-            class="media"
           />
 
           <Tablet
@@ -220,7 +209,7 @@ function zoomImage(id: number): any {
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: 4rem 1.5rem 3rem 1.5rem;
+  padding: var(--spacing-small) 1.5rem 0rem 1.5rem;
 }
 .flex__container {
   padding-inline: 1.5rem;
@@ -242,15 +231,11 @@ function zoomImage(id: number): any {
   display: none;
 }
 .project__description {
-  margin-block: 0.5rem 0;
+  margin-block: 0.5rem 0rem;
   text-align: center;
 }
 
 .icon__container {
-  /* display: flex;
-  justify-content: space-between;
-  align-items: center; */
-
   margin-top: 1rem;
 }
 .view__container {
@@ -277,11 +262,6 @@ function zoomImage(id: number): any {
   background-color: var(--icon-color);
 }
 .project__container {
-  /*  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-  padding: 0rem 0rem 3rem 0rem;
   position: relative;
 }
 .project__heading__container {
@@ -317,15 +297,19 @@ function zoomImage(id: number): any {
 }
 .description {
   width: 95%;
-
   position: relative;
+  padding-bottom: 1rem;
 }
 @media (min-width: 580px) {
   .content__container {
     background-color: var(--bg-color-second-level);
     box-shadow: var(--box-shadow-small);
     border-radius: 0.7rem;
+    padding-top: var(--spacing-wide);
   }
+}
+.project__container {
+  padding-bottom: var(--spacing-wide);
 }
 @media (min-width: 1100px) {
   .flex__container {
@@ -338,10 +322,12 @@ function zoomImage(id: number): any {
   .content__container {
     max-width: 30vw;
     justify-content: flex-start;
-    padding: 4rem 2.5rem 3rem 2rem;
+    padding: 5rem 2.5rem 3rem 2rem;
     border-radius: 0.7rem;
     background-color: var(--bg-color-first-level);
     box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+    margin-top: var(--spacing-small);
   }
   .flex__container {
     padding-inline: 9.5rem 9rem;

@@ -22,7 +22,7 @@ const props = defineProps({
   border-radius: 1rem;
   position: relative;
   box-shadow: inset 0px 0px 2px 0.5px rgba(255, 255, 255, 0.661),
-    inset 0px 0px 1px 2px rgba(144, 144, 144, 0.803);
+    inset 0px 0px 1px 2px rgba(144, 144, 144, 0.803), var(--box-shadow-small);
   flex-shrink: 0;
 }
 .phone__screen {

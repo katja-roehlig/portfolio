@@ -11,9 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: var(--bg-color-second-level);
   border-radius: 0.7rem;
-  box-shadow: var(--box-shadow-small);
 }
 .heading__main,
 .heading__sub {
@@ -45,7 +43,7 @@
   }
   .heading__sub {
     font-size: 3rem;
-    margin-block: 2rem 1.5rem;
+    margin-block: 1rem 1rem;
   }
 }
 </style>
