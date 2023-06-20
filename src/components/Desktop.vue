@@ -50,6 +50,7 @@ const props = defineProps({
   position: absolute;
   bottom: 0%;
   border-radius: 1rem 1rem 50rem 50rem;
+  box-shadow: var(--box-shadow-small);
 }
 /* media-queries ************************************************************* */
 @media (min-width: 768px) {

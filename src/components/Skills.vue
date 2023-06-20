@@ -17,7 +17,7 @@ import Figma from "./icons/skills/Api.vue";
   <article class="skills__container container" id="skills">
     <h3>Skills</h3>
 
-    <h4 class="skills__subheading">My tech skills and tools</h4>
+    <h4>My tech skills and tools</h4>
 
     <ul class="tech-list">
       <li class="tech-list-item">
@@ -83,10 +83,9 @@ import Figma from "./icons/skills/Api.vue";
   list-style: none;
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  padding: 0;
-  grid-column-gap: 0.5rem;
-  grid-row-gap: 3rem;
-
+  padding-inline: 1.7rem 1rem;
+  grid-column-gap: 0.2rem;
+  grid-row-gap: 2rem;
   justify-items: center;
   align-items: center;
   justify-content: center;
@@ -96,30 +95,30 @@ import Figma from "./icons/skills/Api.vue";
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding: 1rem 1.2rem 1.5rem 0.2rem;
+  margin: 1rem 1.2rem 1.5rem 0.2rem;
+  padding: 0.3rem 0.1rem;
   justify-content: space-around;
   align-items: center;
   font-size: 1.4rem;
   text-align: center;
-
+  background-color: var(--bg-color-second-level);
+  border-radius: 0.7rem;
+  box-shadow: var(--box-shadow-middle);
   gap: 0.5rem;
 }
 .icon-style {
-  fill: var(--accent-color);
-  width: 45%;
+  fill: var(--icon-color);
+  width: calc(12% + 2.5rem);
 }
 .icon-text {
   margin: 0;
 }
 .skills__container {
-  padding: 2.5rem 1.5rem 1rem 3rem;
+  padding: 0rem 0rem 1rem 0rem;
 }
 
 /* media-queries ************************************************************ */
 @media (min-width: 768px) {
-  .icon-style {
-    width: 35%;
-  }
   .tech-list {
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-column-gap: 0.1rem;
@@ -134,14 +133,12 @@ import Figma from "./icons/skills/Api.vue";
 
 @media (min-width: 992px) {
   .icon-style {
-    width: 25%;
+    width: 20%;
   }
-  .skills__subheading {
-    margin-bottom: 5rem;
-  }
+
   .tech-list {
     grid-template-columns: repeat(5, 1fr);
-    grid-column-gap: 0.1rem;
+    grid-column-gap: 0.7rem;
   }
   .tech-list-item {
     font-size: 1.6rem;
@@ -152,7 +149,10 @@ import Figma from "./icons/skills/Api.vue";
 }
 @media (min-width: 1100px) {
   .skills__container {
-    padding: 3.5rem 9.5rem 5rem 9rem;
+    padding: 0rem 0rem 5rem 0rem;
+  }
+  .tech-list {
+    padding-inline: 9.5rem 9rem;
   }
 }
 </style>

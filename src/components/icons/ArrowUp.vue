@@ -7,8 +7,10 @@
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 0.2rem;
-  border-left: 3px solid var(--accent-color);
-  border-top: 3px solid var(--accent-color);
+  border-left-width: 3px;
+  border-top-width: 3px;
+  border-left-style: solid;
+  border-top-style: solid;
   transform: rotate(45deg);
 }
 </style>

@@ -47,13 +47,17 @@ function readMore() {
         <ArrowUp
           :class="{ 'arrow-down': !isViewable, 'arrow-up': isViewable }"
           @click="readMore"
-          class="invisible"
+          class="foldout-arrow"
         />
       </div>
     </div>
   </article>
 </template>
 <style scoped>
+.foldout-arrow {
+  border-left-color: var(--icon-color);
+  border-top-color: var(--icon-color);
+}
 .arrow-down {
   display: block;
 }
@@ -70,20 +74,19 @@ function readMore() {
   flex-direction: column;
   align-items: center;
 }
-.about__container {
-  text-align: center;
-}
+
 .about__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-inline: 3rem;
+  padding-bottom: 3rem;
 }
 .about__foto {
   height: 18rem;
   border-radius: 0.6rem;
-  box-shadow: 0px 2px 6px var(--accent-color-transparent),
-    0px -2px 4px rgba(var(--text-color), 0.2);
+  box-shadow: var(--box-shadow-middle);
 }
 .about__text {
   margin-top: 0;
@@ -104,10 +107,11 @@ function readMore() {
     flex-direction: row;
     align-items: center;
     gap: 5rem;
+    padding-inline: 4.5rem 4rem;
   }
   .about__container {
     text-align: left;
-    padding: 3.5rem 4.5rem 3rem 4rem;
+    padding: 0rem 0rem 3rem 0rem;
   }
   .about__foto {
     height: 25rem;
@@ -119,23 +123,21 @@ function readMore() {
     display: none;
   }
 }
-.about__subheading {
-  margin-top: 0;
-}
 
 @media (min-width: 1100px) {
   .about__foto {
     height: 30rem;
   }
   .about__container {
-    padding: 3.5rem 9.5rem 5rem 9rem;
+    padding: 0rem 0rem 5rem 0rem;
   }
   .about__content {
     gap: 9rem;
+    padding: 2rem 9.5rem 0rem 9rem;
   }
-}
-.text {
-  max-width: 60ch;
-  line-height: 2.5rem;
+  .text {
+    max-width: 60ch;
+    line-height: 2.5rem;
+  }
 }
 </style>

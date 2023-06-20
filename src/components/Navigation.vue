@@ -1,11 +1,55 @@
 <script setup lang="ts">
 import HamburgerMenu from "./icons/HamburgerMenu.vue";
-import { ref, computed } from "vue";
+import DarkIcon from "./icons/DarkIcon.vue";
+import LightIcon from "./icons/LightIcon.vue";
+import { ref, onBeforeMount } from "vue";
 
+//fold-out-menu
 let isVisible = ref(false);
-
 function largeMenu(): boolean {
   return (isVisible.value = !isVisible.value);
+}
+
+//toggle light and dark mode
+onBeforeMount(() => {
+  const initUserTheme = getTheme() || getMediaPreference();
+  setTheme(initUserTheme);
+});
+
+let userTheme: string = "light-theme";
+let darkMode = ref(false);
+
+function toggleTheme() {
+  const activeTheme = localStorage.getItem("user-theme");
+  if (activeTheme === "light-theme") {
+    setTheme("dark-theme");
+    darkMode.value = true;
+  } else {
+    setTheme("light-theme");
+    darkMode.value = false;
+  }
+}
+function getTheme() {
+  return localStorage.getItem("user-theme");
+}
+
+function setTheme(theme: string) {
+  localStorage.setItem("user-theme", theme);
+  userTheme = theme;
+  document.documentElement.className = theme;
+}
+
+function getMediaPreference() {
+  const hasDarkPreference = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+  if (hasDarkPreference) {
+    darkMode.value = true;
+    return "dark-theme";
+  } else {
+    darkMode.value = false;
+    return "light-theme";
+  }
 }
 </script>
 
@@ -42,28 +86,47 @@ function largeMenu(): boolean {
         <a href="#contact" class="nav__link">Contact</a>
       </li>
     </ul>
+    <DarkIcon
+      class="nav__mode"
+      id="dark"
+      @click="toggleTheme"
+      v-if="!darkMode"
+    />
+    <LightIcon
+      class="nav__mode light"
+      id="light"
+      @click="toggleTheme"
+      v-if="darkMode"
+    />
   </nav>
 </template>
 <style scoped>
 .nav__list {
   list-style: none;
   display: none;
+  margin: 0;
 }
 .nav__menu {
-  fill: var(--accent-color);
+  fill: var(--icon-color);
   width: 2rem;
 }
 .nav__container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  margin-top: 2rem;
 }
 .nav__link {
-  color: inherit;
+  color: white;
   text-decoration: none;
+  font-family: "RobotoReg";
 }
-nav__link:hover {
+.nav__link:hover {
   background-color: rgb(var(--bg-color));
-  color: var(--accent-color);
+  color: var(--icon-color);
+}
+.nav__mode {
+  padding-inline: 0.5rem 0rem;
+  order: -1;
 }
 .opacity {
   display: grid;
@@ -78,7 +141,7 @@ nav__link:hover {
   left: 0;
   margin: 0;
   padding-inline-start: 0px;
-  background-color: var(--accent-color);
+  background-color: var(--icon-color);
   color: rgb(var(--bg-color));
   z-index: 1;
 }
@@ -98,7 +161,7 @@ nav__link:hover {
   right: 0;
   padding: 0.2rem 1.2rem;
   background-color: rgb(234, 232, 232);
-  color: var(--accent-color);
+  color: var(--icon-color);
   font-size: 1.8rem;
   font-family: "AtmaMed";
   border-radius: 0rem 0rem 0rem 0.5rem;
@@ -107,16 +170,23 @@ nav__link:hover {
   .nav__menu {
     display: none;
   }
+  .nav__mode {
+    padding-inline: 3rem 0rem;
+    order: 0;
+  }
+  .nav__container {
+    justify-content: flex-end;
+  }
   .nav__list {
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
   }
   .nav__link:hover {
-    color: var(--accent-color);
+    color: var(--icon-color);
   }
   .nav__link:visited {
-    color: var(--accent-color-transparent);
+    color: var(--h4-color);
   }
 }
 </style>

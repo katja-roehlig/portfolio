@@ -11,6 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 0.7rem;
 }
 .heading__main,
 .heading__sub {
@@ -22,13 +23,13 @@
   letter-spacing: 0.1rem;
 }
 .heading__main {
-  -webkit-text-stroke: 2px var(--accent-color);
-  color: rgb(var(--bg-color));
+  -webkit-text-stroke: 2px var(--heading-color);
+  color: var(--bg-color);
   text-transform: uppercase;
   font-family: "AtmaBo";
   font-size: 4rem;
   margin-top: 1.5rem;
-  filter: drop-shadow(0px 4px 4px var(--accent-color));
+  filter: drop-shadow(0px 4px 4px var(--drop-shadow-color));
   letter-spacing: 0.2rem;
 }
 
@@ -36,13 +37,13 @@
 @media (min-width: 768px) {
   .heading__main {
     font-size: 6.5rem;
-    -webkit-text-stroke: 3px var(--accent-color);
+    -webkit-text-stroke: 3px var(--heading-color);
     margin-top: 4rem;
     letter-spacing: 0.4rem;
   }
   .heading__sub {
     font-size: 3rem;
-    margin-block: 2rem 1.5rem;
+    margin-block: 1rem 1rem;
   }
 }
 </style>
