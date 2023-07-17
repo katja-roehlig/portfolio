@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onBeforeMount } from "vue";
+import { onBeforeMount } from "vue";
 import { projectStore } from "../../store/store";
 import Phone from "./Phone.vue";
 import Tablet from "./Tablet.vue";
@@ -25,15 +25,17 @@ onBeforeMount(() => {
 });
 //swipe projects on desktop
 function movingProjects(event: Event): void {
-  let indexLeft = projectBox.findIndex((element) => element.visible === true);
+  const target = event.target as HTMLElement;
+  const indexLeft = projectBox.findIndex((element) => element.visible === true);
   let indexRight = indexLeft + 1;
 
-  const target = event.target as HTMLElement;
   projectBox[indexLeft].visible = false;
   projectBox[indexRight].visible = false;
+
   if (target.id === "right") {
     let indexLeftNext = indexLeft + 2;
     let indexRightNext = indexLeft + 3;
+
     if (indexRight !== projectBox.length - 1) {
       projectBox[indexLeftNext].visible = true;
       projectBox[indexRightNext].visible = true;
@@ -56,9 +58,10 @@ function movingProjects(event: Event): void {
 
 //swipe projects on mobile
 function swiping(event: Event): void {
-  let position = projectBox.findIndex((element) => element.visible === true);
-  projectBox[position].visible = false;
   const target = event.target as HTMLElement;
+  const position = projectBox.findIndex((element) => element.visible === true);
+  projectBox[position].visible = false;
+
   if (target.id === "back") {
     if (position !== 0) {
       projectBox[position - 1].visible = true;
@@ -76,8 +79,8 @@ function swiping(event: Event): void {
 
 function changeView(event: Event, id: number): void {
   const target = event.target as HTMLElement;
-  let currentProject = projectBox.findIndex((element) => element.id === id);
-  let image = projectBox[currentProject];
+  const currentProject = projectBox.findIndex((element) => element.id === id);
+  const image = projectBox[currentProject];
   {
     if (target.id === "tablet") {
       image.phoneView = false;
@@ -99,8 +102,8 @@ function changeView(event: Event, id: number): void {
 
 //zoom project content
 function zoomImage(id: number): any {
-  let currentProject = projectBox.findIndex((element) => element.id === id);
-  let image = projectBox[currentProject];
+  const currentProject = projectBox.findIndex((element) => element.id === id);
+  const image = projectBox[currentProject];
   image.isZoomed = !image.isZoomed;
 }
 </script>
@@ -318,7 +321,7 @@ function zoomImage(id: number): any {
     gap: 3rem;
   }
   .project__container {
-    padding: 0rem 0rem 5rem 0rem;
+    padding-bottom: 5rem;
   }
   .content__container {
     max-width: 30vw;
