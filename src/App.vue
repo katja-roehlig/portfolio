@@ -6,18 +6,26 @@ import Skills from "./components/Skills.vue";
 import Projects from "./components/Projects.vue";
 import Contact from "./components/Contact.vue";
 import ArrowUp from "./components/icons/ArrowUp.vue";
-import { ref, onBeforeMount } from "vue";
+import { ref, onMounted, onBeforeUnmount } from "vue";
 
 let scrollOn = ref(false);
+
+function scrollButton(): void {
+  scrollOn.value = window.scrollY !== 0;
+}
+/* long version
 function scrollButton(event: Event): void {
   scrollOn.value = true;
   if (window.scrollY === 0) {
     scrollOn.value = false;
   }
-}
-
-onBeforeMount(() => {
+} */
+onMounted(() => {
   window.addEventListener("scroll", scrollButton);
+});
+
+onBeforeUnmount(() => {
+  window.removeEventListener("scroll", scrollButton);
 });
 </script>
 
@@ -83,7 +91,6 @@ onBeforeMount(() => {
   --spacing-wide: 4rem;
 }
 .btn-scroll {
-  all: unset;
   background-color: hsl(319, 42%, 54%);
   border-radius: 1rem;
   box-shadow: var(--box-shadow-small);
@@ -91,7 +98,7 @@ onBeforeMount(() => {
   height: 1.5rem;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: flex-end;
   padding: 1.4rem 1.5rem 0.5rem 1.5rem;
   position: fixed;
   bottom: 10%;

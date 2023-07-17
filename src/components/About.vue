@@ -2,9 +2,9 @@
 import { ref } from "vue";
 import ArrowDown from "./icons/ArrowDown.vue";
 import ArrowUp from "./icons/ArrowUp.vue";
-let isViewable = ref(true);
-function readMore() {
-  return (isViewable.value = !isViewable.value);
+const isViewable = ref(true);
+function readMore(): void {
+  isViewable.value = !isViewable.value;
 }
 </script>
 
@@ -46,7 +46,7 @@ function readMore() {
         />
         <ArrowUp
           :class="{ 'arrow-down': !isViewable, 'arrow-up': isViewable }"
-          @click="readMore"
+          @click="readMore()"
           class="foldout-arrow"
         />
       </div>
@@ -112,7 +112,7 @@ function readMore() {
   }
   .about__container {
     text-align: left;
-    padding: 0rem 0rem 3rem 0rem;
+    padding-bottom: 3rem;
   }
   .about__foto {
     height: 25rem;
@@ -130,7 +130,7 @@ function readMore() {
     height: 30rem;
   }
   .about__container {
-    padding: 0rem 0rem 5rem 0rem;
+    padding-bottom: 5rem;
   }
   .about__content {
     gap: 9rem;

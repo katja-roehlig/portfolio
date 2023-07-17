@@ -16,7 +16,6 @@ onBeforeMount(() => {
   setTheme(initUserTheme);
 });
 
-let userTheme: string = "light-theme";
 let darkMode = ref(false);
 
 function toggleTheme() {
@@ -35,7 +34,6 @@ function getTheme() {
 
 function setTheme(theme: string) {
   localStorage.setItem("user-theme", theme);
-  userTheme = theme;
   document.documentElement.className = theme;
 }
 
@@ -43,13 +41,8 @@ function getMediaPreference() {
   const hasDarkPreference = window.matchMedia(
     "(prefers-color-scheme: dark)"
   ).matches;
-  if (hasDarkPreference) {
-    darkMode.value = true;
-    return "dark-theme";
-  } else {
-    darkMode.value = false;
-    return "light-theme";
-  }
+  darkMode.value = hasDarkPreference;
+  return darkMode.value ? "dark-theme" : "light-theme";
 }
 </script>
 
@@ -59,7 +52,7 @@ function getMediaPreference() {
       <HamburgerMenu
         class="nav__menu-icon"
         @click="largeMenu"
-        v-if="isVisible === false"
+        v-if="!isVisible"
       />
     </div>
 

@@ -85,13 +85,11 @@ h4 {
 .tech-list {
   list-style: none;
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: repeat(4, 1fr);
   padding-inline: 1.7rem 1rem;
   grid-column-gap: 0.2rem;
   grid-row-gap: 2rem;
   justify-items: center;
-  align-items: center;
-  justify-content: center;
   align-items: center;
 }
 .tech-list-item {
@@ -107,7 +105,6 @@ h4 {
   background-color: var(--bg-color-third-level);
   border-radius: 0.7rem;
   box-shadow: var(--box-shadow-small);
-  gap: 0.5rem;
 }
 .icon-style {
   fill: var(--icon-color);
@@ -123,7 +120,7 @@ h4 {
 /* media-queries ************************************************************ */
 @media (min-width: 768px) {
   .tech-list {
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 0.1rem;
     padding-inline: 3.5rem 2.5rem;
   }
@@ -143,7 +140,6 @@ h4 {
   }
 
   .tech-list {
-    grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 0.7rem;
   }
   .tech-list-item {
@@ -155,7 +151,7 @@ h4 {
 }
 @media (min-width: 1100px) {
   .skills__container {
-    padding: 0rem 0rem 5rem 0rem;
+    padding-bottom: 5rem;
   }
   .tech-list {
     padding-inline: 9.5rem 9rem;

@@ -1,4 +1,3 @@
-<script setup lang="ts"></script>
 <template>
   <div class="heading" id="home">
     <h1 class="heading__main">Katja Röhlig</h1>
@@ -36,8 +35,8 @@
 /* media-queries ************************************************************* */
 @media (min-width: 768px) {
   .heading__main {
-    font-size: 6.5rem;
     -webkit-text-stroke: 3px var(--heading-color);
+    font-size: 6.5rem;
     margin-top: 4rem;
     letter-spacing: 0.4rem;
   }
