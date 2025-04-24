@@ -4,9 +4,17 @@ import Javascript from "./icons/skills/Javascript.vue";
 import Typescript from "./icons/skills/Typescript.vue";
 import Vue from "./icons/skills/Vue.vue";
 import Sass from "./icons/skills/Sass.vue";
-import Html from "./icons/skills/Html.vue";
+import Wordpress from "./icons/skills/WordPress.vue";
 import Git from "./icons/skills/Git.vue";
 import Github from "./icons/Github.vue";
+import Gitlab from "./icons/skills/Gitlab.vue";
+import React from "./icons/skills/React.vue";
+import Next from "./icons/skills/Next.vue";
+import Keycloak from "./icons/skills/Keycloak.vue";
+import Nx from "./icons/skills/Nx.vue";
+import Strapi from "./icons/skills/Strapi.vue";
+import Chakra from "./icons/skills/Chakra.vue";
+import Docker from "./icons/skills/Docker.vue";
 import Vscode from "./icons/skills/Vscode.vue";
 import Responsive from "./icons/skills/Responsive.vue";
 import Api from "./icons/skills/Figma.vue";
@@ -42,8 +50,8 @@ import Figma from "./icons/skills/Api.vue";
       </li>
 
       <li class="tech-list-item">
-        <Html class="icon-style" />
-        <p class="icon-text">HTML5</p>
+        <Wordpress class="icon-style" />
+        <p class="icon-text">WordPress</p>
       </li>
       <li class="tech-list-item">
         <Api class="icon-style" />
@@ -61,6 +69,14 @@ import Figma from "./icons/skills/Api.vue";
         <p class="icon-text">Github</p>
       </li>
       <li class="tech-list-item">
+        <Gitlab class="icon-style" />
+        <p class="icon-text">Gitlab</p>
+      </li>
+      <li class="tech-list-item">
+        <React class="icon-style" />
+        <p class="icon-text">React</p>
+      </li>
+      <li class="tech-list-item">
         <Vscode class="icon-style" />
         <p class="icon-text">VS<br />Code</p>
       </li>
@@ -72,6 +88,36 @@ import Figma from "./icons/skills/Api.vue";
       <li class="tech-list-item">
         <Figma class="icon-style" />
         <p class="icon-text">Figma</p>
+      </li>
+      <li class="tech-list-item">
+        <Next class="icon-style" />
+        <p class="icon-text">Next.js</p>
+      </li>
+      <li class="tech-list-item">
+        <Docker class="icon-style" />
+        <p class="icon-text">Docker</p>
+      </li>
+      <li class="tech-list-item">
+        <Keycloak class="icon-style" />
+        <p class="icon-text">Keycloak</p>
+      </li>
+      <li class="tech-list-item">
+        <Strapi class="icon-style" />
+        <p class="icon-text">
+          Strapi <br />
+          Cms
+        </p>
+      </li>
+      <li class="tech-list-item">
+        <Nx class="icon-style" />
+        <p class="icon-text">
+          Nx <br />
+          Monorepo
+        </p>
+      </li>
+      <li class="tech-list-item">
+        <Chakra class="icon-style" />
+        <p class="icon-text">ChakraUI</p>
       </li>
     </ul>
   </article>
@@ -97,7 +143,7 @@ h4 {
   display: flex;
   flex-direction: column;
   margin: 1rem 1.2rem 1.5rem 0.2rem;
-  padding: 0.3rem 0.1rem;
+  padding: 0.4rem 0.1rem 0.3rem;
   justify-content: space-around;
   align-items: center;
   font-size: 1.4rem;

@@ -48,6 +48,7 @@ onBeforeUnmount(() => {
   --text-color: rgb(0, 0, 0);
   --text-color-inverse: rgb(150, 1, 117);
   --bg-color: rgb(255, 255, 255);
+  --bg-color-icon: rgba(255, 255, 255, 0.95);
   --bg-color-transparent: rgba(255, 255, 255, 0.85);
   --bg-color-first-level: rgba(255, 255, 255, 0.6);
   --bg-color-second-level: rgba(255, 255, 255, 0.6);
@@ -71,7 +72,8 @@ onBeforeUnmount(() => {
 :root.dark-theme {
   --text-color: rgb(255, 255, 240);
   --text-color-inverse: #212121;
-  --bg-color: #212121;
+  --bg-color: rgb(33, 33, 33);
+  --bg-color-icon: rgba(33, 33, 33, 0.8);
   --bg-color-first-level: rgba(255, 255, 255, 0.07);
   --bg-color-second-level: rgba(255, 255, 255, 0.08);
   --bg-color-third-level: rgba(255, 255, 255, 0.11);
