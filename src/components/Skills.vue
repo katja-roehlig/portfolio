@@ -54,14 +54,14 @@ import Figma from "./icons/skills/Api.vue";
         <p class="icon-text">WordPress</p>
       </li>
       <li class="tech-list-item">
-        <Api class="icon-style" />
+        <Api class="icon-style icon-style-scale" />
         <p class="icon-text">
           RESTful<br />
           APIs
         </p>
       </li>
       <li class="tech-list-item">
-        <Git class="icon-style" />
+        <Git class="icon-style icon-style-scale" />
         <p class="icon-text">Git</p>
       </li>
       <li class="tech-list-item">
@@ -77,7 +77,7 @@ import Figma from "./icons/skills/Api.vue";
         <p class="icon-text">React</p>
       </li>
       <li class="tech-list-item">
-        <Vscode class="icon-style" />
+        <Vscode class="icon-style icon-style-scale" />
         <p class="icon-text">VS<br />Code</p>
       </li>
 
@@ -98,11 +98,11 @@ import Figma from "./icons/skills/Api.vue";
         <p class="icon-text">Docker</p>
       </li>
       <li class="tech-list-item">
-        <Keycloak class="icon-style" />
+        <Keycloak class="icon-style icon-style-scale" />
         <p class="icon-text">Keycloak</p>
       </li>
       <li class="tech-list-item">
-        <Strapi class="icon-style" />
+        <Strapi class="icon-style icon-style-scale" />
         <p class="icon-text">
           Strapi <br />
           Cms
@@ -132,8 +132,8 @@ h4 {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding-inline: 1.7rem 1rem;
-  grid-column-gap: 0.2rem;
+  padding-inline: 0.8rem 0.8rem;
+  grid-column-gap: 0.1rem;
   grid-row-gap: 2rem;
   justify-items: center;
   align-items: center;
@@ -155,6 +155,10 @@ h4 {
 .icon-style {
   fill: var(--icon-color);
   width: calc(12% + 2.5rem);
+}
+
+.icon-style-scale {
+  transform: scale(0.9);
 }
 .icon-text {
   margin: 0;

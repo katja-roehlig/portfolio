@@ -17,8 +17,9 @@ const props = defineProps({
 <style scoped>
 .phone__container {
   background-color: black;
-  width: 14rem;
-  height: 25rem;
+  aspect-ratio: 1 / 2;
+  width: 25rem;
+
   border-radius: 1rem;
   position: relative;
   box-shadow: inset 0px 0px 2px 0.5px rgba(255, 255, 255, 0.661),
@@ -31,12 +32,12 @@ const props = defineProps({
   background-position: 150% 100%;
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.586);
 
-  width: 94%;
-  height: 90%;
+  width: 96%;
+  height: 92%;
   border-radius: 0.5rem;
   position: absolute;
-  left: 3%;
-  top: 2%;
+  left: 2%;
+  top: 1%;
 }
 
 .phone__button {
@@ -51,10 +52,10 @@ const props = defineProps({
 }
 
 /* media-queries ************************************************************* */
-@media (min-width: 768px) {
+/* @media (min-width: 580px) {
   .phone__container {
+    width: 15rem;
     height: 30rem;
-    width: 16.79rem;
   }
-}
+} */
 </style>

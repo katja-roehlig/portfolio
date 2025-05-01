@@ -4,6 +4,7 @@ type projectStructure = {
   id: number;
   visible: boolean;
   name: string;
+  url: string;
   phoneImg: string;
   tabletImg?: string;
   desktopImg?: string;
@@ -24,7 +25,42 @@ export const projectStore = defineStore("store", {
       <projectStructure>{
         id: 1,
         visible: true,
+        name: "Toolbox Datenkompetenz",
+        phoneImg: "url(/img/IMG_7290.PNG)",
+        tabletImg: "",
+        desktopImg: "",
+        phoneView: true,
+        tabletView: false,
+        desktopView: false,
+        isZoomed: false,
+        text1: "My main project the last two years at InfAI. ",
+        techStack:
+          "Nx, Next.js, ChakraUI, Strapi Cms, Keycloak, Docker, Piwik Pro",
+        web: "https://beta.toolboxdatenkompetenz.de/",
+        github: "",
+      },
+      <projectStructure>{
+        id: 2,
+        visible: false,
+        name: "Coding Labs",
+        phoneImg: "url(/img/IMG_7291.PNG)",
+        tabletImg: "",
+        desktopImg: "",
+        phoneView: true,
+        tabletView: false,
+        desktopView: false,
+        isZoomed: false,
+        text1: "The second project I worked on at InfAI.",
+        techStack:
+          "Nx, Next.js, ChakraUI, StrapiCms, Keycloak, Docker, Piwik Procoding lan",
+        web: "https://beta.codinglabs-projekt.de",
+        github: "",
+      },
+      <projectStructure>{
+        id: 3,
+        visible: false,
         name: "Tic Tac Toe",
+        url: "https://tictactoe-x.netlify.app/",
         phoneImg: "url(/img/Tictactoe_Phone.webp)",
         tabletImg: "url(/img/Tictactoe_Tablet.webp)",
         desktopImg: "url(/img/Tictactoe_Desktop.webp)",
@@ -39,7 +75,7 @@ export const projectStore = defineStore("store", {
       },
 
       <projectStructure>{
-        id: 2,
+        id: 4,
         visible: false,
         name: "Shopping List",
         phoneImg: "url(/img/Shopping_Phone.webp)",
@@ -55,7 +91,7 @@ export const projectStore = defineStore("store", {
         github: "https://github.com/katja-roehlig/shopping-list",
       },
       <projectStructure>{
-        id: 3,
+        id: 5,
         visible: false,
         name: "Birthday Card",
         phoneImg: "url(/img/Birthday_Phone.webp)",
@@ -72,7 +108,7 @@ export const projectStore = defineStore("store", {
         github: "https://github.com/katja-roehlig/birthday-card-1",
       },
       <projectStructure>{
-        id: 4,
+        id: 6,
         visible: false,
         name: "Sock-o-mat",
         phoneImg: "url(/img/Sockomat_Phone.webp)",
@@ -88,7 +124,7 @@ export const projectStore = defineStore("store", {
         github: "https://github.com/katja-roehlig/sock-o-mat",
       },
       <projectStructure>{
-        id: 5,
+        id: 7,
         visible: false,
         name: "Password Check",
         phoneImg: "url(/img/Password_Phone.webp)",
@@ -104,7 +140,7 @@ export const projectStore = defineStore("store", {
         github: "https://github.com/katja-roehlig/password-toggle-with-vue",
       },
       <projectStructure>{
-        id: 6,
+        id: 8,
         visible: false,
         name: "Color Mixer",
         phoneImg: "url(/img/Color_Phone.webp)",

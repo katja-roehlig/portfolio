@@ -120,26 +120,27 @@ function zoomImage(id: number): any {
       />
       <template v-for="item in store.projects" :key="item.id">
         <div class="content__container" v-if="item.visible">
-          <Phone
-            :phone="item.phoneImg"
-            v-if="item.phoneView"
-            @click="zoomImage(item.id)"
-            :class="{ zoom: item.isZoomed }"
-          />
+          <div class="image__container">
+            <Phone
+              :phone="item.phoneImg"
+              v-if="item.phoneView"
+              @click="zoomImage(item.id)"
+              :class="{ zoom: item.isZoomed }"
+            />
 
-          <Tablet
-            :tablet="item.tabletImg"
-            v-if="item.tabletView"
-            @click="zoomImage(item.id)"
-            :class="{ big: item.isZoomed }"
-          />
-          <Desktop
-            :desktop="item.desktopImg"
-            v-if="item.desktopView"
-            @click="zoomImage(item.id)"
-            :class="{ big: item.isZoomed }"
-          />
-
+            <Tablet
+              :tablet="item.tabletImg"
+              v-if="item.tabletView"
+              @click="zoomImage(item.id)"
+              :class="{ big: item.isZoomed }"
+            />
+            <Desktop
+              :desktop="item.desktopImg"
+              v-if="item.desktopView"
+              @click="zoomImage(item.id)"
+              :class="{ big: item.isZoomed }"
+            />
+          </div>
           <ProjectDescription
             :github="item.github"
             :web="item.web"
@@ -154,7 +155,7 @@ function zoomImage(id: number): any {
                   @click="changeView($event, item.id)"
                   v-if="item.phoneImg !== ''"
                 >
-                  <PhoneIcon class="view-icon" id="phone" />
+                  <PhoneIcon id="phone" />
                 </div>
                 <div
                   class="icon"
@@ -162,7 +163,7 @@ function zoomImage(id: number): any {
                   @click="changeView($event, item.id)"
                   v-if="item.tabletImg !== ''"
                 >
-                  <TabletIcon class="view-icon" id="tablet" />
+                  <TabletIcon id="tablet" />
                 </div>
                 <div
                   class="icon"
@@ -170,7 +171,7 @@ function zoomImage(id: number): any {
                   @click="changeView($event, item.id)"
                   v-if="item.desktopImg !== ''"
                 >
-                  <LaptopIcon class="view-icon" id="desktop" />
+                  <LaptopIcon id="desktop" />
                 </div>
               </div>
               <ArrowRight
@@ -178,12 +179,13 @@ function zoomImage(id: number): any {
                 id="forward"
                 class="mobile"
               />
+              <div class="counter">
+                {{ item.id }} / {{ store.projects.length }}
+              </div>
             </div>
+
             <div class="project__heading__container">
               <h4 class="project__heading">{{ item.name }}</h4>
-              <span class="counter"
-                >{{ item.id }} / {{ store.projects.length }}</span
-              >
             </div>
             <p class="project__description">
               {{ item.text1 }} <br />
@@ -206,6 +208,20 @@ function zoomImage(id: number): any {
 
 <!--* CSS ************************************************************************************************************** -->
 <style scoped>
+.image__container {
+  height: 53rem;
+  border-radius: 0.7rem;
+  display: flex;
+  align-items: center;
+  width: 110%;
+  justify-content: center;
+  box-shadow: var(--box-shadow);
+  background-color: var(--bg-color-first-level);
+  border-radius: 0.7rem;
+  position: relative;
+  border: 0.5px solid var(--h3-color);
+  background-color: var(--bg-color-first-level);
+}
 .content__container {
   display: flex;
   flex-direction: column;
@@ -213,13 +229,15 @@ function zoomImage(id: number): any {
   align-items: center;
   position: relative;
   padding: var(--spacing-small) 1.5rem 0rem 1.5rem;
+  background-color: var(--bg-color-second-level);
 }
 .flex__container {
   padding-inline: 1.5rem;
   display: flex;
   justify-content: center;
+  background-color: transparent;
 }
-.mobile {
+/* .mobile {
   position: absolute;
 }
 #back {
@@ -229,7 +247,7 @@ function zoomImage(id: number): any {
 #forward {
   right: 2%;
   top: 1.5rem;
-}
+} */
 .desktop-arrow {
   display: none;
 }
@@ -239,22 +257,27 @@ function zoomImage(id: number): any {
 }
 
 .icon__container {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }
 .view__container {
   display: flex;
   justify-content: center;
   gap: 0.8rem;
 }
+
 .icon {
-  padding: 0.4rem 0.2rem 0rem 0.5rem;
+  display: flex;
   box-shadow: var(--box-shadow-middle);
-  width: 2.5rem;
+  width: 4rem;
+  height: 4rem;
   border-radius: 0.5rem;
   cursor: pointer;
-}
-.phone-icon {
-  padding-bottom: 0.2rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .icon:hover {
@@ -274,17 +297,19 @@ function zoomImage(id: number): any {
 }
 .counter {
   position: absolute;
-  bottom: 20%;
+  bottom: -2rem;
   right: 0%;
   font-size: 1.3rem;
   font-family: "RobotoReg";
 }
+
 .project__stack {
   text-align: center;
   margin-bottom: 3rem;
 }
 .bold {
   font-family: "RobotoReg";
+  text-align: center;
 }
 
 .zoom {
@@ -300,13 +325,12 @@ function zoomImage(id: number): any {
   z-index: 1;
 }
 .description {
-  width: 95%;
-  position: relative;
+  width: 100%;
   padding-bottom: 1rem;
 }
 @media (min-width: 580px) {
   .content__container {
-    background-color: var(--bg-color-second-level);
+    /*  background-color: var(--bg-color-second-level); */
     box-shadow: var(--box-shadow-small);
     border-radius: 0.7rem;
     padding-top: var(--spacing-wide);
@@ -315,10 +339,14 @@ function zoomImage(id: number): any {
 .project__container {
   padding-bottom: var(--spacing-wide);
 }
+
 @media (min-width: 1100px) {
   .flex__container {
     flex-direction: row;
     gap: 3rem;
+  }
+  .image__container {
+    width: 30vw;
   }
   .project__container {
     padding-bottom: 5rem;
@@ -328,7 +356,7 @@ function zoomImage(id: number): any {
     justify-content: flex-start;
     padding: 5rem 2.5rem 3rem 2rem;
     border-radius: 0.7rem;
-    background-color: var(--bg-color-first-level);
+    /*  background-color: var(--bg-color-second-level); */
     box-shadow: var(--box-shadow);
     margin-bottom: 2rem;
     margin-top: var(--spacing-small);

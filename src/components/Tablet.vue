@@ -7,25 +7,22 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
-    <div class="tablet__container">
-      <div
-        class="tablet__screen"
-        :style="`background-image:` + props.tablet"
-      ></div>
-    </div>
+  <div class="tablet__container">
+    <div
+      class="tablet__screen"
+      :style="`background-image:` + props.tablet"
+    ></div>
   </div>
 </template>
 <style scoped>
 .tablet__container {
-  width: 23rem;
-  height: 16rem;
+  aspect-ratio: 3 / 2;
+  width: calc(22rem + 25%);
   background-color: black;
-
   border-radius: 12%;
   box-shadow: inset 0px 0px 2px 0.5px rgba(255, 255, 255, 0.661),
     inset 0px 0px 1px 2px rgba(144, 144, 144, 0.803), var(--box-shadow-small);
-  margin-block: 5rem 4rem;
+  margin-block: 1rem 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,10 +38,4 @@ const props = defineProps({
   border-radius: 7%;
 }
 /* media-queries ************************************************************* */
-@media (min-width: 768px) {
-  .tablet__container {
-    height: 21rem;
-    width: 30.1875rem;
-  }
-}
 </style>

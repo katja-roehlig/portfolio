@@ -7,20 +7,18 @@ const props = defineProps({
 </script>
 
 <template>
-  <div>
-    <div class="desktop__container">
-      <div
-        class="desktop__screen"
-        :style="`background-image:` + props.desktop"
-      ></div>
-      <div class="desktop__keyboard"></div>
-    </div>
+  <div class="desktop__container">
+    <div
+      class="desktop__screen"
+      :style="`background-image:` + props.desktop"
+    ></div>
+    <div class="desktop__keyboard"></div>
   </div>
 </template>
 <style scoped>
 .desktop__container {
-  width: 23rem;
-  height: 15.3rem;
+  aspect-ratio: 3/2;
+  width: calc(20rem + 25%);
   background-color: black;
   position: relative;
   border-radius: 1rem;
@@ -30,7 +28,7 @@ const props = defineProps({
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-block: 5.7rem 4rem;
+  margin-block: 1rem 4rem;
 }
 .desktop__screen {
   background-size: 100% 100%;
@@ -44,7 +42,7 @@ const props = defineProps({
   border-radius: 0.5rem;
 }
 .desktop__keyboard {
-  width: 115%;
+  width: 113%;
   height: 6%;
   background-image: linear-gradient(rgb(186, 184, 184), rgb(54, 54, 54));
   position: absolute;
@@ -53,10 +51,4 @@ const props = defineProps({
   box-shadow: var(--box-shadow-small);
 }
 /* media-queries ************************************************************* */
-@media (min-width: 768px) {
-  .desktop__container {
-    height: 20.3rem;
-    width: 30.5149rem;
-  }
-}
 </style>
