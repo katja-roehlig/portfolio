@@ -213,14 +213,13 @@ function zoomImage(id: number): any {
   border-radius: 0.7rem;
   display: flex;
   align-items: center;
-  width: 110%;
+  width: 100%;
   justify-content: center;
   box-shadow: var(--box-shadow);
   background-color: var(--bg-color-first-level);
   border-radius: 0.7rem;
   position: relative;
   border: 0.5px solid var(--h3-color);
-  background-color: var(--bg-color-first-level);
 }
 .content__container {
   display: flex;
@@ -228,11 +227,9 @@ function zoomImage(id: number): any {
   justify-content: center;
   align-items: center;
   position: relative;
-  padding: var(--spacing-small) 1.5rem 0rem 1.5rem;
-  background-color: var(--bg-color-second-level);
 }
 .flex__container {
-  padding-inline: 1.5rem;
+  /*  padding-inline: 1.5rem; */
   display: flex;
   justify-content: center;
   background-color: transparent;
@@ -298,7 +295,7 @@ function zoomImage(id: number): any {
 .counter {
   position: absolute;
   bottom: -2rem;
-  right: 0%;
+  right: 1rem;
   font-size: 1.3rem;
   font-family: "RobotoReg";
 }
@@ -333,7 +330,7 @@ function zoomImage(id: number): any {
     /*  background-color: var(--bg-color-second-level); */
     box-shadow: var(--box-shadow-small);
     border-radius: 0.7rem;
-    padding-top: var(--spacing-wide);
+    /*   padding-top: var(--spacing-wide); */
   }
 }
 .project__container {
@@ -356,7 +353,7 @@ function zoomImage(id: number): any {
     justify-content: flex-start;
     padding: 5rem 2.5rem 3rem 2rem;
     border-radius: 0.7rem;
-    /*  background-color: var(--bg-color-second-level); */
+    background-color: var(--bg-color-second-level);
     box-shadow: var(--box-shadow);
     margin-bottom: 2rem;
     margin-top: var(--spacing-small);

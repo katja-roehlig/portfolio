@@ -49,16 +49,16 @@ onBeforeUnmount(() => {
   --text-color-inverse: rgb(150, 1, 117);
   --bg-color: rgb(255, 255, 255);
   --bg-color-icon: rgba(255, 255, 255, 0.95);
-  --bg-color-transparent: rgba(255, 255, 255, 0.8);
-  --bg-color-first-level: rgba(240, 243, 250, 0.65);
-  --bg-color-second-level: rgba(255, 255, 255, 0.55);
+  --bg-color-transparent: rgba(255, 255, 255, 0.85);
+  --bg-color-first-level: rgba(255, 255, 255, 0.7);
+  --bg-color-second-level: rgba(255, 255, 255, 0.6);
   --bg-color-third-level: rgba(255, 255, 255, 0);
   --bg-color-light: rgba(255, 255, 255, 0.6);
   --drop-shadow-color: rgba(150, 1, 117);
 
   --icon-color: rgb(150, 1, 117);
   --heading-color: rgb(150, 1, 117);
-  --h4-color: rgb(151, 104, 136);
+  --h4-color: /* rgb(151, 104, 136); */ hsl(185, 35%, 55%);
   --h3-color: rgb(150, 1, 117);
   --box-shadow: 0px 6px 6px rgba(150, 1, 117, 0.4),
     0px -4px 8px rgba(0, 0, 0, 0.15);
