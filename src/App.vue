@@ -4,7 +4,6 @@ import Home from "./components/Home.vue";
 import About from "./components/About.vue";
 import Skills from "./components/Skills.vue";
 import Projects from "./components/Projects.vue";
-import NewProjects from "./components/NewProjects.vue";
 import Contact from "./components/Contact.vue";
 import ArrowUp from "./components/icons/ArrowUp.vue";
 import { ref, onMounted, onBeforeUnmount } from "vue";
