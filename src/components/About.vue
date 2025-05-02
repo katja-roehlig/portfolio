@@ -24,9 +24,16 @@ function readMore(): void {
             I'm Katja. I am a frontend developer with a lot of passion for
             coding and design.
             <br /><br />
-            Since November 2022, I have a certificate as a web developer from
-            Coding Bootcamps Europe. Now I am eager to put my skills into
-            practice.
+            Over the last 1.5 years, I have been working on a very interesting
+            research project at the Institute for Applied Computer Science
+            Leipzig (InfAI), the Toolbox Datenkompentenz, which involved
+            creating a website that brings people closer to data literacy.
+            <br />
+            We worked in a monorepo with Next.js, ChakraUI, Strapi Cms, Keycloak
+            and Piwik Pro. I also got a certification in Figma and got the
+            chance to realize some small designs. <br /><br />
+            Unfortunately, the project has now come to an end and I am looking
+            for new exciting challenges.
           </p>
         </div>
 
