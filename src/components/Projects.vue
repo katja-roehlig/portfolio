@@ -214,10 +214,11 @@ function zoomImage(id: number): any {
   fill: var(--text-color);
   position: absolute;
   bottom: 1.5rem;
-  left: 75%;
+  left: 80%;
   padding: 1rem;
   border: 1px solid transparent;
   border-radius: 0.5rem;
+  margin-left: 1.5rem;
 }
 .magnifier-icon:hover {
   fill: var(--bg-color);
@@ -325,7 +326,7 @@ function zoomImage(id: number): any {
 
 .zoom {
   transition: transform 1s ease-out;
-  transform: scale(1.8);
+  transform: scale(1.6);
   transform-origin: 50% 10%;
   z-index: 1;
 }
@@ -341,10 +342,8 @@ function zoomImage(id: number): any {
 }
 @media (min-width: 580px) {
   .content__container {
-    /*  background-color: var(--bg-color-second-level); */
     box-shadow: var(--box-shadow-small);
     border-radius: 0.7rem;
-    /*   padding-top: var(--spacing-wide); */
   }
 }
 .project__container {
