@@ -11,6 +11,7 @@ import LaptopIcon from "./icons/LaptopIcon.vue";
 import ArrowLeft from "./icons/ArrowLeft.vue";
 import ArrowRight from "./icons/ArrowRight.vue";
 import ProjectDescription from "./ProjectDescription.vue";
+import Magnifier from "./icons/Magnifier.vue";
 
 //global variables
 const store = projectStore();
@@ -140,6 +141,7 @@ function zoomImage(id: number): any {
               @click="zoomImage(item.id)"
               :class="{ big: item.isZoomed }"
             />
+            <Magnifier class="magnifier-icon" @click="zoomImage(item.id)" />
           </div>
           <ProjectDescription
             :github="item.github"
@@ -208,14 +210,26 @@ function zoomImage(id: number): any {
 
 <!--* CSS ************************************************************************************************************** -->
 <style scoped>
+.magnifier-icon {
+  fill: var(--text-color);
+  position: absolute;
+  bottom: 1.5rem;
+  left: 75%;
+  padding: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+}
+.magnifier-icon:hover {
+  fill: var(--bg-color);
+  background-color: var(--text-color);
+}
 .image__container {
   height: 53rem;
-  border-radius: 0.7rem;
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: center;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow-middle);
   background-color: var(--bg-color-first-level);
   border-radius: 0.7rem;
   position: relative;
@@ -254,7 +268,7 @@ function zoomImage(id: number): any {
 }
 
 .icon__container {
-  margin-top: 1.5rem;
+  margin-top: 1.8rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
