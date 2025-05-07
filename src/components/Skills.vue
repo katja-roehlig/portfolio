@@ -1,24 +1,21 @@
 <script setup lang="ts">
 import Css from "./icons/skills/Css.vue";
+import Html from "./icons/skills/Html.vue";
 import Javascript from "./icons/skills/Javascript.vue";
 import Typescript from "./icons/skills/Typescript.vue";
 import Vue from "./icons/skills/Vue.vue";
-import Sass from "./icons/skills/Sass.vue";
-import Wordpress from "./icons/skills/WordPress.vue";
+import Wordpress from "./icons/skills/Wordpress.vue";
 import Git from "./icons/skills/Git.vue";
-import Github from "./icons/Github.vue";
-import Gitlab from "./icons/skills/Gitlab.vue";
 import React from "./icons/skills/React.vue";
 import Next from "./icons/skills/Next.vue";
 import Keycloak from "./icons/skills/Keycloak.vue";
-import Nx from "./icons/skills/Nx.vue";
 import Strapi from "./icons/skills/Strapi.vue";
 import Chakra from "./icons/skills/Chakra.vue";
 import Docker from "./icons/skills/Docker.vue";
 import Vscode from "./icons/skills/Vscode.vue";
 import Responsive from "./icons/skills/Responsive.vue";
-import Api from "./icons/skills/Figma.vue";
-import Figma from "./icons/skills/Api.vue";
+import Figma from "./icons/skills/Figma.vue";
+import Api from "./icons/skills/Api.vue";
 </script>
 
 <template>
@@ -29,122 +26,99 @@ import Figma from "./icons/skills/Api.vue";
 
     <ul class="tech-list">
       <li class="tech-list-item">
-        <Vue class="icon-style" />
-        <p class="icon-text">Vue.js</p>
+        <Html class="icon-style" />
+        <p class="icon-text">Html 5</p>
       </li>
       <li class="tech-list-item">
         <Css class="icon-style" />
-        <p class="icon-text">CSS3</p>
-      </li>
-      <li class="tech-list-item">
-        <Sass class="icon-style" />
-        <p class="icon-text">SCSS</p>
+        <p class="icon-text">CSS3 (SCSS)</p>
       </li>
       <li class="tech-list-item">
         <Javascript class="icon-style" />
-        <p class="icon-text">Java <br />Script</p>
+        <p class="icon-text">Java Script</p>
       </li>
       <li class="tech-list-item">
         <Typescript class="icon-style" />
-        <p class="icon-text">Type <br />Script</p>
-      </li>
-
-      <li class="tech-list-item">
-        <Wordpress class="icon-style" />
-        <p class="icon-text">WordPress</p>
-      </li>
-      <li class="tech-list-item">
-        <Api class="icon-style icon-style-scale" />
-        <p class="icon-text">
-          RESTful<br />
-          APIs
-        </p>
-      </li>
-      <li class="tech-list-item">
-        <Git class="icon-style icon-style-scale" />
-        <p class="icon-text">Git</p>
-      </li>
-      <li class="tech-list-item">
-        <Github class="icon-style" />
-        <p class="icon-text">Github</p>
-      </li>
-      <li class="tech-list-item">
-        <Gitlab class="icon-style" />
-        <p class="icon-text">Gitlab</p>
+        <p class="icon-text">Type Script</p>
       </li>
       <li class="tech-list-item">
         <React class="icon-style" />
         <p class="icon-text">React</p>
       </li>
       <li class="tech-list-item">
-        <Vscode class="icon-style icon-style-scale" />
-        <p class="icon-text">VS<br />Code</p>
-      </li>
-
-      <li class="tech-list-item">
-        <Responsive class="icon-style" />
-        <p class="icon-text">Responsive <br />Websites</p>
+        <Vue class="icon-style" />
+        <p class="icon-text">Vue.js</p>
       </li>
       <li class="tech-list-item">
-        <Figma class="icon-style" />
-        <p class="icon-text">Figma</p>
-      </li>
-      <li class="tech-list-item">
-        <Next class="icon-style" />
+        <Next class="icon-style icon-color" />
         <p class="icon-text">Next.js</p>
+      </li>
+      <li class="tech-list-item">
+        <Chakra class="icon-style" />
+        <p class="icon-text">ChakraUI</p>
+      </li>
+      <li class="tech-list-item">
+        <Git class="icon-style" />
+        <p class="icon-text">Git</p>
+      </li>
+      <li class="tech-list-item">
+        <Vscode class="icon-style icon-color" />
+        <p class="icon-text">VS Code</p>
       </li>
       <li class="tech-list-item">
         <Docker class="icon-style" />
         <p class="icon-text">Docker</p>
       </li>
       <li class="tech-list-item">
-        <Keycloak class="icon-style icon-style-scale" />
+        <Keycloak class="icon-style" />
         <p class="icon-text">Keycloak</p>
       </li>
       <li class="tech-list-item">
-        <Strapi class="icon-style icon-style-scale" />
-        <p class="icon-text">
-          Strapi <br />
-          Cms
-        </p>
+        <Strapi class="icon-style" />
+        <p class="icon-text">Strapi Cms</p>
       </li>
       <li class="tech-list-item">
-        <Nx class="icon-style" />
-        <p class="icon-text">
-          Nx <br />
-          Monorepo
-        </p>
+        <Wordpress class="icon-style" />
+        <p class="icon-text">Word<wbr />Press</p>
       </li>
       <li class="tech-list-item">
-        <Chakra class="icon-style" />
-        <p class="icon-text">ChakraUI</p>
+        <Api class="icon-style icon-color" />
+        <p class="icon-text">REST APIs</p>
+      </li>
+
+      <li class="tech-list-item">
+        <Figma class="icon-style" />
+        <p class="icon-text">Figma</p>
       </li>
     </ul>
   </article>
-  <!-- <h4>My soft skills</h4> -->
 </template>
 
 <style scoped>
+.icon-color {
+  fill: var(--icon-color);
+}
 h4 {
   margin-top: var(--spacing-small);
 }
 .tech-list {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding-inline: 0.8rem 0.8rem;
-  grid-column-gap: 0.1rem;
+  padding-block: 1rem;
+  grid-template-columns: repeat(4, 25%);
+  padding-inline: 0.7rem 0.8rem;
   grid-row-gap: 2rem;
   justify-items: center;
   align-items: center;
 }
 .tech-list-item {
-  height: 100%;
+  height: 85px;
   display: flex;
   flex-direction: column;
-  margin: 1rem 1.2rem 1.5rem 0.2rem;
-  padding: 0.4rem 0.1rem 0.3rem;
-  justify-content: space-around;
+  width: 90%;
+  /*  margin: 1rem 1.2rem 1.5rem 0.2rem;*/
+  padding: 1rem 0.1rem 1rem;
+  justify-content: space-between;
   align-items: center;
   font-size: 1.4rem;
   text-align: center;
@@ -152,19 +126,19 @@ h4 {
   border-radius: 0.7rem;
   box-shadow: var(--box-shadow-small);
 }
-.icon-style {
-  fill: var(--icon-color);
-  width: calc(12% + 2.5rem);
-}
 
-.icon-style-scale {
-  transform: scale(0.9);
-}
 .icon-text {
   margin: 0;
+  text-wrap: wrap;
+  padding-inline: 1rem;
 }
 .skills__container {
   padding: 0rem 0rem 1rem 0rem;
+}
+
+.icon-style {
+  width: 35px;
+  height: 35px;
 }
 
 /* media-queries ************************************************************ */
@@ -185,10 +159,6 @@ h4 {
 }
 
 @media (min-width: 992px) {
-  .icon-style {
-    width: 20%;
-  }
-
   .tech-list {
     grid-column-gap: 0.7rem;
   }
