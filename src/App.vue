@@ -3,7 +3,6 @@ import Navigation from "./components/Navigation.vue";
 import Home from "./components/Home.vue";
 import About from "./components/About.vue";
 import Skills from "./components/Skills.vue";
-import skills from "./components/skills.vue";
 import Projects from "./components/Projects.vue";
 import Contact from "./components/Contact.vue";
 import ArrowUp from "./components/icons/ArrowUp.vue";
