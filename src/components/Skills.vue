@@ -4,7 +4,7 @@ import Html from "./icons/skills/Html.vue";
 import Javascript from "./icons/skills/Javascript.vue";
 import Typescript from "./icons/skills/Typescript.vue";
 import Vue from "./icons/skills/Vue.vue";
-import Wordpress from "./icons/skills/Wordpress.vue";
+import WordPress from "./icons/skills/WordPress.vue";
 import Git from "./icons/skills/Git.vue";
 import React from "./icons/skills/React.vue";
 import Next from "./icons/skills/Next.vue";
@@ -78,7 +78,7 @@ import Api from "./icons/skills/Api.vue";
         <p class="icon-text">Strapi Cms</p>
       </li>
       <li class="tech-list-item">
-        <Wordpress class="icon-style" />
+        <WordPress class="icon-style" />
         <p class="icon-text">Word<wbr />Press</p>
       </li>
       <li class="tech-list-item">
