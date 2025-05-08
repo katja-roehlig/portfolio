@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-//import Projects from "../src/components/Projects.vue";
+
 type projectStructure = {
   id: number;
   visible: boolean;
@@ -8,9 +8,6 @@ type projectStructure = {
   phoneImg: string;
   tabletImg?: string;
   desktopImg?: string;
-  phoneView: boolean;
-  tabletView?: boolean;
-  desktopView?: boolean;
   isZoomed: boolean;
   text1: string;
   text2?: string;
@@ -29,9 +26,6 @@ export const projectStore = defineStore("store", {
         phoneImg: "url(/img/Toolbox_Phone.jpeg)",
         tabletImg: "url(/img/Toolbox_Tablet.jpeg)",
         desktopImg: "url(/img/Toolbox_Desktop.jpeg)",
-        phoneView: true,
-        tabletView: false,
-        desktopView: false,
         isZoomed: false,
         text1: "My main project the last two years at InfAI. ",
         techStack:
@@ -46,9 +40,6 @@ export const projectStore = defineStore("store", {
         phoneImg: "url(/img/Codinglabs_Phone.jpeg)",
         tabletImg: "url(/img/Codinglabs_Tablet.jpeg)",
         desktopImg: "url(/img/Codinglabs_Desktop.jpeg)",
-        phoneView: true,
-        tabletView: false,
-        desktopView: false,
         isZoomed: false,
         text1: "The second project I worked on at InfAI.",
         techStack:
@@ -64,9 +55,6 @@ export const projectStore = defineStore("store", {
         phoneImg: "url(/img/Tictactoe_Phone.jpeg)",
         tabletImg: "url(/img/Tictactoe_Tablet.jpeg)",
         desktopImg: "url(/img/Tictactoe_Desktop.jpeg)",
-        phoneView: true,
-        tabletView: false,
-        desktopView: false,
         isZoomed: false,
         text1: "Here you can play TicTacToe alone or together with a friend.",
         techStack: "Vue3 Vite with Option API, Java Script, HTML5, CSS3",
@@ -81,8 +69,6 @@ export const projectStore = defineStore("store", {
         phoneImg: "url(/img/Shopping_Phone.jpeg)",
         tabletImg: "url(/img/Shopping_Tablet.jpeg)",
         desktopImg: "",
-        phoneView: true,
-        tabletView: false,
         isZoomed: false,
         text1:
           "Shopping List helps you not to forget any items while you are shopping",
@@ -97,9 +83,6 @@ export const projectStore = defineStore("store", {
         phoneImg: "url(/img/Birthday_Phone.jpeg)",
         tabletImg: "url(/img/Birthday_Tablet.jpeg)",
         desktopImg: "url(/img/Birthday_Desktop.jpeg)",
-        phoneView: true,
-        tabletView: false,
-        desktopView: false,
         isZoomed: false,
         text1: "You need a crazy birthday card?",
         text2: "Try this digital one - it is animated :-)!",
@@ -114,7 +97,6 @@ export const projectStore = defineStore("store", {
         phoneImg: "url(/img/Sockomat_Phone.webp)",
         tabletImg: "",
         desktopImg: "",
-        phoneView: true,
         isZoomed: false,
         text1: "You are knitting socks?",
         text2: "Try this one to organize your great work!",
@@ -130,9 +112,6 @@ export const projectStore = defineStore("store", {
         phoneImg: "url(/img/Password_Phone.jpeg)",
         tabletImg: "url(/img/Password_Tablet.jpeg)",
         desktopImg: "url(/img/Password_Desktop.jpeg)",
-        phoneView: true,
-        tabletView: false,
-        desktopView: false,
         isZoomed: false,
         text1: "Choose a password, a REALLY good password!",
         techStack: "Vue3 CDN with Options API, JavaScript, HTML5, CSS3",
@@ -146,8 +125,6 @@ export const projectStore = defineStore("store", {
         phoneImg: "url(/img/Colormixer_Phone.jpeg)",
         tabletImg: "",
         desktopImg: "url(/img/Colormixer_Desktop.jpeg)",
-        phoneView: true,
-        desktopView: false,
         isZoomed: false,
         text1:
           "Mix your colors intuitively and get them displayed as a hex number",

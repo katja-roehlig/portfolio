@@ -4,7 +4,7 @@ import { projectStore } from "../../store/store";
 import Phone from "./Phone.vue";
 import Tablet from "./Tablet.vue";
 import Desktop from "./Desktop.vue";
-
+import { ref } from "vue";
 import TabletIcon from "./icons/TabletIcon.vue";
 import PhoneIcon from "./icons/SmartphoneIcon.vue";
 import LaptopIcon from "./icons/LaptopIcon.vue";
@@ -78,29 +78,8 @@ function swiping(event: Event): void {
   }
 }
 
-function changeView(event: Event, id: number): void {
-  const target = event.target as HTMLElement;
-  const currentProject = projectBox.findIndex((element) => element.id === id);
-  const image = projectBox[currentProject];
-  {
-    if (target.id === "tablet") {
-      image.phoneView = false;
-      image.desktopView = false;
-      image.tabletView = true;
-    }
-    if (target.id === "desktop") {
-      image.phoneView = false;
-      image.desktopView = true;
-      image.tabletView = false;
-    }
-    if (target.id === "phone") {
-      image.phoneView = true;
-      image.desktopView = false;
-      image.tabletView = false;
-    }
-  }
-}
-
+/
+const isSelected = ref("phone");
 //zoom project content
 function zoomImage(id: number): any {
   const currentProject = projectBox.findIndex((element) => element.id === id);
@@ -122,25 +101,33 @@ function zoomImage(id: number): any {
       <template v-for="item in store.projects" :key="item.id">
         <div class="content__container" v-if="item.visible">
           <div class="image__container">
-            <Phone
-              :phone="item.phoneImg"
-              v-if="item.phoneView"
-              @click="zoomImage(item.id)"
-              :class="{ zoom: item.isZoomed }"
-            />
-
-            <Tablet
-              :tablet="item.tabletImg"
-              v-if="item.tabletView"
-              @click="zoomImage(item.id)"
-              :class="{ big: item.isZoomed }"
-            />
-            <Desktop
-              :desktop="item.desktopImg"
-              v-if="item.desktopView"
-              @click="zoomImage(item.id)"
-              :class="{ big: item.isZoomed }"
-            />
+            <transition name="fade">
+              <Phone
+                class="position"
+                :phone="item.phoneImg"
+                v-show="isSelected === 'phone'"
+                @click="zoomImage(item.id)"
+                :class="{ zoom: item.isZoomed }"
+              />
+            </transition>
+            <transition name="fade">
+              <Tablet
+                class="position"
+                :tablet="item.tabletImg"
+                v-show="isSelected === 'tablet'"
+                @click="zoomImage(item.id)"
+                :class="{ big: item.isZoomed }"
+              />
+            </transition>
+            <transition name="fade">
+              <Desktop
+                class="position"
+                :desktop="item.desktopImg"
+                v-show="isSelected === 'desktop'"
+                @click="zoomImage(item.id)"
+                :class="{ big: item.isZoomed }"
+              />
+            </transition>
             <Magnifier class="magnifier-icon" @click="zoomImage(item.id)" />
           </div>
           <ProjectDescription
@@ -154,7 +141,7 @@ function zoomImage(id: number): any {
                 <div
                   class="icon"
                   :class="{ active: item.phoneView }"
-                  @click="changeView($event, item.id)"
+                  @click="isSelected = 'phone'"
                   v-if="item.phoneImg !== ''"
                 >
                   <PhoneIcon id="phone" />
@@ -162,7 +149,7 @@ function zoomImage(id: number): any {
                 <div
                   class="icon"
                   :class="{ active: item.tabletView }"
-                  @click="changeView($event, item.id)"
+                  @click="isSelected = 'tablet'"
                   v-if="item.tabletImg !== ''"
                 >
                   <TabletIcon id="tablet" />
@@ -170,7 +157,7 @@ function zoomImage(id: number): any {
                 <div
                   class="icon"
                   :class="{ active: item.desktopView }"
-                  @click="changeView($event, item.id)"
+                  @click="isSelected = 'desktop'"
                   v-if="item.desktopImg !== ''"
                 >
                   <LaptopIcon id="desktop" />
@@ -210,11 +197,27 @@ function zoomImage(id: number): any {
 
 <!--* CSS ************************************************************************************************************** -->
 <style scoped>
+.position {
+  position: absolute;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s ease;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+}
 .magnifier-icon {
   fill: var(--text-color);
   position: absolute;
   bottom: 1.5rem;
-  left: 80%;
+  left: 85%;
   padding: 1rem;
   border: 1px solid transparent;
   border-radius: 0.5rem;
@@ -298,7 +301,7 @@ function zoomImage(id: number): any {
 }
 .active {
   color: var(--bg-color);
-  background-color: var(--icon-color);
+  background-color: var(--h3-color);
 }
 .project__container {
   position: relative;
