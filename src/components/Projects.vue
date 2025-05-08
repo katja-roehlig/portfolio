@@ -140,7 +140,7 @@ function zoomImage(id: number): any {
               <div class="view__container">
                 <div
                   class="icon"
-                  :class="{ active: item.phoneView }"
+                  :class="{ active: isSelected === 'phone' }"
                   @click="isSelected = 'phone'"
                   v-if="item.phoneImg !== ''"
                 >
@@ -148,7 +148,7 @@ function zoomImage(id: number): any {
                 </div>
                 <div
                   class="icon"
-                  :class="{ active: item.tabletView }"
+                  :class="{ active: isSelected === 'tablet' }"
                   @click="isSelected = 'tablet'"
                   v-if="item.tabletImg !== ''"
                 >
@@ -156,7 +156,7 @@ function zoomImage(id: number): any {
                 </div>
                 <div
                   class="icon"
-                  :class="{ active: item.desktopView }"
+                  :class="{ active: isSelected === 'desktop' }"
                   @click="isSelected = 'desktop'"
                   v-if="item.desktopImg !== ''"
                 >
