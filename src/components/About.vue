@@ -62,8 +62,8 @@ function readMore(): void {
 </template>
 <style scoped>
 .foldout-arrow {
-  border-left-color: var(--icon-color);
-  border-top-color: var(--icon-color);
+  border-left-color: var(--h3-color);
+  border-top-color: var(--h3-color);
 }
 .arrow-down {
   display: block;
@@ -124,11 +124,15 @@ function readMore(): void {
   .about__foto {
     height: 25rem;
   }
-  .foldout {
-    display: block;
-  }
+
   .arrow-down {
     display: none;
+  }
+}
+
+@media (min-width: 960px) {
+  .foldout {
+    display: block;
   }
 }
 

@@ -56,8 +56,8 @@ import Github from "./icons/Github.vue";
 }
 .contact__icon {
   width: 2rem;
-  color: var(--icon-color);
-  fill: var(--icon-color);
+  color: var(--h3-color);
+  fill: var(--h3-color);
 }
 
 .contact__location {

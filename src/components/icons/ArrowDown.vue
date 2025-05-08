@@ -7,8 +7,8 @@
   width: 1.2rem;
   height: 1.2rem;
   border-radius: 0.2rem;
-  border-left: 3px solid var(--icon-color);
-  border-bottom: 3px solid var(--icon-color);
+  border-left: 3px solid var(--h3-color);
+  border-bottom: 3px solid var(--h3-color);
   transform: rotate(-45deg);
 }
 </style>

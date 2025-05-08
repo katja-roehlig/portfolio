@@ -56,7 +56,7 @@ onBeforeUnmount(() => {
   --bg-color-light: rgba(255, 255, 255, 0.6);
   --drop-shadow-color: rgba(150, 1, 117);
 
-  --icon-color: transparent;
+  --icon-color: #212121;
   --heading-color: rgb(150, 1, 117);
   --h4-color: /* rgb(151, 104, 136); */ hsl(185, 35%, 55%);
   --h3-color: rgb(150, 1, 117);
