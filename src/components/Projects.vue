@@ -78,8 +78,8 @@ function swiping(event: Event): void {
   }
 }
 
-/
 const isSelected = ref("phone");
+
 //zoom project content
 function zoomImage(id: number): any {
   const currentProject = projectBox.findIndex((element) => element.id === id);
