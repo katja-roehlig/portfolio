@@ -272,33 +272,33 @@ function zoomImage(id: number): any {
 .forward-enter-active,
 .forward-leave-active,
 .forward-move {
-  transition: opacity 0.3s linear, transform 0.5s ease;
+  transition: opacity 0.6s linear, transform 0.6s linear;
 }
 
 .forward-enter-from {
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(200px);
 }
 
 .forward-leave-to {
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-200px);
 }
 
 .back-enter-active,
 .back-leave-active,
 .back-move {
-  transition: opacity 0.3s linear, transform 0.5s ease;
+  transition: opacity 0.6s linear, transform 0.6s linear;
 }
 
 .back-enter-from {
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(-200px);
 }
 
 .back-leave-to {
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(200px);
 }
 
 .magnifier-icon {
@@ -432,6 +432,12 @@ function zoomImage(id: number): any {
 }
 .project__container {
   padding-bottom: var(--spacing-wide);
+}
+
+.forward-enter-active,
+.forward-leave-active,
+.forward-move {
+  transition: opacity 0.4s linear, transform 0.5s linear;
 }
 
 @media (min-width: 1100px) {
