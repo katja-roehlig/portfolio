@@ -84,10 +84,10 @@ const changeView = () => {
   if (screenWidth.value >= 1100 && animationDirection.value === "back") {
     const prevProject = projectBox[currentIndex.value - 1];
 
-    if (!nextProject?.tabletImg && isSelected.value === "tablet") {
+    if (!prevProject?.tabletImg && isSelected.value === "tablet") {
       isSelected.value = "phone";
     }
-    if (!nextProject?.desktopImg && isSelected.value === "desktop") {
+    if (!prevProject?.desktopImg && isSelected.value === "desktop") {
       isSelected.value = "phone";
     }
   }
