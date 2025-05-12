@@ -57,20 +57,39 @@ const nextProject = () => {
 };
 
 const prevProject = () => {
-  console.log("Juhuu");
+  animationDirection.value = "back";
   if (currentIndex.value > 0) {
     currentIndex.value--;
     changeView();
-    animationDirection.value = "back";
   }
 };
 
 const changeView = () => {
-  if (!currentProject.tabletImg && isSelected.value === "tablet") {
+  if (!currentProject.value.tabletImg && isSelected.value === "tablet") {
     isSelected.value = "phone";
   }
-  if (!currentProject.desktopImg && isSelected.value === "desktop") {
+  if (!currentProject.value.desktopImg && isSelected.value === "desktop") {
     isSelected.value = "phone";
+  }
+  if (screenWidth.value >= 1100 && animationDirection.value === "forward") {
+    const nextProject = projectBox[currentIndex.value + 1];
+
+    if (!nextProject?.tabletImg && isSelected.value === "tablet") {
+      isSelected.value = "phone";
+    }
+    if (!nextProject?.desktopImg && isSelected.value === "desktop") {
+      isSelected.value = "phone";
+    }
+  }
+  if (screenWidth.value >= 1100 && animationDirection.value === "back") {
+    const prevProject = projectBox[currentIndex.value - 1];
+
+    if (!nextProject?.tabletImg && isSelected.value === "tablet") {
+      isSelected.value = "phone";
+    }
+    if (!nextProject?.desktopImg && isSelected.value === "desktop") {
+      isSelected.value = "phone";
+    }
   }
 };
 
