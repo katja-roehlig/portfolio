@@ -25,14 +25,14 @@ function readMore(): void {
             coding and design.
             <br /><br />
             Over the last 1.5 years, I have been working on a very interesting
-            research project at the Institute for Applied Informatics Leipzig
-            (InfAI), the Toolbox Datenkompentenz, which involved creating a
+            research project at the Institute for Applied Informatics(InfAI) in
+            Leipzig, the Toolbox Datenkompentenz. Our goal was creating a
             website that brings people closer to data literacy.
             <br />
             We worked in a monorepo with Next.js, ChakraUI, Strapi Cms, Keycloak
             and Piwik Pro. I also got a certification in Figma and got the
             chance to realize some small designs. <br /><br />
-            Unfortunately, the project has now come to an end and I am looking
+            Unfortunately, the project has come to an end and I am now looking
             for new exciting challenges.
           </p>
         </div>
@@ -100,6 +100,8 @@ function readMore(): void {
 }
 .text {
   line-height: 2.1rem;
+  white-space: wrap;
+  hyphens: auto;
 }
 .about__subheading {
   font-size: 1.4rem;

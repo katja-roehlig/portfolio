@@ -2,7 +2,6 @@ import { defineStore } from "pinia";
 
 type projectStructure = {
   id: number;
-  visible: boolean;
   name: string;
   url: string;
   phoneImg: string;
@@ -21,7 +20,6 @@ export const projectStore = defineStore("store", {
     projects: [
       <projectStructure>{
         id: 1,
-        visible: true,
         name: "Toolbox Datenkompetenz",
         phoneImg: "url(/img/Toolbox_Phone.jpeg)",
         tabletImg: "url(/img/Toolbox_Tablet.jpeg)",
@@ -35,7 +33,6 @@ export const projectStore = defineStore("store", {
       },
       <projectStructure>{
         id: 2,
-        visible: false,
         name: "Coding Labs",
         phoneImg: "url(/img/Codinglabs_Phone.jpeg)",
         tabletImg: "url(/img/Codinglabs_Tablet.jpeg)",
@@ -49,7 +46,6 @@ export const projectStore = defineStore("store", {
       },
       <projectStructure>{
         id: 3,
-        visible: false,
         name: "Tic Tac Toe",
         url: "https://tictactoe-x.netlify.app/",
         phoneImg: "url(/img/Tictactoe_Phone.jpeg)",
@@ -64,7 +60,6 @@ export const projectStore = defineStore("store", {
 
       <projectStructure>{
         id: 4,
-        visible: false,
         name: "Shopping List",
         phoneImg: "url(/img/Shopping_Phone.jpeg)",
         tabletImg: "url(/img/Shopping_Tablet.jpeg)",
@@ -78,7 +73,6 @@ export const projectStore = defineStore("store", {
       },
       <projectStructure>{
         id: 5,
-        visible: false,
         name: "Birthday Card",
         phoneImg: "url(/img/Birthday_Phone.jpeg)",
         tabletImg: "url(/img/Birthday_Tablet.jpeg)",
@@ -92,7 +86,6 @@ export const projectStore = defineStore("store", {
       },
       <projectStructure>{
         id: 6,
-        visible: false,
         name: "Sock-o-mat",
         phoneImg: "url(/img/Sockomat_Phone.webp)",
         tabletImg: "",
@@ -107,7 +100,6 @@ export const projectStore = defineStore("store", {
       },
       <projectStructure>{
         id: 7,
-        visible: false,
         name: "Password Check",
         phoneImg: "url(/img/Password_Phone.jpeg)",
         tabletImg: "url(/img/Password_Tablet.jpeg)",
@@ -120,7 +112,6 @@ export const projectStore = defineStore("store", {
       },
       <projectStructure>{
         id: 8,
-        visible: false,
         name: "Color Mixer",
         phoneImg: "url(/img/Colormixer_Phone.jpeg)",
         tabletImg: "",

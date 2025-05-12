@@ -69,6 +69,7 @@ onBeforeUnmount(() => {
   --bg-color-toggle: #ffffff;
   --spacing-small: 2rem;
   --spacing-wide: 1%;
+  --disabled-color: #d5d2d2;
 }
 :root.dark-theme {
   --text-color: rgb(255, 255, 240);
@@ -92,6 +93,7 @@ onBeforeUnmount(() => {
   --box-shadow-middle: 0px 2px 4px #212121, 0px -1px 8px rgba(0, 0, 0, 0.056);
   --spacing-small: 2rem;
   --spacing-wide: 4rem;
+  --disabled-color: #888888;
 }
 .btn-scroll {
   background-color: hsl(319, 42%, 54%);
