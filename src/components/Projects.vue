@@ -423,7 +423,6 @@ function zoomImage(id: number): any {
     gap: 3rem;
     padding-inline: 9.5rem 9rem;
     margin-top: 5rem;
-    border: 2px solid gold;
   }
   .image__container {
     width: 30vw;
