@@ -50,15 +50,15 @@ const isSelected = ref("phone");
 
 const nextProject = () => {
   if (currentIndex.value <= projectBox.length - 1) {
+    animationDirection.value = "forward";
     currentIndex.value++;
     changeView();
-    animationDirection.value = "forward";
   }
 };
 
 const prevProject = () => {
-  animationDirection.value = "back";
   if (currentIndex.value > 0) {
+    animationDirection.value = "back";
     currentIndex.value--;
     changeView();
   }
@@ -240,7 +240,7 @@ function zoomImage(id: number): any {
   justify-content: center;
   align-items: center;
   padding-inline: 2rem;
-  height: max-content;
+  min-height: max-content;
 }
 
 .grid__container {
@@ -272,7 +272,7 @@ function zoomImage(id: number): any {
 .forward-enter-active,
 .forward-leave-active,
 .forward-move {
-  transition: opacity 0.6s linear, transform 0.6s linear;
+  transition: opacity 0.8s linear, transform 0.5s linear;
 }
 
 .forward-enter-from {
@@ -288,7 +288,7 @@ function zoomImage(id: number): any {
 .back-enter-active,
 .back-leave-active,
 .back-move {
-  transition: opacity 0.6s linear, transform 0.6s linear;
+  transition: opacity 0.8s linear, transform 0.5s linear;
 }
 
 .back-enter-from {
@@ -298,9 +298,19 @@ function zoomImage(id: number): any {
 
 .back-leave-to {
   opacity: 0;
-  transform: translateX(200px);
+  transform: translateX(500px);
 }
 
+.back-leave-active {
+  position: absolute;
+}
+.forward-leave-active {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
 .magnifier-icon {
   fill: var(--text-color);
   position: absolute;
@@ -325,13 +335,13 @@ function zoomImage(id: number): any {
   padding-bottom: 2.5rem;
   position: relative;
 }
-.content__container {
+/* .content__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-}
+} */
 
 .button__arrow-desktop {
   display: none;
@@ -434,11 +444,11 @@ function zoomImage(id: number): any {
   padding-bottom: var(--spacing-wide);
 }
 
-.forward-enter-active,
+/* .forward-enter-active,
 .forward-leave-active,
 .forward-move {
   transition: opacity 0.4s linear, transform 0.5s linear;
-}
+} */
 
 @media (min-width: 1100px) {
   .grid__container {
