@@ -255,7 +255,7 @@ function zoomImage(id: number): any {
   position: absolute;
 }
 /* ***************** Transition-Classes*********************** */
-/* .fade-enter-active,
+.fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.8s ease;
 }
@@ -267,7 +267,7 @@ function zoomImage(id: number): any {
 .fade-leave-from {
   opacity: 1;
 }
- */
+
 /* ************************* TransitionGroup-Classes ************************** */
 .forward-enter-active,
 .forward-leave-active,
