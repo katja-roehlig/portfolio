@@ -36,9 +36,10 @@ const props = defineProps({
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   margin-top: 0.8rem;
+  height: 343px;
 }
 .btn-icon {
   width: 1.5rem;
