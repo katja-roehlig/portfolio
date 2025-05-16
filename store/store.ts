@@ -25,7 +25,8 @@ export const projectStore = defineStore("store", {
         tabletImg: "url(/img/Toolbox_Tablet.jpeg)",
         desktopImg: "url(/img/Toolbox_Desktop.jpeg)",
         isZoomed: false,
-        text1: "My main project the last two years at InfAI. ",
+        text1: "My main project the last two years at InfAI.",
+        text2: "Here you can learn a lot about data literacy",
         techStack:
           "Nx, Next.js, ChakraUI, Strapi Cms, Keycloak, Docker, Piwik Pro",
         web: "https://beta.toolboxdatenkompetenz.de/",
@@ -39,8 +40,9 @@ export const projectStore = defineStore("store", {
         desktopImg: "url(/img/Codinglabs_Desktop.jpeg)",
         isZoomed: false,
         text1: "The second project I worked on at InfAI.",
+        text2: "On this platform you can learn to code .",
         techStack:
-          "Nx, Next.js, ChakraUI, StrapiCms, Keycloak, Docker, Piwik Procoding lan",
+          "Nx, Next.js, ChakraUI, StrapiCms, Keycloak, Docker, Piwik Pro",
         web: "https://beta.codinglabs-projekt.de",
         github: "",
       },

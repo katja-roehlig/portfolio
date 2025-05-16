@@ -322,7 +322,7 @@ function zoomImage(id: number): any {
   background-color: var(--text-color);
 }
 .image__container {
-  height: 54rem;
+  height: 50rem;
   display: flex;
   align-items: center;
   width: 100%;
@@ -331,13 +331,6 @@ function zoomImage(id: number): any {
   padding-bottom: 2.5rem;
   position: relative;
 }
-/* .content__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-} */
 
 .button__arrow-desktop {
   display: none;
@@ -354,6 +347,7 @@ function zoomImage(id: number): any {
 .project__description {
   margin-block: 0.5rem 0rem;
   text-align: center;
+  height: 44px;
 }
 
 .icon__container {
@@ -430,21 +424,10 @@ function zoomImage(id: number): any {
   width: 100%;
   padding-bottom: 1rem;
 }
-@media (min-width: 580px) {
-  .card__container {
-    box-shadow: var(--box-shadow-small);
-    border-radius: 0.7rem;
-  }
-}
+
 .project__container {
   padding-bottom: var(--spacing-wide);
 }
-
-/* .forward-enter-active,
-.forward-leave-active,
-.forward-move {
-  transition: opacity 0.4s linear, transform 0.5s linear;
-} */
 
 @media (min-width: 1100px) {
   .grid__container {
@@ -464,11 +447,11 @@ function zoomImage(id: number): any {
   .card__container {
     max-width: 30vw;
     padding: 5rem 2.5rem 3rem 2rem;
-    border-radius: 0.7rem;
-    background-color: var(--bg-color-second-level);
-    box-shadow: var(--box-shadow);
     margin-bottom: 2rem;
     margin-top: var(--spacing-small);
+    /*  border-radius: 0.7rem;
+    background-color: var(--bg-color-second-level);
+    box-shadow: var(--box-shadow); */
   }
 
   .button_arrow-mobile,
@@ -496,4 +479,14 @@ function zoomImage(id: number): any {
     margin-inline: 3.5rem;
   }
 }
+
+.back-leave-active {
+  position: absolute;
+}
+
+/* .forward-enter-active,
+.forward-leave-active,
+.forward-move {
+  transition: opacity 0.4s linear, transform 0.5s linear;
+} */
 </style>
