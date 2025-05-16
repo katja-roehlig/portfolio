@@ -255,7 +255,7 @@ function zoomImage(id: number): any {
   position: absolute;
 }
 /* ***************** Transition-Classes*********************** */
-.fade-enter-active,
+/* .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.8s ease;
 }
@@ -267,12 +267,12 @@ function zoomImage(id: number): any {
 .fade-leave-from {
   opacity: 1;
 }
-
+ */
 /* ************************* TransitionGroup-Classes ************************** */
 .forward-enter-active,
 .forward-leave-active,
 .forward-move {
-  transition: opacity 0.8s linear, transform 0.5s linear;
+  transition: opacity 0.5s linear, transform 0.5s linear;
 }
 
 .forward-enter-from {
@@ -288,7 +288,7 @@ function zoomImage(id: number): any {
 .back-enter-active,
 .back-leave-active,
 .back-move {
-  transition: opacity 0.8s linear, transform 0.5s linear;
+  transition: opacity 0.5s linear, transform 0.5s linear;
 }
 
 .back-enter-from {
@@ -298,19 +298,15 @@ function zoomImage(id: number): any {
 
 .back-leave-to {
   opacity: 0;
-  transform: translateX(500px);
+  transform: translateX(200px);
 }
 
-.back-leave-active {
+/* .back-leave-active {
   position: absolute;
 }
 .forward-leave-active {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
-}
+} */
 .magnifier-icon {
   fill: var(--text-color);
   position: absolute;
