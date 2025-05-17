@@ -19,7 +19,8 @@ let projectBox = store.projects;
 
 //check screen-width
 const screenWidth = ref(window.innerWidth);
-const animationDirection = ref("forward");
+const animationDirection = ref<"forward" | "back">("forward");
+const animate = ref(false);
 
 const updateScreenWidth = () => {
   screenWidth.value = window.innerWidth;
@@ -61,8 +62,9 @@ const setSelectedView = (projectId: number, view: string) => {
 const nextProject: void = () => {
   if (currentIndex.value + numberOfCards.value < projectBox.length - 1) {
     animationDirection.value = "forward";
+    triggerAnimation();
+    console.log("Richtung Vor", animationDirection.value);
     currentIndex.value += numberOfCards.value;
-
     getAvailableView();
   }
 };
@@ -70,9 +72,18 @@ const nextProject: void = () => {
 const prevProject = () => {
   if (currentIndex.value - numberOfCards.value >= 0) {
     animationDirection.value = "back";
+    triggerAnimation();
+    console.log("Richtung Back", animationDirection.value);
     currentIndex.value -= numberOfCards.value;
     getAvailableView();
   }
+};
+
+const triggerAnimation = () => {
+  animate.value = false;
+  requestAnimationFrame(() => {
+    animate.value = true;
+  });
 };
 
 const getAvailableView = () => {
@@ -102,16 +113,16 @@ function zoomImage(id: number): any {
     >
       <ArrowLeft @click="prevProject" class="desktop" />
     </button>
-    <TransitionGroup
-      class="grid__container"
-      :name="animationDirection === 'forward' ? animationDirection : 'back'"
-      tag="div"
-    >
+    <div class="flex__container">
       <div
         v-for="(item, index) in projectBox"
         :key="item.id"
-        class="card__container card-visibility"
+        class="card__container"
         v-show="index >= currentIndex && index < currentIndex + numberOfCards"
+        :class="{
+          'slide-forward': animationDirection === 'forward' && animate,
+          'slide-back': animationDirection === 'back' && animate,
+        }"
       >
         <div class="image__container">
           <transition name="fade">
@@ -207,7 +218,7 @@ function zoomImage(id: number): any {
           </p>
         </ProjectDescription>
       </div>
-    </TransitionGroup>
+    </div>
     <button
       @click="nextProject"
       class="button__arrow button__arrow-desktop button__arrow-right"
@@ -233,20 +244,16 @@ function zoomImage(id: number): any {
   align-items: center;
   padding-inline: 2rem;
   min-height: max-content;
-}
-/* .card-visibility {
-  display: none;
+  transition: transform 0.5s linear, opacity 0.5s linear;
 }
 
-.card-visibility.visible {
-  display: block;
-} */
-
-.grid__container {
+.flex__container {
   display: flex;
   justify-content: center;
   background-color: transparent;
   position: relative;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 .position {
   position: absolute;
@@ -266,44 +273,43 @@ function zoomImage(id: number): any {
 }
 
 /* ************************* TransitionGroup-Classes ************************** */
-/* .forward-enter-active,
-.forward-leave-active,
-.forward-move {
-  transition: opacity 0.5s linear, transform 0.5s linear;
+
+.slide-forward {
+  animation: slideInFromRight 0.8s linear;
 }
 
-.forward-enter-from {
-  opacity: 0;
-  transform: translateX(200px);
+.slide-back {
+  animation: slideInFromLeft 0.8s linear;
 }
 
-.forward-leave-to {
-  opacity: 0;
-  transform: translateX(-200px);
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.back-enter-active,
-.back-leave-active,
-.back-move {
-  transition: opacity 0.5s linear, transform 0.5s linear;
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
-.back-enter-from {
-  opacity: 0;
-  transform: translateX(-200px);
-}
-
-.back-leave-to {
-  opacity: 0;
-  transform: translateX(200px);
-}
- */
-/* .back-leave-active {
-  position: absolute;
-}
-.forward-leave-active {
-  position: absolute;
-} */
 .magnifier-icon {
   fill: var(--text-color);
   position: absolute;
@@ -428,9 +434,8 @@ function zoomImage(id: number): any {
 }
 
 @media (min-width: 1100px) {
-  .grid__container {
+  .flex__container {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
     justify-items: center;
     gap: 6rem;
     padding-inline: 9.5rem 9rem;
@@ -480,14 +485,4 @@ function zoomImage(id: number): any {
     margin-inline: 3.5rem;
   }
 }
-
-.back-leave-active {
-  position: absolute;
-}
-
-/* .forward-enter-active,
-.forward-leave-active,
-.forward-move {
-  transition: opacity 0.4s linear, transform 0.5s linear;
-} */
 </style>
