@@ -32,34 +32,34 @@ onUnmounted(() => {
   window.removeEventListener("resize", updateScreenWidth);
 });
 
-const numberOfCards = computed(() => {
+const numberOfCards: number = computed(() => {
   return screenWidth.value >= 1100 ? 2 : 1;
 });
 
-const currentIndex = ref(0);
-const currentProject = computed(() => projectBox[currentIndex.value]);
+const currentIndex: number = ref(0);
+const currentProject: object = computed(() => projectBox[currentIndex.value]);
 
-const visibleProjects = computed(() => {
+/* const visibleProjects = computed(() => {
   return projectBox.slice(
     currentIndex.value,
     currentIndex.value + numberOfCards.value
   );
-});
+}); */
 
-const isSelected = ref("phone");
+const isSelected: string = ref("phone");
 
-const nextProject = () => {
-  if (currentIndex.value <= projectBox.length - 1) {
+const nextProject: void = () => {
+  if (currentIndex.value + numberOfCards.value < projectBox.length - 1) {
     animationDirection.value = "forward";
-    currentIndex.value++;
+    currentIndex.value += numberOfCards.value;
     changeView();
   }
 };
 
 const prevProject = () => {
-  if (currentIndex.value > 0) {
+  if (currentIndex.value - numberOfCards.value >= 0) {
     animationDirection.value = "back";
-    currentIndex.value--;
+    currentIndex.value -= numberOfCards.value;
     changeView();
   }
 };
@@ -117,9 +117,10 @@ function zoomImage(id: number): any {
       tag="div"
     >
       <div
-        v-for="item in visibleProjects"
+        v-for="(item, index) in projectBox"
         :key="item.id"
-        class="card__container"
+        class="card__container card-visibility"
+        v-show="index >= currentIndex && index < currentIndex + numberOfCards"
       >
         <div class="image__container">
           <transition name="fade">
@@ -242,11 +243,16 @@ function zoomImage(id: number): any {
   padding-inline: 2rem;
   min-height: max-content;
 }
+/* .card-visibility {
+  display: none;
+}
+
+.card-visibility.visible {
+  display: block;
+} */
 
 .grid__container {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr;
+  display: flex;
   justify-content: center;
   background-color: transparent;
   position: relative;
@@ -269,7 +275,7 @@ function zoomImage(id: number): any {
 }
 
 /* ************************* TransitionGroup-Classes ************************** */
-.forward-enter-active,
+/* .forward-enter-active,
 .forward-leave-active,
 .forward-move {
   transition: opacity 0.5s linear, transform 0.5s linear;
@@ -300,7 +306,7 @@ function zoomImage(id: number): any {
   opacity: 0;
   transform: translateX(200px);
 }
-
+ */
 /* .back-leave-active {
   position: absolute;
 }
@@ -402,6 +408,7 @@ function zoomImage(id: number): any {
 .project__stack {
   text-align: center;
   margin-bottom: 3rem;
+  height: 44px;
 }
 .bold {
   font-family: "RobotoReg";
@@ -434,9 +441,8 @@ function zoomImage(id: number): any {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     justify-items: center;
-    gap: 3rem;
+    gap: 6rem;
     padding-inline: 9.5rem 9rem;
-    margin-top: 5rem;
   }
   .image__container {
     width: 30vw;
@@ -446,12 +452,16 @@ function zoomImage(id: number): any {
   }
   .card__container {
     max-width: 30vw;
-    padding: 5rem 2.5rem 3rem 2rem;
+    padding: 0rem 2.5rem 3rem 2rem;
     margin-bottom: 2rem;
     margin-top: var(--spacing-small);
     /*  border-radius: 0.7rem;
     background-color: var(--bg-color-second-level);
     box-shadow: var(--box-shadow); */
+  }
+
+  .card-visibility:nth-child(2) {
+    display: block;
   }
 
   .button_arrow-mobile,
@@ -465,7 +475,7 @@ function zoomImage(id: number): any {
   .button__arrow-desktop {
     display: inline-block;
     position: absolute;
-    top: 50rem;
+    top: 38rem;
     z-index: 1000;
   }
 
