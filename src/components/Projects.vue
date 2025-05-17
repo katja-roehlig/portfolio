@@ -33,14 +33,14 @@ onUnmounted(() => {
   window.removeEventListener("resize", updateScreenWidth);
 });
 
-const numberOfCards: number = computed(() => {
+const numberOfCards = computed(() => {
   return screenWidth.value >= 1100 ? 2 : 1;
 });
 
-const currentIndex: number = ref(0);
-const currentProject: object = computed(() => projectBox[currentIndex.value]);
+const currentIndex = ref(0);
+const currentProject = computed(() => projectBox[currentIndex.value]);
 
-const isSelectedMobile: string = ref("phone");
+const isSelectedMobile = ref("phone");
 const selectedWideScreen = ref<Record<number, string>>({});
 
 const getSelectedView = (projectId: number) => {
@@ -53,17 +53,14 @@ const setSelectedView = (projectId: number, view: string) => {
   if (screenWidth.value >= 1100) {
     selectedWideScreen.value[projectId] = view;
   } else {
-    console.log("Value:", isSelectedMobile.value);
     isSelectedMobile.value = view;
-    console.log("view", view);
   }
 };
 
-const nextProject: void = () => {
+const nextProject = () => {
   if (currentIndex.value + numberOfCards.value < projectBox.length - 1) {
     animationDirection.value = "forward";
     triggerAnimation();
-    console.log("Richtung Vor", animationDirection.value);
     currentIndex.value += numberOfCards.value;
     getAvailableView();
   }
@@ -73,7 +70,6 @@ const prevProject = () => {
   if (currentIndex.value - numberOfCards.value >= 0) {
     animationDirection.value = "back";
     triggerAnimation();
-    console.log("Richtung Back", animationDirection.value);
     currentIndex.value -= numberOfCards.value;
     getAvailableView();
   }
