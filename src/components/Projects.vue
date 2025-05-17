@@ -39,20 +39,31 @@ const numberOfCards: number = computed(() => {
 const currentIndex: number = ref(0);
 const currentProject: object = computed(() => projectBox[currentIndex.value]);
 
-/* const visibleProjects = computed(() => {
-  return projectBox.slice(
-    currentIndex.value,
-    currentIndex.value + numberOfCards.value
-  );
-}); */
+const isSelectedMobile: string = ref("phone");
+const selectedWideScreen = ref<Record<number, string>>({});
 
-const isSelected: string = ref("phone");
+const getSelectedView = (projectId: number) => {
+  return screenWidth.value >= 1100
+    ? selectedWideScreen.value[projectId] || "phone"
+    : isSelectedMobile.value;
+};
+
+const setSelectedView = (projectId: number, view: string) => {
+  if (screenWidth.value >= 1100) {
+    selectedWideScreen.value[projectId] = view;
+  } else {
+    console.log("Value:", isSelectedMobile.value);
+    isSelectedMobile.value = view;
+    console.log("view", view);
+  }
+};
 
 const nextProject: void = () => {
   if (currentIndex.value + numberOfCards.value < projectBox.length - 1) {
     animationDirection.value = "forward";
     currentIndex.value += numberOfCards.value;
-    changeView();
+
+    getAvailableView();
   }
 };
 
@@ -60,36 +71,16 @@ const prevProject = () => {
   if (currentIndex.value - numberOfCards.value >= 0) {
     animationDirection.value = "back";
     currentIndex.value -= numberOfCards.value;
-    changeView();
+    getAvailableView();
   }
 };
 
-const changeView = () => {
-  if (!currentProject.value.tabletImg && isSelected.value === "tablet") {
-    isSelected.value = "phone";
-  }
-  if (!currentProject.value.desktopImg && isSelected.value === "desktop") {
-    isSelected.value = "phone";
-  }
-  if (screenWidth.value >= 1100 && animationDirection.value === "forward") {
-    const nextProject = projectBox[currentIndex.value + 1];
-
-    if (!nextProject?.tabletImg && isSelected.value === "tablet") {
-      isSelected.value = "phone";
-    }
-    if (!nextProject?.desktopImg && isSelected.value === "desktop") {
-      isSelected.value = "phone";
-    }
-  }
-  if (screenWidth.value >= 1100 && animationDirection.value === "back") {
-    const prevProject = projectBox[currentIndex.value - 1];
-
-    if (!prevProject?.tabletImg && isSelected.value === "tablet") {
-      isSelected.value = "phone";
-    }
-    if (!prevProject?.desktopImg && isSelected.value === "desktop") {
-      isSelected.value = "phone";
-    }
+const getAvailableView = () => {
+  if (
+    (!currentProject.value.tabletImg && isSelectedMobile.value === "tablet") ||
+    (!currentProject.value.desktopImg && isSelectedMobile.value === "desktop")
+  ) {
+    isSelectedMobile.value = "phone";
   }
 };
 
@@ -127,7 +118,7 @@ function zoomImage(id: number): any {
             <Phone
               class="position"
               :phone="item.phoneImg"
-              v-show="isSelected === 'phone'"
+              v-show="getSelectedView(item.id) === 'phone'"
               @click="zoomImage(item.id)"
               :class="{ zoom: item.isZoomed }"
             />
@@ -136,7 +127,7 @@ function zoomImage(id: number): any {
             <Tablet
               class="position"
               :tablet="item.tabletImg"
-              v-show="isSelected === 'tablet'"
+              v-show="getSelectedView(item.id) === 'tablet'"
               @click="zoomImage(item.id)"
               :class="{ big: item.isZoomed }"
             />
@@ -145,7 +136,7 @@ function zoomImage(id: number): any {
             <Desktop
               class="position"
               :desktop="item.desktopImg"
-              v-show="isSelected === 'desktop'"
+              v-show="getSelectedView(item.id) === 'desktop'"
               @click="zoomImage(item.id)"
               :class="{ big: item.isZoomed }"
             />
@@ -169,24 +160,24 @@ function zoomImage(id: number): any {
             <div class="view__container">
               <div
                 class="icon"
-                :class="{ active: isSelected === 'phone' }"
-                @click="isSelected = 'phone'"
+                @click="setSelectedView(item.id, 'phone')"
+                :class="{ active: getSelectedView(item.id) === 'phone' }"
                 v-if="item.phoneImg !== ''"
               >
                 <PhoneIcon id="phone" />
               </div>
               <div
                 class="icon"
-                :class="{ active: isSelected === 'tablet' }"
-                @click="isSelected = 'tablet'"
+                @click="setSelectedView(item.id, 'tablet')"
+                :class="{ active: getSelectedView(item.id) === 'tablet' }"
                 v-if="item.tabletImg !== ''"
               >
                 <TabletIcon id="tablet" />
               </div>
               <div
                 class="icon"
-                :class="{ active: isSelected === 'desktop' }"
-                @click="isSelected = 'desktop'"
+                @click="setSelectedView(item.id, 'desktop')"
+                :class="{ active: getSelectedView(item.id) === 'desktop' }"
                 v-if="item.desktopImg !== ''"
               >
                 <LaptopIcon id="desktop" />
