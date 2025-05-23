@@ -271,11 +271,11 @@ function zoomImage(id: number): any {
 /* ************************* TransitionGroup-Classes ************************** */
 
 .slide-forward {
-  animation: slideInFromRight 0.8s linear;
+  animation: slideInFromRight 0.8s ease-in-out;
 }
 
 .slide-back {
-  animation: slideInFromLeft 0.8s linear;
+  animation: slideInFromLeft 0.8s ease-in-out;
 }
 
 @keyframes slideInFromRight {
@@ -283,9 +283,7 @@ function zoomImage(id: number): any {
     transform: translateX(100%);
     opacity: 0;
   }
-  50% {
-    opacity: 0.2;
-  }
+
   100% {
     transform: translateX(0);
     opacity: 1;
@@ -297,9 +295,7 @@ function zoomImage(id: number): any {
     transform: translateX(-100%);
     opacity: 0;
   }
-  50% {
-    opacity: 0.2;
-  }
+
   100% {
     transform: translateX(0);
     opacity: 1;
