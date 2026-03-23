@@ -4,18 +4,16 @@ import Html from "./icons/skills/Html.vue";
 import Javascript from "./icons/skills/Javascript.vue";
 import Typescript from "./icons/skills/Typescript.vue";
 import Vue from "./icons/skills/Vue.vue";
-import WordPress from "./icons/skills/WordPress.vue";
+import Python from "./icons/skills/Python.vue";
 import Git from "./icons/skills/Git.vue";
 import React from "./icons/skills/React.vue";
 import Next from "./icons/skills/Next.vue";
-import Keycloak from "./icons/skills/Keycloak.vue";
+import Sqlite from "./icons/skills/Sqlite.vue";
 import Strapi from "./icons/skills/Strapi.vue";
 import Chakra from "./icons/skills/Chakra.vue";
-import Docker from "./icons/skills/Docker.vue";
-import Vscode from "./icons/skills/Vscode.vue";
-import Responsive from "./icons/skills/Responsive.vue";
+import Flask from "./icons/skills/Flask.vue";
 import Figma from "./icons/skills/Figma.vue";
-import Api from "./icons/skills/Api.vue";
+import Fastapi from "./icons/skills/FastApi.vue";
 </script>
 
 <template>
@@ -58,37 +56,32 @@ import Api from "./icons/skills/Api.vue";
         <p class="icon-text">ChakraUI</p>
       </li>
       <li class="tech-list-item">
+        <Figma class="icon-style" />
+        <p class="icon-text">Figma</p>
+      </li>
+      <li class="tech-list-item">
         <Git class="icon-style" />
         <p class="icon-text">Git</p>
       </li>
       <li class="tech-list-item">
-        <Vscode class="icon-style icon-color" />
-        <p class="icon-text">VS Code</p>
+        <Python class="icon-style" />
+        <p class="icon-text">Python</p>
       </li>
       <li class="tech-list-item">
-        <Docker class="icon-style" />
-        <p class="icon-text">Docker</p>
+        <Flask class="icon-style icon-color" />
+        <p class="icon-text">Flask</p>
       </li>
       <li class="tech-list-item">
-        <Keycloak class="icon-style" />
-        <p class="icon-text">Keycloak</p>
+        <Fastapi class="icon-style icon-color" />
+        <p class="icon-text">FastApi</p>
+      </li>
+      <li class="tech-list-item">
+        <Sqlite class="icon-style" />
+        <p class="icon-text">SQLite</p>
       </li>
       <li class="tech-list-item">
         <Strapi class="icon-style" />
         <p class="icon-text">Strapi Cms</p>
-      </li>
-      <li class="tech-list-item">
-        <WordPress class="icon-style" />
-        <p class="icon-text">Word<wbr />Press</p>
-      </li>
-      <li class="tech-list-item">
-        <Api class="icon-style icon-color" />
-        <p class="icon-text">REST APIs</p>
-      </li>
-
-      <li class="tech-list-item">
-        <Figma class="icon-style" />
-        <p class="icon-text">Figma</p>
       </li>
     </ul>
   </article>
@@ -122,7 +115,7 @@ h4 {
   align-items: center;
   font-size: 1.4rem;
   text-align: center;
-  background-color: var(--bg-color-third-level);
+  background-color: var(--bg-color-second-level);
   border-radius: 0.7rem;
   box-shadow: var(--box-shadow-small);
 }
@@ -151,7 +144,7 @@ h4 {
   .tech-list-item {
     font-size: 1.5rem;
     background-color: var(--bg-color-second-level);
-    box-shadow: var(--box-shadow-middle);
+    box-shadow: var(--box-shadow-small);
   }
   .skills__container {
     padding-bottom: 3.8rem;
