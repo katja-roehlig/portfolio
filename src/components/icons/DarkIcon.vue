@@ -3,7 +3,7 @@
     xmlns="http://www.w3.org/2000/svg"
     width="20"
     height="20"
-    fill="var(--h3-color)"
+    fill="var(--icon-color-dark)"
     class="bi bi-moon-stars-fill"
     viewBox="0 0 16 16"
   >

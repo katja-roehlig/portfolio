@@ -45,58 +45,93 @@ onBeforeUnmount(() => {
 
 <style>
 :root.light-theme {
-  --text-color: rgb(0, 0, 0);
-  --text-color-inverse: rgb(150, 1, 117);
-  --bg-color: rgb(255, 255, 255);
-  --bg-color-icon: rgba(255, 255, 255, 0.95);
-  --bg-color-transparent: rgba(255, 255, 255, 0.85);
-  --bg-color-first-level: rgba(255, 255, 255, 0.7);
-  --bg-color-second-level: rgba(255, 255, 255, 0.6);
-  --bg-color-third-level: rgba(255, 255, 255, 0.01);
-  --bg-color-light: rgba(255, 255, 255, 0.6);
-  --drop-shadow-color: rgba(150, 1, 117);
+  /* basic */
+  --text-color: #1b1a2e;
+  /* --text-color-inverse: #ffffff; */
+  --accent-primary: #3b1977;
+  --accent-secondary: #32c7d5;
+  --disabled-color: #d5d2d2;
 
-  --icon-color: #212121;
-  --heading-color: rgb(150, 1, 117);
-  --h4-color: /* rgb(151, 104, 136); */ hsl(185, 35%, 55%);
-  --h3-color: rgb(150, 1, 117);
-  --box-shadow: 0px 6px 6px rgba(150, 1, 117, 0.4),
-    0px -4px 8px rgba(0, 0, 0, 0.15);
-  --box-shadow-small: 0px 1px 2px rgba(150, 1, 117, 0.4),
-    0px -2px 4px rgba(0, 0, 0, 0.15);
-  --box-shadow-middle: 0px 1px 4px rgba(150, 1, 117, 0.4),
-    0px -1px 8px rgba(0, 0, 0, 0.15);
-  --bg-color-toggle: #ffffff;
+  /* background-color */
+  --bg-color: #f8f7ff;
+  --bg-color-first-level: #ffffff;
+  --bg-color-second-level: #ededff;
+  --h3-bg-color: var(--accent-primary);
+  --link-bg-color: var(--accent-primary);
+  --icon-bg-color: var(--h3-color);
+
+  /* headings and links */
+  --heading-color: var(--accent-primary);
+  --sub-heading-color: var(--accent-primary);
+  --h3-color: #ebe9f9;
+  --h4-color: var(--accent-secondary);
+  --nav-link-color: var(--accent-primary);
+  --primary-to-secondary: var(--accent-primary);
+
+  /* Icons */
+  --icon-color: #ffffff;
+  --icon-color-dark: #b5b5e3;
+
+  /* shadow-color */
+  --drop-shadow-color: rgba(93, 93, 252, 0.2);
+  --drop-shadow-color-dark: rgba(2, 2, 77, 0.2);
+  --box-shadow: 0px 12px 30px rgba(93, 93, 252, 0.12),
+    0px 4px 10px rgba(0, 0, 0, 0.03);
+  --box-shadow-small: 0px 4px 10px rgba(93, 93, 252, 0.1);
+  --box-shadow-middle: 0px 8px 20px rgba(93, 93, 252, 0.12);
+
+  /* spacing */
   --spacing-small: 2rem;
   --spacing-wide: 1%;
-  --disabled-color: #d5d2d2;
+
+  --bg-gradient: radial-gradient(
+      at 0% 0%,
+      rgba(93, 93, 252, 0.05) 0%,
+      transparent 50%
+    ),
+    radial-gradient(at 100% 100%, rgba(50, 215, 75, 0.05) 0%, transparent 50%);
 }
+
 :root.dark-theme {
   --text-color: rgb(255, 255, 240);
-  --text-color-inverse: #212121;
+  /* --text-color-inverse: #212121; */
+  --accent-primary: rgb(187, 88, 156);
+  --accent-secondary: #64aeb4;
+  --disabled-color: #888888;
+
+  /* background-color */
   --bg-color: rgb(33, 33, 33);
-  --bg-color-icon: rgba(33, 33, 33, 0.8);
   --bg-color-first-level: rgba(255, 255, 255, 0.07);
-  --bg-color-second-level: rgba(255, 255, 255, 0.08);
-  --bg-color-third-level: rgba(255, 255, 255, 0.11);
-  --bg-color-transparent: rgba(18, 18, 25);
-  --bg-color-light: rgba(23, 23, 29, 0.7);
-  --bg-color-toggle: hsl(185, 27%, 55%);
+  --bg-color-second-level: rgba(255, 255, 255, 0.1);
+  --h3-bg-color: rgba(255, 255, 255, 0.11);
+  --link-bg-color: rgb(33, 33, 33);
+  --icon-bg-color: var(--bg-color-first-level);
+
+  /* headings and links */
+  --heading-color: var(--accent-primary);
+  --sub-heading-color: #ffffff;
+  --h4-color: var(--accent-primary);
+  --h3-color: var(--accent-secondary);
+  --nav-link-color: var(--text-color);
+  --primary-to-secondary: var(--accent-secondary);
+
+  /* icon-color */
+  --icon-color: #ffffff;
+  --icon-color-dark: var(--accent-secondary);
+
+  /* shadow-color */
   --drop-shadow-color: #000;
   --drop-shadow-color-dark: #000;
-  --icon-color: rgba(255, 255, 255, 0.8);
-  --heading-color: hsl(319, 35%, 55%);
-  --h4-color: rgb(187, 88, 156);
-  --h3-color: hsl(185, 35%, 55%);
   --box-shadow: 0px 6px 6px black, 0px -4px 8px rgba(0, 0, 0, 0.056);
   --box-shadow-small: 0px 2px 3px black, 0px -2px 4px rgba(0, 0, 0, 0.056);
   --box-shadow-middle: 0px 2px 4px #212121, 0px -1px 8px rgba(0, 0, 0, 0.056);
+
+  /* spacing */
   --spacing-small: 2rem;
   --spacing-wide: 4rem;
-  --disabled-color: #888888;
 }
 .btn-scroll {
-  background-color: hsl(319, 42%, 54%);
+  background-color: var(--accent-secondary);
   border-radius: 1rem;
   box-shadow: var(--box-shadow-small);
   width: 2.5rem;

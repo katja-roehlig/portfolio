@@ -16,7 +16,6 @@
 .heading__sub {
   margin: 0;
   font-family: "AtmaMed";
-  color: var(--text-color);
   font-size: 1.9rem;
   text-transform: none;
   letter-spacing: 0.1rem;
@@ -30,6 +29,9 @@
   margin-top: 1.5rem;
   filter: drop-shadow(0px 4px 4px var(--drop-shadow-color));
   letter-spacing: 0.2rem;
+}
+.heading__sub {
+  color: var(--sub-heading-color);
 }
 
 /* media-queries ************************************************************* */

@@ -43,13 +43,10 @@ const props = defineProps({
 }
 .btn-icon {
   width: 1.5rem;
-  color: var(--text-color);
-  fill: var(--text-color);
+  color: var(--icon-color);
+  fill: var(--icon-color);
 }
-.btn-icon:hover {
-  color: var(--bg-color);
-  fill: var(--bg-color);
-}
+
 .btn-link {
   text-decoration: none;
   color: black;
@@ -65,12 +62,12 @@ const props = defineProps({
   padding: 0.6rem 2rem;
   box-shadow: var(--box-shadow-middle);
   border-radius: 1rem;
-  background-color: var(--bg-color-toggle);
-  cursor: pointer;
+  background-color: var(--accent-secondary); /*
+  cursor: pointer;*/
 }
 .btn:hover,
 .btn-link:hover {
-  background-color: var(--heading-color);
+  background-color: var(--accent-primary);
   color: white;
 }
 

@@ -362,13 +362,14 @@ function zoomImage(id: number): any {
 
 .icon {
   display: flex;
-  box-shadow: var(--box-shadow-middle);
+  box-shadow: var(--box-shadow-small);
   width: 4.5rem;
   height: 4.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  background-color: var(--icon-bg-color);
 }
 
 .icon:hover {
@@ -377,7 +378,7 @@ function zoomImage(id: number): any {
 }
 .active {
   color: var(--bg-color);
-  background-color: var(--h3-color);
+  background-color: var(--primary-to-secondary);
 }
 .project__container {
   position: relative;
@@ -443,9 +444,6 @@ function zoomImage(id: number): any {
     padding: 0rem 2.5rem 3rem 2rem;
     margin-bottom: 2rem;
     margin-top: var(--spacing-small);
-    /*  border-radius: 0.7rem;
-    background-color: var(--bg-color-second-level);
-    box-shadow: var(--box-shadow); */
   }
 
   .card-visibility:nth-child(2) {

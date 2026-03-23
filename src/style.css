@@ -9,13 +9,8 @@ body {
   font-size: 1.5rem;
   color: var(--text-color);
   padding: 0rem 2rem 3.5rem 2rem;
-  background-image: linear-gradient(
-      var(--bg-color-transparent),
-      var(--bg-color)
-    ),
-    url(assets/umberto-bg-picture.jpeg);
-  background-repeat: no-repeat;
-  background-size: cover, cover;
+  background: var(--bg-color);
+  background-image: var(--bg-gradient);
 }
 
 /* fonts *********************************************************/
@@ -62,7 +57,7 @@ h3 {
   text-align: center;
   display: block;
   padding: 4rem 6rem var(--spacing-small) 6rem;
-  background-color: var(--bg-color-third-level);
+  background-color: var(--h3-bg-color);
   border-radius: 0.7rem 0.7rem 0.1rem 0.1rem;
   box-shadow: var(--box-shadow-small);
   position: relative;
@@ -83,7 +78,6 @@ h4 {
   box-shadow: var(--box-shadow);
   background-color: var(--bg-color-first-level);
   border-radius: 0.7rem;
-  margin-top: 4rem;
 }
 /* media-queries ******************************************************** */
 @media (min-width: 768px) {

@@ -51,13 +51,18 @@ import Github from "./icons/Github.vue";
   text-decoration: none;
   display: flex;
   gap: 2rem;
-  padding-block: 0.5rem 0;
+  padding: 0.5rem 10px 0;
   font-family: "RobotoReg";
+}
+.contact__link:hover {
+  color: var(--h3-color);
+  background-color: var(--link-bg-color);
+  border-radius: 5px;
 }
 .contact__icon {
   width: 2rem;
-  color: var(--h3-color);
-  fill: var(--h3-color);
+  color: var(--icon-color-dark);
+  fill: var(--icon-color-dark);
 }
 
 .contact__location {

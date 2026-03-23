@@ -91,7 +91,7 @@ function getMediaPreference() {
   cursor: pointer;
 }
 .nav__menu {
-  fill: var(--h3-color);
+  fill: var(--icon-color-dark);
   width: 2rem;
 }
 .nav__container {
@@ -100,15 +100,15 @@ function getMediaPreference() {
   margin-top: 2rem;
 }
 .nav__link {
-  color: var(--text-color);
+  color: var(--nav-link-color);
   text-decoration: none;
   font-family: "RobotoReg";
   padding: 1rem 1rem;
 }
 .nav__link:hover {
-  background-color: var(--bg-color);
+  background-color: var(--link-bg-color);
+  border-radius: 5px;
   color: var(--h3-color);
-  transform: scale(1.2);
 }
 .nav__mode {
   padding-inline: 0.5rem 0rem;
@@ -151,11 +151,16 @@ function getMediaPreference() {
   top: 0;
   right: 0;
   padding: 0.2rem 1.2rem;
-  background-color: rgb(234, 232, 232);
+  background-color: var(--link-bg-color);
   color: var(--h3-color);
   font-size: 1.8rem;
   font-family: "AtmaMed";
   border-radius: 0rem 0rem 0rem 0.5rem;
+}
+
+.nav__list-item-close:hover {
+  transform: scale(1.2);
+  color: #fff;
 }
 @media (min-width: 768px) {
   .nav__menu {
