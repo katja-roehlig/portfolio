@@ -268,7 +268,7 @@ function zoomImage(id: number): any {
   opacity: 1;
 }
 
-/* ************************* TransitionGroup-Classes ************************** */
+/* ************************* Animation-Classes ************************** */
 
 .slide-forward {
   animation: slideInFromRight 0.8s ease-in-out;

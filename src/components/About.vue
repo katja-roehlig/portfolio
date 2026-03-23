@@ -21,19 +21,18 @@ function readMore(): void {
         <div class="text-left">
           <h4 class="about__subheading">Hey there,</h4>
           <p class="about__text text">
-            I'm Katja. I am a frontend developer with a lot of passion for
-            coding and design.
+            I'm Katja – a Frontend Developer evolving into a Full Stack
+            Developer with a focus on AI Integration.
             <br /><br />
-            Over the last 1.5 years, I have been working on a very interesting
-            research project at the Institute for Applied Informatics(InfAI) in
-            Leipzig, the Toolbox Datenkompentenz. Our goal was creating a
-            website that brings people closer to data literacy.
+            Currently, I am deep-diving into the world of Full Stack Development
+            & AI Integration. Since October, I’ve been mastering Python, Flask,
+            and SQL, finally connecting the dots of the entire web development
+            lifecycle. Over the next few months, I’ll be expanding my toolkit
+            with NLP and LLM integration, culminating in a comprehensive final
+            project in June.
             <br />
-            We worked in a monorepo with Next.js, ChakraUI, Strapi Cms, Keycloak
-            and Piwik Pro. I also got a certification in Figma and got the
-            chance to realize some small designs. <br /><br />
-            Unfortunately, the project has come to an end and I am now looking
-            for new exciting challenges.
+            I am thrilled to finally see and understand the full cycle of a
+            website – and I’m ready to make this my next career step.
           </p>
         </div>
 
@@ -41,9 +40,12 @@ function readMore(): void {
           class="text text-right"
           :class="{ 'arrow-down': !isViewable, foldout: isViewable }"
         >
-          I am an empathetic person. It makes me happy to collaborate with other
-          people, solve technical or design problems, try new things and expand
-          my knowledge.<br />
+          Over the last 1.5 years, I contributed to a high-impact research
+          project at the Institute for Applied Informatics (InfAI) in Leipzig.
+          Working on the "Toolbox Datenkompetenz", I helped build a
+          Next.js-based monorepo to make data literacy accessible to everyone.
+          My background in design, backed by a Figma certification, allows me to
+          bridge the gap between aesthetics and clean code.<br />
           Besides coding, I am interested in drawing, sewing, psychology and
           dancing.
         </p>

@@ -1,7 +1,7 @@
 <template>
   <div class="heading" id="home">
     <h1 class="heading__main">Katja Röhlig</h1>
-    <h2 class="heading__sub">Frontend Developer</h2>
+    <h2 class="heading__sub">Full Stack Developer | AI Integration</h2>
   </div>
 </template>
 <style scoped>
