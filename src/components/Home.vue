@@ -22,7 +22,7 @@
 }
 .heading__main {
   -webkit-text-stroke: 2px var(--heading-color);
-  color: var(--bg-color);
+  color: var(--h1-bg-color);
   text-transform: uppercase;
   font-family: "AtmaBo";
   font-size: 4rem;

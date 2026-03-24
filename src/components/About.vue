@@ -106,8 +106,7 @@ function readMore(): void {
   hyphens: auto;
 }
 .about__subheading {
-  font-size: 1.4rem;
-  padding-block: 1rem 0.5rem;
+  padding-block: 1rem 1rem;
   text-align: left;
 }
 

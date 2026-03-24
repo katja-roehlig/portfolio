@@ -3,7 +3,8 @@ import Navigation from "./components/Navigation.vue";
 import Home from "./components/Home.vue";
 import About from "./components/About.vue";
 import Skills from "./components/Skills.vue";
-import Projects from "./components/Projects.vue";
+import Projects from "./components/FrontendProjects.vue";
+import BackendProjects from "./components/BackendProjects.vue";
 import Contact from "./components/Contact.vue";
 import ArrowUp from "./components/icons/ArrowUp.vue";
 import { ref, onMounted, onBeforeUnmount } from "vue";
@@ -37,6 +38,7 @@ onBeforeUnmount(() => {
 
   <Skills class="skills" />
   <Projects />
+  <BackendProjects />
   <Contact />
   <div v-if="scrollOn">
     <a href="#home" class="btn-scroll"> <ArrowUp class="arrow-scroll" /> </a>
@@ -49,7 +51,8 @@ onBeforeUnmount(() => {
   --text-color: #1b1a2e;
   /* --text-color-inverse: #ffffff; */
   --accent-primary: #3b1977;
-  --accent-secondary: #32c7d5;
+  --accent-secondary: rgb(50, 199, 213);
+  --accent-secondary-alpha: #32c7d575;
   --disabled-color: #d5d2d2;
 
   /* background-color */
@@ -59,6 +62,7 @@ onBeforeUnmount(() => {
   --h3-bg-color: var(--accent-primary);
   --link-bg-color: var(--accent-primary);
   --icon-bg-color: var(--h3-color);
+  --h1-bg-color: var(--accent-secondary-alpha);
 
   /* headings and links */
   --heading-color: var(--accent-primary);
@@ -86,10 +90,10 @@ onBeforeUnmount(() => {
 
   --bg-gradient: radial-gradient(
       at 0% 0%,
-      rgba(93, 93, 252, 0.05) 0%,
-      transparent 50%
+      rgba(93, 93, 252, 0.2) 0%,
+      transparent 70%
     ),
-    radial-gradient(at 100% 100%, rgba(50, 215, 75, 0.05) 0%, transparent 50%);
+    radial-gradient(at 100% 100%, rgba(93, 93, 252, 0.2) 0%, transparent 70%);
 }
 
 :root.dark-theme {
@@ -100,12 +104,13 @@ onBeforeUnmount(() => {
   --disabled-color: #888888;
 
   /* background-color */
-  --bg-color: rgb(33, 33, 33);
+  --bg-color: #212121;
   --bg-color-first-level: rgba(255, 255, 255, 0.07);
   --bg-color-second-level: rgba(255, 255, 255, 0.1);
   --h3-bg-color: rgba(255, 255, 255, 0.11);
   --link-bg-color: rgb(33, 33, 33);
   --icon-bg-color: var(--bg-color-first-level);
+  --h1-bg-color: var(--bg-color);
 
   /* headings and links */
   --heading-color: var(--accent-primary);

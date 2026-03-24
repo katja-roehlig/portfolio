@@ -40,7 +40,7 @@ import Github from "./icons/Github.vue";
 </template>
 <style scoped>
 .content__container {
-  padding: var(--spacing-small) 0rem 2rem 0rem;
+  padding: var(--spacing-small) 0rem 4rem 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
