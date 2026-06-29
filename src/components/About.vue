@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import Github from "./icons/Github.vue";
+import LinkedIn from "./icons/contacts/LinkedIn.vue";
 import ArrowDown from "./icons/ArrowDown.vue";
 import ArrowUp from "./icons/ArrowUp.vue";
 const isViewable = ref(true);
@@ -21,18 +23,19 @@ function readMore(): void {
         <div class="text-left">
           <h4 class="about__subheading">Hey there,</h4>
           <p class="about__text text">
-            I'm Katja – a Frontend Developer evolving into a Full Stack
-            Developer with a focus on AI Integration.
+
+            I'm Katja, I love building software that combines thoughtful user experiences with intelligent AI systems.    
             <br /><br />
-            Currently, I am deep-diving into the world of Full Stack Development
-            & AI Integration. Since October, I’ve been mastering Python, Flask,
-            and SQL, finally connecting the dots of the entire web development
-            lifecycle. Over the next few months, I’ll be expanding my toolkit
-            with NLP and LLM integration, culminating in a comprehensive final
-            project in June.
-            <br />
-            I am thrilled to finally see and understand the full cycle of a
-            website – and I’m ready to make this my next career step.
+            I started my journey in frontend development because I loved building user interfaces. 
+            Over time, I became curious about everything that happens behind the scenes. 
+            That curiosity eventually led me to Python, FastAPI, databases and AI systems. 
+            Today, I enjoy building complete applications and understanding how all the pieces work together.
+             <br />  <br />
+
+            My current focus is on AI-supported software. I'm especially interested in building applications that solve real problems 
+            and create a great user experience. 
+            One example is <span>'Serenity'</span>, a personal project that combines long-term memory, 
+            semantic search and a multi-agent architecture.
           </p>
         </div>
 
@@ -40,14 +43,12 @@ function readMore(): void {
           class="text text-right"
           :class="{ 'arrow-down': !isViewable, foldout: isViewable }"
         >
-          Over the last 1.5 years, I contributed to a high-impact research
-          project at the Institute for Applied Informatics (InfAI) in Leipzig.
-          Working on the "Toolbox Datenkompetenz", I helped build a
-          Next.js-based monorepo to make data literacy accessible to everyone.
-          My background in design, backed by a Figma certification, allows me to
-          bridge the gap between aesthetics and clean code.<br />
-          Besides coding, I am interested in drawing, sewing, psychology and
-          dancing.
+          Before that, I spent 1.5 years working on a research project at the Institute for Applied Informatics (InfAI) in Leipzig. 
+          I'm also interested in usability and visual design, which has shaped the way I approach frontend development.
+           <br />
+          Outside of coding, you'll usually find me drawing, sewing, dancing or reading about psychology. 
+          That interest in psychology is also one of the reasons why Serenity exists.
+
         </p>
         <ArrowDown
           :class="{ 'arrow-down': isViewable, 'arrow-up': !isViewable }"
@@ -58,7 +59,16 @@ function readMore(): void {
           @click="readMore()"
           class="foldout-arrow"
         />
+        <div class="about__wrapper">
+        <a href="https://github.com/katja-roehlig/serenity"  class="about__link"> <Github class="about__icon"/> <span>Github</span></a>
+        <a
+          href="https://de.linkedin.com/in/katja-r%C3%B6hlig-379a96259"
+          class="about__link"
+          ><LinkedIn class="about__icon" /><span>LinkedIn</span></a
+        >
+        </div>
       </div>
+     
     </div>
   </article>
 </template>
@@ -110,6 +120,40 @@ function readMore(): void {
   text-align: left;
 }
 
+.about__wrapper {
+  display:flex;
+  justify-content: center;
+  gap: 5rem;
+  width: 100%;;
+}
+.about__link {
+  text-decoration: none;
+  margin-top: 1rem;;
+  padding: 0.8rem 1.5rem 0.6rem;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  font-family: RobotoReg;
+  display: flex;
+  gap: 1rem;
+  box-shadow: var(--box-shadow-middle);
+  border-radius: 1rem;
+  background-color: var(--accent-secondary);
+  
+}
+.about__link:hover {
+  color: var(--h3-color);
+  background-color: var(--accent-primary);
+  transform: scale(1.05);
+
+}
+.about__icon {
+  width: 2rem;
+  color: var(--icon-color);
+  fill: var(--icon-color);
+}
+
+
 /* media-queries **************************************************** */
 
 @media (min-width: 768px) {
@@ -131,12 +175,20 @@ function readMore(): void {
   .arrow-down {
     display: none;
   }
+  .about__link {
+    margin-top: 2rem;
+  }
+ 
 }
 
 @media (min-width: 960px) {
   .foldout {
     display: block;
   }
+  .about__wrapper {
+    gap: 15rem;
+  }
+  
 }
 
 @media (min-width: 1100px) {

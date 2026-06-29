@@ -1,7 +1,7 @@
 <template>
   <div class="heading" id="home">
     <h1 class="heading__main">Katja Röhlig</h1>
-    <h2 class="heading__sub">Full Stack Developer | AI Integration</h2>
+    <h2 class="heading__sub">AI Fullstack Developer</h2>
   </div>
 </template>
 <style scoped>
@@ -25,7 +25,7 @@
   color: var(--h1-bg-color);
   text-transform: uppercase;
   font-family: "AtmaBo";
-  font-size: 4rem;
+  font-size: 5rem;
   margin-top: 1.5rem;
   filter: drop-shadow(0px 4px 4px var(--drop-shadow-color));
   letter-spacing: 0.2rem;
