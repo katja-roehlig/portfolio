@@ -59,16 +59,18 @@ const props = defineProps({
 
 .btn {
   all: unset;
-  padding: 0.6rem 2rem;
+  /* padding: 0.6rem 2rem; */
+  padding: 1.2rem 2rem 0.9rem;
   box-shadow: var(--box-shadow-middle);
   border-radius: 1rem;
-  background-color: var(--accent-secondary); /*
-  cursor: pointer;*/
+  background-color: var(--accent-secondary);
+  cursor: pointer;
 }
 .btn:hover,
 .btn-link:hover {
   background-color: var(--accent-primary);
   color: white;
+  transform: scale(1.05)
 }
 
 .button__container {

@@ -4,13 +4,13 @@
 }
 
 body {
-  margin: 0;
   font-family: "RobotoLi";
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--text-color);
   padding: 0rem 2rem 3.5rem 2rem;
   background: var(--bg-color);
   background-image: var(--bg-gradient);
+  max-width: 1400px;
 }
 
 /* fonts *********************************************************/
@@ -99,9 +99,9 @@ h4 {
   }
   body {
     font-size: 1.8rem;
-    padding: 2.5rem 8rem;
+    padding: 2.5rem;
     width: 90vw;
-    max-width: 1920px;
+    /* max-width: 1920px; */
     margin: auto;
     margin-inline: auto;
   }

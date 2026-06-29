@@ -46,6 +46,12 @@ onBeforeUnmount(() => {
 </template>
 
 <style>
+:root {
+   --spacing-small: 2rem;
+  --spacing-middle: 4rem;
+  --spacing-wide: 1%;
+}
+
 :root.light-theme {
   /* basic */
   --text-color: #1b1a2e;
@@ -57,8 +63,9 @@ onBeforeUnmount(() => {
 
   /* background-color */
   --bg-color: #f8f7ff;
-  --bg-color-first-level: #ffffff;
-  --bg-color-second-level: #ededff;
+  /*--bg-color-first-level: #ffffff;*/
+  --bg-color-first-level: #ffffff51;
+  --bg-color-second-level: hsl(240, 89%, 93%);
   --h3-bg-color: var(--accent-primary);
   --link-bg-color: var(--accent-primary);
   --icon-bg-color: var(--h3-color);
@@ -82,11 +89,11 @@ onBeforeUnmount(() => {
   --box-shadow: 0px 12px 30px rgba(93, 93, 252, 0.12),
     0px 4px 10px rgba(0, 0, 0, 0.03);
   --box-shadow-small: 0px 4px 10px rgba(93, 93, 252, 0.1);
+  --box-shadow-small-list: none;
   --box-shadow-middle: 0px 8px 20px rgba(93, 93, 252, 0.12);
 
   /* spacing */
-  --spacing-small: 2rem;
-  --spacing-wide: 1%;
+ 
 
   --bg-gradient: radial-gradient(
       at 0% 0%,
@@ -129,11 +136,9 @@ onBeforeUnmount(() => {
   --drop-shadow-color-dark: #000;
   --box-shadow: 0px 6px 6px black, 0px -4px 8px rgba(0, 0, 0, 0.056);
   --box-shadow-small: 0px 2px 3px black, 0px -2px 4px rgba(0, 0, 0, 0.056);
+  --box-shadow-small-list: 0px 2px 3px black, 0px -2px 4px rgba(0, 0, 0, 0.056);
   --box-shadow-middle: 0px 2px 4px #212121, 0px -1px 8px rgba(0, 0, 0, 0.056);
 
-  /* spacing */
-  --spacing-small: 2rem;
-  --spacing-wide: 4rem;
 }
 .btn-scroll {
   background-color: var(--accent-secondary);

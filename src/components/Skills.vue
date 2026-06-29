@@ -14,23 +14,23 @@ import Chakra from "./icons/skills/Chakra.vue";
 import Flask from "./icons/skills/Flask.vue";
 import Figma from "./icons/skills/Figma.vue";
 import Fastapi from "./icons/skills/FastApi.vue";
+import Openai from "./icons/skills/Openai.vue";
+import Langchain from "./icons/skills/Langchain.vue";
+import Langgraph from "./icons/skills/Langgraph.vue";
+import Langfuse from "./icons/skills/Langfuse.vue";
+import Chroma from "./icons/skills/ChromaDB.vue";
+import VSCode from "./icons/skills/Vscode.vue";
+
+
 </script>
 
 <template>
-  <article class="skills__container container" id="skills">
+  <article class="container" id="skills">
     <h3>Skills</h3>
-
-    <h4>My tech skills and tools</h4>
+<div class="skills__container">
+    <h4>Frontend</h4>
 
     <ul class="tech-list">
-      <li class="tech-list-item">
-        <Html class="icon-style" />
-        <p class="icon-text">Html 5</p>
-      </li>
-      <li class="tech-list-item">
-        <Css class="icon-style" />
-        <p class="icon-text">CSS3 (SCSS)</p>
-      </li>
       <li class="tech-list-item">
         <Javascript class="icon-style" />
         <p class="icon-text">Java Script</p>
@@ -55,13 +55,29 @@ import Fastapi from "./icons/skills/FastApi.vue";
         <Chakra class="icon-style" />
         <p class="icon-text">ChakraUI</p>
       </li>
+       <li class="tech-list-item">
+        <Html class="icon-style" />
+        <p class="icon-text">Html 5</p>
+      </li>
+      <li class="tech-list-item">
+        <Css class="icon-style" />
+        <p class="icon-text">CSS3 (SCSS)</p>
+      </li>
       <li class="tech-list-item">
         <Figma class="icon-style" />
         <p class="icon-text">Figma</p>
       </li>
+      </ul>
+      <h4>Backend</h4>
+      <ul class="tech-list">
+      
       <li class="tech-list-item">
-        <Git class="icon-style" />
-        <p class="icon-text">Git</p>
+        <Fastapi class="icon-style icon-color" />
+        <p class="icon-text">FastApi</p>
+      </li>
+      <li class="tech-list-item">
+        <Sqlite class="icon-style" />
+        <p class="icon-text">SQLite</p>
       </li>
       <li class="tech-list-item">
         <Python class="icon-style" />
@@ -72,18 +88,45 @@ import Fastapi from "./icons/skills/FastApi.vue";
         <p class="icon-text">Flask</p>
       </li>
       <li class="tech-list-item">
-        <Fastapi class="icon-style icon-color" />
-        <p class="icon-text">FastApi</p>
-      </li>
-      <li class="tech-list-item">
-        <Sqlite class="icon-style" />
-        <p class="icon-text">SQLite</p>
-      </li>
-      <li class="tech-list-item">
         <Strapi class="icon-style" />
         <p class="icon-text">Strapi Cms</p>
       </li>
+      </ul>
+      <h4>AI</h4>
+      <ul class="tech-list">
+       <li class="tech-list-item">
+        <Langchain class="icon-style" />
+        <p class="icon-text">LangChain</p>
+      </li>
+       <li class="tech-list-item">
+        <Langgraph class="icon-style" />
+        <p class="icon-text">LangGraph</p>
+      </li>
+       <li class="tech-list-item">
+        <Openai class="icon-style" />
+        <p class="icon-text">OpenAI</p>
+      </li>
+       <li class="tech-list-item">
+        <Chroma class="icon-style" />
+        <p class="icon-text">Chroma DB</p>
+      </li>
+       <li class="tech-list-item">
+        <Langfuse class="icon-style" />
+        <p class="icon-text">Langfuse</p>
+      </li>
     </ul>
+    <h4>Tools</h4>
+    <ul class="tech-list">
+ <li class="tech-list-item">
+        <VSCode class="icon-style" />
+        <p class="icon-text">VS Code</p>
+      </li>
+       <li class="tech-list-item">
+        <Git class="icon-style" />
+        <p class="icon-text">Git</p>
+      </li>
+    </ul>
+    </div>
   </article>
 </template>
 
@@ -92,14 +135,18 @@ import Fastapi from "./icons/skills/FastApi.vue";
   fill: var(--icon-color);
 }
 h4 {
-  margin-top: var(--spacing-small);
+  margin-top: var(--spacing-middle);
+  padding-bottom: 0px;
+  padding-left: 1rem;;
+  text-align: left;
 }
 .tech-list {
   list-style: none;
   display: grid;
-  padding-block: 1rem;
+  padding-block: 0rem 1rem;
   grid-template-columns: repeat(4, 25%);
-  padding-inline: 0.7rem 0.8rem;
+  padding-inline-start: 0;
+  /* padding-inline: 0.7rem 0.8rem; */
   grid-row-gap: 2rem;
   justify-items: center;
   align-items: center;
@@ -109,15 +156,14 @@ h4 {
   display: flex;
   flex-direction: column;
   width: 90%;
-  /*  margin: 1rem 1.2rem 1.5rem 0.2rem;*/
-  padding: 1rem 0.1rem 1rem;
-  justify-content: space-between;
+  padding: 1.2rem 0.1rem 1rem;
+  justify-content: space-around;
   align-items: center;
   font-size: 1.4rem;
   text-align: center;
   background-color: var(--bg-color-second-level);
   border-radius: 0.7rem;
-  box-shadow: var(--box-shadow-small);
+  box-shadow: var(--box-shadow-small-list);
 }
 
 .icon-text {
@@ -126,12 +172,13 @@ h4 {
   padding-inline: 1rem;
 }
 .skills__container {
-  padding: 0rem 0rem 1rem 0rem;
+  padding: 0rem 1rem 1rem 1rem;
 }
 
 .icon-style {
-  width: 35px;
+  width: 35px;  
   height: 35px;
+  flex-shrink: 0;
 }
 
 /* media-queries ************************************************************ */
@@ -139,15 +186,16 @@ h4 {
   .tech-list {
     grid-template-columns: repeat(5, 1fr);
     grid-column-gap: 0.1rem;
-    padding-inline: 3.5rem 2.5rem;
+    
   }
   .tech-list-item {
     font-size: 1.5rem;
     background-color: var(--bg-color-second-level);
-    box-shadow: var(--box-shadow-small);
+    box-shadow: var(--box-shadow-small-list); 
   }
   .skills__container {
     padding-bottom: 3.8rem;
+    padding-inline: 3.5rem 2.5rem;
   }
 }
 
@@ -165,9 +213,8 @@ h4 {
 @media (min-width: 1100px) {
   .skills__container {
     padding-bottom: 5rem;
-  }
-  .tech-list {
     padding-inline: 9.5rem 9rem;
+    
   }
 }
 </style>
