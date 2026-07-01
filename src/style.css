@@ -46,6 +46,11 @@ body {
   src: url(/fonts/Roboto-Light.woff2);
   font-weight: 300;
 }
+@font-face {
+  font-family: "RobotoMed";
+  src: url(/fonts/Roboto-Medium.woff2);
+  font-weight: 500;
+}
 
 h3 {
   font-family: "AtmaMed";
@@ -66,7 +71,7 @@ h3 {
 }
 h4 {
   font-family: "AtmaMed";
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--h4-color);
   letter-spacing: 0.08rem;
   text-transform: uppercase;
@@ -74,6 +79,7 @@ h4 {
   padding-bottom: 1.5rem;
   margin: 0;
 }
+
 .container {
   box-shadow: var(--box-shadow);
   background-color: var(--bg-color-first-level);
@@ -90,7 +96,7 @@ h4 {
   }
   body {
     font-size: 1.65rem;
-    padding: 2.5rem 6rem;
+    padding: 2rem 6rem 6rem;
   }
 }
 @media (min-width: 1100px) {
@@ -99,9 +105,8 @@ h4 {
   }
   body {
     font-size: 1.8rem;
-    padding: 2.5rem;
+    padding: 2rem;
     width: 90vw;
-    /* max-width: 1920px; */
     margin: auto;
     margin-inline: auto;
   }

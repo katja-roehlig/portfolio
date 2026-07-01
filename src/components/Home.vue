@@ -12,6 +12,7 @@
   align-items: center;
   border-radius: 0.7rem;
 }
+
 .heading__main,
 .heading__sub {
   margin: 0;
@@ -20,6 +21,7 @@
   text-transform: none;
   letter-spacing: 0.1rem;
 }
+
 .heading__main {
   -webkit-text-stroke: 2px var(--heading-color);
   color: var(--h1-bg-color);
@@ -29,7 +31,9 @@
   margin-top: 1.5rem;
   filter: drop-shadow(0px 4px 4px var(--drop-shadow-color));
   letter-spacing: 0.2rem;
+  text-align: center;
 }
+
 .heading__sub {
   color: var(--sub-heading-color);
 }
@@ -42,6 +46,7 @@
     margin-top: 4rem;
     letter-spacing: 0.4rem;
   }
+
   .heading__sub {
     font-size: 3rem;
     margin-block: 1rem 1rem;

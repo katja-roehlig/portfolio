@@ -4,7 +4,7 @@ import Home from "./components/Home.vue";
 import About from "./components/About.vue";
 import Skills from "./components/Skills.vue";
 import Projects from "./components/FrontendProjects.vue";
-import BackendProjects from "./components/BackendProjects.vue";
+import AiProject from "./components/AiProject.vue";
 import Contact from "./components/Contact.vue";
 import ArrowUp from "./components/icons/ArrowUp.vue";
 import { ref, onMounted, onBeforeUnmount } from "vue";
@@ -37,17 +37,20 @@ onBeforeUnmount(() => {
   <About class="about" />
 
   <Skills class="skills" />
+  <AiProject />
   <Projects />
-  <BackendProjects />
+
   <Contact />
   <div v-if="scrollOn">
-    <a href="#home" class="btn-scroll"> <ArrowUp class="arrow-scroll" /> </a>
+    <a href="#home" class="btn-scroll">
+      <ArrowUp class="arrow-scroll" />
+    </a>
   </div>
 </template>
 
 <style>
 :root {
-   --spacing-small: 2rem;
+  --spacing-small: 2rem;
   --spacing-middle: 4rem;
   --spacing-wide: 1%;
 }
@@ -55,15 +58,14 @@ onBeforeUnmount(() => {
 :root.light-theme {
   /* basic */
   --text-color: #1b1a2e;
-  /* --text-color-inverse: #ffffff; */
   --accent-primary: #3b1977;
   --accent-secondary: rgb(50, 199, 213);
   --accent-secondary-alpha: #32c7d575;
   --disabled-color: #d5d2d2;
+  --ficaption-color: #666;
 
   /* background-color */
   --bg-color: #f8f7ff;
-  /*--bg-color-first-level: #ffffff;*/
   --bg-color-first-level: #ffffff51;
   --bg-color-second-level: hsl(240, 89%, 93%);
   --h3-bg-color: var(--accent-primary);
@@ -92,14 +94,9 @@ onBeforeUnmount(() => {
   --box-shadow-small-list: none;
   --box-shadow-middle: 0px 8px 20px rgba(93, 93, 252, 0.12);
 
-  /* spacing */
- 
-
-  --bg-gradient: radial-gradient(
-      at 0% 0%,
+  --bg-gradient: radial-gradient(at 0% 0%,
       rgba(93, 93, 252, 0.2) 0%,
-      transparent 70%
-    ),
+      transparent 70%),
     radial-gradient(at 100% 100%, rgba(93, 93, 252, 0.2) 0%, transparent 70%);
 }
 
@@ -109,6 +106,7 @@ onBeforeUnmount(() => {
   --accent-primary: rgb(187, 88, 156);
   --accent-secondary: #64aeb4;
   --disabled-color: #888888;
+  --figcaption-color: #cdcccc;
 
   /* background-color */
   --bg-color: #212121;
@@ -140,6 +138,7 @@ onBeforeUnmount(() => {
   --box-shadow-middle: 0px 2px 4px #212121, 0px -1px 8px rgba(0, 0, 0, 0.056);
 
 }
+
 .btn-scroll {
   background-color: var(--accent-secondary);
   border-radius: 1rem;
@@ -155,9 +154,11 @@ onBeforeUnmount(() => {
   right: 3%;
   cursor: pointer;
 }
+
 .btn-scroll:hover {
   background-color: hsl(185, 35%, 55%);
 }
+
 .arrow-scroll {
   border-left-color: var(--bg-color);
   border-top-color: var(--bg-color);

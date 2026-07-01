@@ -103,98 +103,52 @@ function zoomImage(id: number): any {
 <template>
   <article class="project__container container" id="projects">
     <h3>Projects</h3>
-    <button
-      class="button__arrow button__arrow-desktop"
-      :disabled="currentIndex === 0"
-    >
+    <button class="button__arrow button__arrow-desktop" :disabled="currentIndex === 0">
       <ArrowLeft @click="prevProject" class="desktop" />
     </button>
     <div class="flex__container">
-      <div
-        v-for="(item, index) in projectBox"
-        :key="item.id"
-        class="card__container"
-        v-show="index >= currentIndex && index < currentIndex + numberOfCards"
-        :class="{
+      <div v-for="(item, index) in projectBox" :key="item.id" class="card__container"
+        v-show="index >= currentIndex && index < currentIndex + numberOfCards" :class="{
           'slide-forward': animationDirection === 'forward' && animate,
           'slide-back': animationDirection === 'back' && animate,
-        }"
-      >
+        }">
         <div class="image__container">
           <transition name="fade">
-            <Phone
-              class="position"
-              :phone="item.phoneImg"
-              v-show="getSelectedView(item.id) === 'phone'"
-              @click="zoomImage(item.id)"
-              :class="{ zoom: item.isZoomed }"
-            />
+            <Phone class="position" :phone="item.phoneImg" v-show="getSelectedView(item.id) === 'phone'"
+              @click="zoomImage(item.id)" :class="{ zoom: item.isZoomed }" />
           </transition>
           <transition name="fade">
-            <Tablet
-              class="position"
-              :tablet="item.tabletImg"
-              v-show="getSelectedView(item.id) === 'tablet'"
-              @click="zoomImage(item.id)"
-              :class="{ big: item.isZoomed }"
-            />
+            <Tablet class="position" :tablet="item.tabletImg" v-show="getSelectedView(item.id) === 'tablet'"
+              @click="zoomImage(item.id)" :class="{ big: item.isZoomed }" />
           </transition>
           <transition name="fade">
-            <Desktop
-              class="position"
-              :desktop="item.desktopImg"
-              v-show="getSelectedView(item.id) === 'desktop'"
-              @click="zoomImage(item.id)"
-              :class="{ big: item.isZoomed }"
-            />
+            <Desktop class="position" :desktop="item.desktopImg" v-show="getSelectedView(item.id) === 'desktop'"
+              @click="zoomImage(item.id)" :class="{ big: item.isZoomed }" />
           </transition>
           <Magnifier class="magnifier-icon" @click="zoomImage(item.id)" />
         </div>
 
-        <ProjectDescription
-          :github="item.github"
-          :web="item.web"
-          class="description"
-        >
+        <ProjectDescription :github="item.github" :web="item.web" class="description">
           <div class="icon__container">
-            <button
-              class="button__arrow button__arrow-mobile"
-              :disabled="currentIndex === 0"
-              @click="prevProject"
-            >
+            <button class="button__arrow button__arrow-mobile" :disabled="currentIndex === 0" @click="prevProject">
               <ArrowLeft class="mobile" />
             </button>
             <div class="view__container">
-              <div
-                class="icon"
-                @click="setSelectedView(item.id, 'phone')"
-                :class="{ active: getSelectedView(item.id) === 'phone' }"
-                v-if="item.phoneImg !== ''"
-              >
+              <div class="icon" @click="setSelectedView(item.id, 'phone')"
+                :class="{ active: getSelectedView(item.id) === 'phone' }" v-if="item.phoneImg !== ''">
                 <PhoneIcon id="phone" />
               </div>
-              <div
-                class="icon"
-                @click="setSelectedView(item.id, 'tablet')"
-                :class="{ active: getSelectedView(item.id) === 'tablet' }"
-                v-if="item.tabletImg !== ''"
-              >
+              <div class="icon" @click="setSelectedView(item.id, 'tablet')"
+                :class="{ active: getSelectedView(item.id) === 'tablet' }" v-if="item.tabletImg !== ''">
                 <TabletIcon id="tablet" />
               </div>
-              <div
-                class="icon"
-                @click="setSelectedView(item.id, 'desktop')"
-                :class="{ active: getSelectedView(item.id) === 'desktop' }"
-                v-if="item.desktopImg !== ''"
-              >
+              <div class="icon" @click="setSelectedView(item.id, 'desktop')"
+                :class="{ active: getSelectedView(item.id) === 'desktop' }" v-if="item.desktopImg !== ''">
                 <LaptopIcon id="desktop" />
               </div>
             </div>
-            <button
-              @click="nextProject"
-              class="button__arrow button__arrow-mobile"
-              :disabled="currentIndex + numberOfCards === projectBox.length"
-            >
+            <button @click="nextProject" class="button__arrow button__arrow-mobile"
+              :disabled="currentIndex + numberOfCards === projectBox.length">
               <ArrowRight class="mobile" />
             </button>
             <div class="counter">
@@ -215,11 +169,8 @@ function zoomImage(id: number): any {
         </ProjectDescription>
       </div>
     </div>
-    <button
-      @click="nextProject"
-      class="button__arrow button__arrow-desktop button__arrow-right"
-      :disabled="currentIndex + numberOfCards === projectBox.length"
-    >
+    <button @click="nextProject" class="button__arrow button__arrow-desktop button__arrow-right"
+      :disabled="currentIndex + numberOfCards === projectBox.length">
       <ArrowRight class="desktop" />
     </button>
   </article>
@@ -233,6 +184,7 @@ function zoomImage(id: number): any {
   padding: 1rem;
   cursor: pointer;
 }
+
 .card__container {
   display: flex;
   flex-direction: column;
@@ -251,18 +203,22 @@ function zoomImage(id: number): any {
   flex-wrap: nowrap;
   overflow: hidden;
 }
+
 .position {
   position: absolute;
 }
+
 /* ***************** Transition-Classes*********************** */
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.8s ease;
 }
+
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }
+
 .fade-enter-to,
 .fade-leave-from {
   opacity: 1;
@@ -312,10 +268,12 @@ function zoomImage(id: number): any {
   border-radius: 0.5rem;
   margin-left: 1.5rem;
 }
+
 .magnifier-icon:hover {
   fill: var(--bg-color);
   background-color: var(--text-color);
 }
+
 .image__container {
   height: 50rem;
   display: flex;
@@ -330,15 +288,18 @@ function zoomImage(id: number): any {
 .button__arrow-desktop {
   display: none;
 }
+
 .button__arrow:hover .desktop,
 .button__arrow:hover .mobile {
   border-color: var(--h4-color);
 }
+
 .button__arrow:disabled .desktop,
 .button__arrow:disabled .mobile {
   border-color: var(--disabled-color);
   cursor: not-allowed;
 }
+
 .project__description {
   margin-block: 0.5rem 0rem;
   text-align: center;
@@ -352,6 +313,7 @@ function zoomImage(id: number): any {
   align-items: center;
   position: relative;
 }
+
 .view__container {
   display: flex;
   justify-content: center;
@@ -376,17 +338,21 @@ function zoomImage(id: number): any {
   color: var(--bg-color);
   background-color: var(--text-color);
 }
+
 .active {
   color: var(--bg-color);
   background-color: var(--primary-to-secondary);
 }
+
 .project__container {
   position: relative;
 }
+
 .project__heading__container {
   position: relative;
   margin-top: 3rem;
 }
+
 .counter {
   position: absolute;
   bottom: -2rem;
@@ -400,6 +366,7 @@ function zoomImage(id: number): any {
   margin-bottom: 3rem;
   height: 44px;
 }
+
 .bold {
   font-family: "RobotoReg";
   text-align: center;
@@ -411,12 +378,14 @@ function zoomImage(id: number): any {
   transform-origin: 50% 10%;
   z-index: 1;
 }
+
 .big {
   transition: transform 1s ease-out;
   transform: scale(1.3);
   transform-origin: 50% 60%;
   z-index: 1;
 }
+
 .description {
   width: 100%;
   padding-bottom: 1rem;
@@ -433,12 +402,15 @@ function zoomImage(id: number): any {
     gap: 6rem;
     padding-inline: 9.5rem 9rem;
   }
+
   .image__container {
     width: 30vw;
   }
+
   .project__container {
     padding-bottom: 5rem;
   }
+
   .card__container {
     max-width: 30vw;
     padding: 0rem 2.5rem 3rem 2rem;
@@ -454,6 +426,7 @@ function zoomImage(id: number): any {
   .mobile {
     display: none;
   }
+
   .icon__container {
     justify-content: center;
   }
@@ -468,6 +441,7 @@ function zoomImage(id: number): any {
   .button__arrow-desktop.button__arrow-right {
     right: 0px;
   }
+
   .desktop {
     width: 1.7rem;
     height: 1.7rem;

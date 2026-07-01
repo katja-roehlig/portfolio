@@ -49,11 +49,7 @@ function getMediaPreference() {
 <template>
   <nav class="nav__container">
     <div class="nav__menu">
-      <HamburgerMenu
-        class="nav__menu-icon"
-        @click="largeMenu"
-        v-if="!isVisible"
-      />
+      <HamburgerMenu class="nav__menu-icon" @click="largeMenu" v-if="!isVisible" />
     </div>
 
     <ul class="nav__list" :class="{ opacity: isVisible }">
@@ -62,11 +58,7 @@ function getMediaPreference() {
         <a href="#about" class="nav__link">About</a>
       </li>
       <li class="nav__list-item" v-if="isVisible"></li>
-      <li
-        class="nav__list-item nav__list-item-close"
-        v-if="isVisible"
-        @click="largeMenu"
-      >
+      <li class="nav__list-item nav__list-item-close" v-if="isVisible" @click="largeMenu">
         X
       </li>
       <li class="nav__list-item">
@@ -88,28 +80,33 @@ function getMediaPreference() {
   list-style: none;
   display: none;
   margin: 0;
-  cursor: pointer;
 }
+
 .nav__menu {
   fill: var(--icon-color-dark);
   width: 2rem;
 }
+
 .nav__container {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
+  cursor: pointer;
 }
+
 .nav__link {
   color: var(--nav-link-color);
   text-decoration: none;
   font-family: "RobotoReg";
   padding: 1rem 1rem;
 }
+
 .nav__link:hover {
   background-color: var(--link-bg-color);
   border-radius: 5px;
   color: var(--h3-color);
 }
+
 .nav__mode {
   padding-inline: 0.5rem 0rem;
   order: -1;
@@ -119,6 +116,7 @@ function getMediaPreference() {
 .nav__mode:hover {
   transform: scale(1.3);
 }
+
 .opacity {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -136,16 +134,19 @@ function getMediaPreference() {
   color: rgb(var(--bg-color));
   z-index: 1;
 }
+
 @keyframes nav-list-appear {
   0% {
     opacity: 0;
     height: 0vh;
   }
+
   100% {
     opacity: 1;
     height: 20vh;
   }
 }
+
 .nav__list-item-close {
   position: absolute;
   top: 0;
@@ -162,22 +163,27 @@ function getMediaPreference() {
   transform: scale(1.2);
   color: #fff;
 }
+
 @media (min-width: 768px) {
   .nav__menu {
     display: none;
   }
+
   .nav__mode {
     padding-inline: 3rem 1rem;
     order: 0;
   }
+
   .nav__container {
     justify-content: flex-end;
   }
+
   .nav__list {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
   }
+
   .nav__link:visited {
     color: var(--h4-color);
   }
