@@ -174,6 +174,7 @@ function zoomImage(id: number): any {
 <style scoped>
 .project__container {
   position: relative;
+  overflow: visible;
 }
 
 
@@ -190,6 +191,7 @@ h3 {
   margin-top: 3rem;
   min-height: 50rem;
   height: 79rem;
+  overflow: visible;
 }
 
 .card__container {

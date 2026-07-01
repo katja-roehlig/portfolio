@@ -72,6 +72,9 @@ function closeImpressum(): void {
     </div>
   </article>
 </template>
+
+
+
 <style scoped>
 .contact__container {
   margin-bottom: 8rem;
@@ -79,7 +82,6 @@ function closeImpressum(): void {
 
 .content__container {
   padding-block: 2rem 4rem;
-  ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,7 +123,6 @@ function closeImpressum(): void {
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   z-index: 9998;
-
 }
 
 .impressum-modal {
@@ -197,7 +198,6 @@ function closeImpressum(): void {
     width: 50rem;
     margin-inline: auto;
     margin-bottom: 4rem;
-    ;
   }
 
   .content__container {
