@@ -7,14 +7,15 @@ import Github from "./icons/Github.vue";
 import Paragraph from "./icons/contacts/Paragraph.vue";
 import { ref } from "vue";
 
-const impressumModal = ref<HTMLDialogElement | null>(null)
+// const impressumModal = ref<HTMLDialogElement | null>(null)
 
+const isImpressumOpen = ref(false)
 function openImpressum(): void {
-  impressumModal.value?.showModal();
+  isImpressumOpen.value = true
 }
 
 function closeImpressum(): void {
-  impressumModal.value?.close()
+  isImpressumOpen.value = false
 }
 </script>
 
@@ -48,7 +49,9 @@ function closeImpressum(): void {
 
       </div>
     </div>
-    <dialog ref="impressumModal" class="impressum-modal">
+    <div v-if="isImpressumOpen" class="modal-backdrop" @click="closeImpressum"></div>
+
+    <div v-if="isImpressumOpen" class="impressum-modal">
       <div class="modal-content">
         <h4>Impressum</h4>
         <p>Angaben gemäß § 5 TMG:</p>
@@ -63,15 +66,16 @@ function closeImpressum(): void {
         <h4>Kontakt:</h4>
         <p>E-Mail: katja-roehlig@mail.de</p>
         <button type="button" class="close-btn" @click="closeImpressum">
-          Schließen
+          Close
         </button>
       </div>
-    </dialog>
+    </div>
   </article>
 </template>
 <style scoped>
 .content__container {
-  padding: var(--spacing-small) 0rem 2rem 0rem;
+  padding-block: 2rem 4rem;
+  ;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -104,7 +108,24 @@ function closeImpressum(): void {
   margin: 0;
 }
 
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+
+}
+
 .impressum-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
   border: none;
   border-radius: .7rem;
   padding: 4rem 2rem;
@@ -118,6 +139,7 @@ function closeImpressum(): void {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: black;
 }
 
 .modal-content h4 {
@@ -165,11 +187,18 @@ function closeImpressum(): void {
 
 
 /*media-queries ************************************************************/
+
 @media (min-width: 1100px) {
   .contact__container {
-    padding-block: 0rem 5rem;
     width: 50rem;
     margin-inline: auto;
+    border: 2px solid red;
+    margin-bottom: 4rem;
+  }
+
+  .content__container {
+    margin-bottom: 2rem;
+
   }
 }
 </style>

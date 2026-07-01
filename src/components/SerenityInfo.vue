@@ -287,6 +287,10 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-block: 2.5rem 1rem;
+    border-top: 1px solid var(--disabled-color);
+    margin-inline: auto;
+    width: 26rem;
 }
 
 .info__link {
@@ -341,6 +345,8 @@ h4 {
 
     .info__link-container {
         margin-bottom: 1rem;
+        padding-block: 0.5rem 1rem;
+        border-top: none;
     }
 }
 

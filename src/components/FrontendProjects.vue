@@ -189,7 +189,7 @@ h3 {
   view-transition-name: project-card;
   margin-top: 3rem;
   min-height: 50rem;
-  height: 72rem;
+  height: 79rem;
 }
 
 .card__container {
@@ -222,7 +222,7 @@ h3 {
 
 }
 
-.deskription {
+.description {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -242,7 +242,6 @@ h3 {
 
 .project__description p {
   text-align: center;
-  ;
 }
 
 .view__container {
@@ -250,7 +249,7 @@ h3 {
   justify-content: center;
   align-items: center;
   gap: 0.8rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   border-top: 1px solid var(--disabled-color);
   width: 26rem;
   height: 7rem;
