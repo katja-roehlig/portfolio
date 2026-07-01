@@ -38,9 +38,10 @@ onBeforeUnmount(() => {
   <About class="about" />
 
   <Skills class="skills" />
-  <!-- <AiProject />
-  <Projects /> -->
   <Contact />
+  <AiProject />
+  <Projects />
+
   <div v-if="scrollOn">
     <a href="#home" class="btn-scroll">
       <ArrowUp class="arrow-scroll" />
@@ -154,10 +155,12 @@ body {
   justify-content: center;
   align-items: center;
   width: 6rem;
-  padding-block: 1.5rem 1rem;
+  height: 5rem;
+
   position: fixed;
-  bottom: 10%;
+  bottom: 5%;
   right: 3%;
+  z-index: 1000;
   cursor: pointer;
 }
 
