@@ -1,5 +1,14 @@
-:root {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+svg,
+svg * {
+  box-sizing: content-box !important;
+}
+
+:root {
   font-size: 62.5%;
 }
 
@@ -54,6 +63,7 @@ body {
 
 h3 {
   font-family: "AtmaMed";
+  margin-top: 0;
   font-size: 1.8rem;
   color: var(--h3-color);
   letter-spacing: 0.08rem;
@@ -84,6 +94,9 @@ h4 {
   box-shadow: var(--box-shadow);
   background-color: var(--bg-color-first-level);
   border-radius: 0.7rem;
+  margin-top: 2rem;
+  max-width: 1200px;
+  margin-inline: auto;
 }
 /* media-queries ******************************************************** */
 @media (min-width: 768px) {
@@ -103,9 +116,13 @@ h4 {
   h3 {
     font-size: 3rem;
   }
+  h4 {
+    font-size: 2.2rem;
+  }
   body {
     font-size: 1.8rem;
     padding: 2rem;
+    padding-bottom: 6rem;
     width: 90vw;
     margin: auto;
     margin-inline: auto;

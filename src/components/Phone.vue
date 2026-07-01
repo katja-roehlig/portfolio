@@ -17,8 +17,8 @@ const props = defineProps({
 <style scoped>
 .phone__container {
   background-color: black;
-  aspect-ratio: 1 / 2.1;
-  width: 23rem;
+  aspect-ratio: 1 / 2;
+  width: 20rem;
 
   border-radius: 1rem;
   position: relative;
@@ -26,6 +26,7 @@ const props = defineProps({
     inset 0px 0px 1px 2px rgba(144, 144, 144, 0.803), var(--box-shadow-small);
   flex-shrink: 0;
 }
+
 .phone__screen {
   background-size: 100% 100%;
   background-repeat: no-repeat;

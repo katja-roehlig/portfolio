@@ -14,18 +14,14 @@ const props = defineProps({
     <article>
       <slot>Description of the project</slot>
     </article>
-    <div
-      class="button__container"
-      :style="{ justifyContent: props.github ? 'space-between' : 'center' }"
-    >
+    <div class="button__container">
       <button class="btn" v-show="props.github">
         <a class="btn-link" :href="props.github">
-          <Github class="btn-icon" />Github</a
-        ></button
-      ><button class="btn">
-        <a class="btn-link" :href="props.web"
-          ><Website class="btn-icon" />Website</a
-        >
+          <Github class="btn-icon" />Github
+        </a></button><button class="btn">
+        <a class="btn-link" :href="props.web">
+          <Website class="btn-icon" />Website
+        </a>
       </button>
     </div>
   </div>
@@ -39,8 +35,8 @@ const props = defineProps({
   justify-content: space-between;
   align-items: center;
   margin-top: 0.8rem;
-  height: 343px;
 }
+
 .btn-icon {
   width: 1.5rem;
   color: var(--icon-color);
@@ -59,13 +55,14 @@ const props = defineProps({
 
 .btn {
   all: unset;
-  /* padding: 0.6rem 2rem; */
-  padding: 1.2rem 2rem 0.9rem;
+
+  padding: 1.2rem 2.5rem 0.9rem;
   box-shadow: var(--box-shadow-middle);
   border-radius: 1rem;
   background-color: var(--accent-secondary);
   cursor: pointer;
 }
+
 .btn:hover,
 .btn-link:hover {
   background-color: var(--accent-primary);
@@ -79,5 +76,7 @@ const props = defineProps({
   width: 100%;
   position: relative;
   bottom: 5%;
+  justify-content: center;
+  gap: 6rem;
 }
 </style>

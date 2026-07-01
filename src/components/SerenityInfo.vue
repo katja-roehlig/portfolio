@@ -136,6 +136,7 @@ function toggleZoom(): void {
 <style scoped>
 .info__container {
     padding: 2rem 2rem;
+    padding-bottom: 0;
     position: relative;
     background-color: transparent;
     margin-top: 0;
@@ -235,7 +236,7 @@ h4 {
 
 
 .zoom {
-    transform: scale(1.5);
+    transform: scale(1.3);
     transform-origin: 50% 10%;
     z-index: 999;
 }
@@ -245,6 +246,10 @@ h4 {
     justify-content: center;
     align-items: center;
     gap: 5rem;
+    background-color: var(--bg-color-second-level);
+    border-radius: 0.7rem;
+    padding-block: 3rem 3rem;
+    margin-inline: -2rem;
     margin-top: 2rem;
 }
 
@@ -291,7 +296,8 @@ h4 {
 .info__link {
     text-decoration: none;
     margin-top: 1rem;
-    padding: 0.8rem 3.5rem 0.6rem;
+    padding: 1.2rem 2.5rem 0.9rem;
+    /* padding: 0.8rem 3.5rem 0.6rem; */
     align-items: center;
     justify-content: center;
     color: black;
@@ -328,6 +334,8 @@ h4 {
 }
 
 @media (min-width: 960px) {
+
+
     .info__slider-container {
         background-color: var(--bg-color-second-level);
         width: 100%;
@@ -336,12 +344,22 @@ h4 {
         border-radius: 0.7rem;
         box-shadow: var(--box-shadow-small-list);
         margin-inline: auto;
+
+
     }
 
     .info__container {
         padding-inline: 4rem;
-        ;
+        padding-bottom: 3rem;
     }
+}
+
+.info__slider-controls {
+    background-color: transparent;
+    padding-block: 0;
+    margin-inline: 0;
+    padding-top: 1rem;
+
 }
 
 @media (min-width: 1100px) {

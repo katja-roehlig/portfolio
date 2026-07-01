@@ -34,7 +34,13 @@ function getTheme() {
 
 function setTheme(theme: string) {
   localStorage.setItem("user-theme", theme);
-  document.documentElement.className = theme;
+  if (theme === "dark-theme") {
+    document.documentElement.classList.add("dark-theme");
+    document.documentElement.classList.remove("light-theme");
+  } else {
+    document.documentElement.classList.add("light-theme");
+    document.documentElement.classList.remove("dark-theme");
+  }
 }
 
 function getMediaPreference() {
@@ -91,7 +97,8 @@ function getMediaPreference() {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
-  cursor: pointer;
+
+
 }
 
 .nav__link {
@@ -99,6 +106,7 @@ function getMediaPreference() {
   text-decoration: none;
   font-family: "RobotoReg";
   padding: 1rem 1rem;
+  cursor: pointer;
 }
 
 .nav__link:hover {
@@ -111,6 +119,7 @@ function getMediaPreference() {
   padding-inline: 0.5rem 0rem;
   order: -1;
   transition: transform 300ms ease-in-out;
+  cursor: pointer;
 }
 
 .nav__mode:hover {

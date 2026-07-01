@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
   /* basic */
   --text-color: #1b1a2e;
   --accent-primary: #3b1977;
-  --accent-secondary: rgb(50, 199, 213);
+  --accent-secondary: hsl(185, 88%, 41%);
   --accent-secondary-alpha: #32c7d575;
   --disabled-color: #d5d2d2;
   --ficaption-color: #666;
@@ -70,7 +70,7 @@ onBeforeUnmount(() => {
   --bg-color-second-level: hsl(240, 89%, 93%);
   --h3-bg-color: var(--accent-primary);
   --link-bg-color: var(--accent-primary);
-  --icon-bg-color: var(--h3-color);
+  --icon-bg-color: var(--bg-color-second-level);
   --h1-bg-color: var(--accent-secondary-alpha);
 
   /* headings and links */
@@ -114,7 +114,7 @@ onBeforeUnmount(() => {
   --bg-color-second-level: rgba(255, 255, 255, 0.1);
   --h3-bg-color: rgba(255, 255, 255, 0.11);
   --link-bg-color: rgb(33, 33, 33);
-  --icon-bg-color: var(--bg-color-first-level);
+  --icon-bg-color: var(--bg-color-second-level);
   --h1-bg-color: var(--bg-color);
 
   /* headings and links */
@@ -143,12 +143,12 @@ onBeforeUnmount(() => {
   background-color: var(--accent-secondary);
   border-radius: 1rem;
   box-shadow: var(--box-shadow-small);
-  width: 2.5rem;
-  height: 1.5rem;
+
   display: flex;
   justify-content: center;
-  align-items: flex-end;
-  padding: 1.4rem 1.5rem 0.5rem 1.5rem;
+  align-items: center;
+  width: 6rem;
+  padding-block: 1.5rem 1rem;
   position: fixed;
   bottom: 10%;
   right: 3%;
@@ -156,7 +156,7 @@ onBeforeUnmount(() => {
 }
 
 .btn-scroll:hover {
-  background-color: hsl(185, 35%, 55%);
+  background-color: var(--accent-primary);
 }
 
 .arrow-scroll {
