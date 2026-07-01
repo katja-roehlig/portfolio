@@ -189,7 +189,7 @@ h3 {
   view-transition-name: project-card;
   margin-top: 3rem;
   min-height: 50rem;
-  ;
+  height: 72rem;
 }
 
 .card__container {
@@ -207,8 +207,9 @@ h3 {
 .device__wrapper {
   position: relative;
   width: 100%;
-  height: 40rem;
+  height: 41rem;
   overflow: hidden;
+  margin-bottom: 1rem;
 
 
 }
@@ -233,6 +234,9 @@ h3 {
 
 .project__description {
   margin-bottom: 1rem;
+  padding-inline: 2rem;
+  max-width: 70ch;
+  ;
 
 }
 
@@ -391,9 +395,8 @@ h3 {
 
 @media (min-width: 960px) {
 
-
   .flex__container {
-    height: 50rem;
+    height: 5rem;
     padding-inline: 3.5rem 2rem;
   }
 
@@ -401,7 +404,6 @@ h3 {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
-
     height: 100%;
   }
 
@@ -415,7 +417,7 @@ h3 {
 
   .device__wrapper {
     height: 40rem;
-    margin-bottom: 0rem;
+    margin-bottom: 1rem;
   }
 
   .desktop__view {

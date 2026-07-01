@@ -16,27 +16,27 @@ function readMore(): void {
     <div class="about__content">
       <img src="../assets/ich_schmunzelnd_1.jpg" alt="a picture of me" class="about__foto" />
       <div class="about__info">
-        <div class="text-left">
-          <h4 class="about__subheading">Hey there,</h4>
-          <p class="about__text text">
+        <!-- <div> -->
+        <h4 class="about__subheading">Hey there,</h4>
+        <p class="about__text text">
 
-            I'm Katja, I love building software that combines thoughtful user experiences with intelligent AI systems.
-            <br /><br />
-            I started my journey in frontend development because I loved building user interfaces.
-            Over time, I became curious about everything that happens behind the scenes.
-            That curiosity eventually led me to Python, FastAPI, databases and AI systems.
-            Today, I enjoy building complete applications and understanding how all the pieces work together.
-            <br /> <br />
+          I'm Paula, I love building software that combines thoughtful user experiences with intelligent AI systems.
+          <br /><br />
+          I started my journey in frontend development because I loved building user interfaces.
+          Over time, I became curious about everything that happens behind the scenes.
+          That curiosity eventually led me to Python, FastAPI, databases and AI systems.
+          Today, I enjoy building complete applications and understanding how all the pieces work together.
+          <br /> <br />
 
-            My current focus is on AI-supported software. I'm especially interested in building applications that solve
-            real problems
-            and create a great user experience.
-            One example is <span>'Serenity'</span>, a personal project that combines long-term memory,
-            semantic search and a multi-agent architecture.
-          </p>
-        </div>
+          My current focus is on AI-supported software. I'm especially interested in building applications that solve
+          real problems
+          and create a great user experience.
+          One example is <span>'Serenity'</span>, a personal project that combines long-term memory,
+          semantic search and a multi-agent architecture.
+        </p>
+        <!-- </div> -->
 
-        <p class="text text-right" :class="{ 'arrow-down': !isViewable, foldout: isViewable }">
+        <p class="text about__text" :class="{ 'arrow-down': !isViewable, foldout: isViewable }">
           Before that, I spent 1.5 years working on a research project at the Institute for Applied Informatics (InfAI)
           in Leipzig.
           I'm also interested in usability and visual design, which has shaped the way I approach frontend development.
@@ -85,6 +85,7 @@ function readMore(): void {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .about__content {
@@ -92,18 +93,23 @@ function readMore(): void {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: var(--spacing-small) 3rem 3rem 3rem;
+  padding-block: var(--spacing-small) 3rem;
+
 }
 
 .about__foto {
   height: 18rem;
-  border-radius: 0.6rem;
+  border-radius: 0.7rem;
   box-shadow: var(--box-shadow-middle);
   margin-bottom: 1rem;
 }
 
 .about__text {
   margin-top: 0rem;
+  width: auto;
+  padding-inline: 2rem;
+  max-width: 70ch;
+  ;
 }
 
 .text {
@@ -120,8 +126,10 @@ function readMore(): void {
 .about__wrapper {
   display: flex;
   justify-content: center;
-  gap: 5rem;
-  width: 100%;
+  gap: 2rem;
+  width: auto;
+  padding-inline: 2rem;
+  margin-top: 3rem;
   ;
 }
 
@@ -163,8 +171,8 @@ function readMore(): void {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5rem;
-    padding-inline: 4.5rem 4rem;
+    gap: 4rem;
+    padding-inline: 5rem 4rem;
   }
 
   .about__container {
@@ -183,6 +191,12 @@ function readMore(): void {
   .about__link {
     margin-top: 2rem;
   }
+
+  .about__wrapper {
+    gap: 5rem;
+    margin-top: 1rem;
+  }
+
 
 }
 
@@ -208,7 +222,7 @@ function readMore(): void {
 
   .about__content {
     gap: 9rem;
-    padding: 2rem 9.5rem 0rem 9rem;
+    padding: 2rem 9.5rem 4rem 9rem;
   }
 
   .text {

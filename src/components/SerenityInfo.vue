@@ -67,7 +67,7 @@ function toggleZoom(): void {
             <div class="info__content">
 
                 <p>Serenity is the final project of my eight-month Full-Stack & AI program.</p>
-                <p class="text">
+                <p>
                     I built it from scratch to explore how modern AI applications can maintain meaningful long-term
                     conversations by combining semantic memory, multi-agent workflows and intelligent context retrieval.
                 </p>
@@ -156,18 +156,15 @@ h4 {
 
 .info__techstack,
 .info__content {
-    padding-inline: 2rem;
     border-radius: 0.7rem;
-    margin-bottom: 4rem;
-    border-radius: 0.7rem;
-    box-shadow: var(--box-shadow-small-list);
+    margin-bottom: 2rem;
 }
 
 .info__content p,
 .info__techstack p {
-    max-width: 85ch;
+    max-width: 70ch;
     margin-inline: auto;
-
+    line-height: 2.1rem;
 }
 
 .info__techstack-heading {
@@ -177,9 +174,10 @@ h4 {
 .info__slider-container {
     max-width: 700px;
     width: 100%;
-    margin: 4rem auto 3rem;
+    margin: 4rem auto 0rem;
     overflow: visible;
     position: relative;
+
 }
 
 .info__slider-wrapper {
@@ -250,7 +248,7 @@ h4 {
     border-radius: 0.7rem;
     padding-block: 3rem 3rem;
     margin-inline: -2rem;
-    margin-top: 2rem;
+    margin-top: 3rem;
 }
 
 .slider-btn {
@@ -289,8 +287,6 @@ h4 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2rem;
-    ;
 }
 
 .info__link {
@@ -328,13 +324,27 @@ h4 {
     .info__content,
     .info__techstack {
         background-color: var(--bg-color-second-level);
-        margin-top: 1.5rem;
+        margin-top: 2.5rem;
+        padding: 2rem 2.5rem;
+        box-shadow: var(--box-shadow-small-list);
+        margin-bottom: 6rem;
+    }
+
+    .info__container {
+        padding-inline: 4rem;
         ;
+    }
+
+    .info__slider-controls {
+        margin-inline: -4rem;
+    }
+
+    .info__link-container {
+        margin-bottom: 1rem;
     }
 }
 
 @media (min-width: 960px) {
-
 
     .info__slider-container {
         background-color: var(--bg-color-second-level);
@@ -344,22 +354,28 @@ h4 {
         border-radius: 0.7rem;
         box-shadow: var(--box-shadow-small-list);
         margin-inline: auto;
-
-
     }
 
     .info__container {
         padding-inline: 4rem;
-        padding-bottom: 3rem;
+        padding-bottom: 5rem;
     }
-}
 
-.info__slider-controls {
-    background-color: transparent;
-    padding-block: 0;
-    margin-inline: 0;
-    padding-top: 1rem;
+    .info__slider-controls {
+        background-color: transparent;
+        padding-block: 0;
+        margin-inline: 0;
+        padding-top: 1rem;
+    }
 
+    .info__techstack,
+    .info__content {
+        margin-bottom: 5rem;
+    }
+
+    .info__link-container {
+        margin-bottom: 2rem;
+    }
 }
 
 @media (min-width: 1100px) {

@@ -77,6 +77,12 @@ const props = defineProps({
   position: relative;
   bottom: 5%;
   justify-content: center;
-  gap: 6rem;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .button__container {
+    gap: 5rem;
+  }
 }
 </style>
