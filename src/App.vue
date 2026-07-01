@@ -36,11 +36,12 @@ onBeforeUnmount(() => {
   <Home />
 
   <About class="about" />
-  <Contact />
+
   <Skills class="skills" />
 
   <AiProject />
   <Projects />
+  <Contact />
 
   <div v-if="scrollOn">
     <a href="#home" class="btn-scroll">
