@@ -12,7 +12,8 @@ import { ref, onMounted, onBeforeUnmount } from "vue";
 let scrollOn = ref(false);
 
 function scrollButton(): void {
-  scrollOn.value = window.scrollY !== 0;
+  // scrollOn.value = window.scrollY !== 0;
+  scrollOn.value = window.scrollY > 100;
 }
 /* long version
 function scrollButton(event: Event): void {
@@ -136,6 +137,12 @@ onBeforeUnmount(() => {
   --box-shadow-small-list: 0px 2px 3px black, 0px -2px 4px rgba(0, 0, 0, 0.056);
   --box-shadow-middle: 0px 2px 4px #212121, 0px -1px 8px rgba(0, 0, 0, 0.056);
 
+}
+
+html,
+body {
+  overflow-y: auto;
+  min-height: 100vh;
 }
 
 .btn-scroll {

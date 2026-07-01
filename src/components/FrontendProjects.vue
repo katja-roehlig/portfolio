@@ -210,7 +210,6 @@ h3 {
   position: relative;
   width: 100%;
   height: 41rem;
-  overflow: hidden;
   margin-bottom: 1rem;
 
 
@@ -397,7 +396,7 @@ h3 {
 @media (min-width: 960px) {
 
   .flex__container {
-    height: 5rem;
+    height: 50rem;
     padding-inline: 3.5rem 2rem;
   }
 
