@@ -73,6 +73,10 @@ function closeImpressum(): void {
   </article>
 </template>
 <style scoped>
+.contact__container {
+  margin-bottom: 8rem;
+}
+
 .content__container {
   padding-block: 2rem 4rem;
   ;
@@ -192,8 +196,8 @@ function closeImpressum(): void {
   .contact__container {
     width: 50rem;
     margin-inline: auto;
-    border: 2px solid red;
     margin-bottom: 4rem;
+    ;
   }
 
   .content__container {
