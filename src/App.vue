@@ -36,9 +36,9 @@ onBeforeUnmount(() => {
   <Home />
 
   <About class="about" />
-
-  <Skills class="skills" />
   <Contact />
+  <Skills class="skills" />
+
   <AiProject />
   <Projects />
 
