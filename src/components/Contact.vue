@@ -77,7 +77,7 @@ function closeImpressum(): void {
 
 <style scoped>
 .contact__container {
-  margin-bottom: 8rem;
+  margin-bottom: 5rem;
 }
 
 .content__container {

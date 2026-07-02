@@ -63,7 +63,6 @@ function getMediaPreference() {
       <li class="nav__list-item">
         <a href="#about" class="nav__link">About</a>
       </li>
-      <li class="nav__list-item" v-if="isVisible"></li>
       <li class="nav__list-item nav__list-item-close" v-if="isVisible" @click="largeMenu">
         X
       </li>
@@ -71,7 +70,10 @@ function getMediaPreference() {
         <a href="#skills" class="nav__link">Skills</a>
       </li>
       <li class="nav__list-item">
-        <a href="#projects" class="nav__link">Projects</a>
+        <a href="#ai-project" class="nav__link">AI Full-Stack Project</a>
+      </li>
+      <li class="nav__list-item">
+        <a href="#projects" class="nav__link">Frontend Projects</a>
       </li>
       <li class="nav__list-item">
         <a href="#contact" class="nav__link">Contact</a>
@@ -129,7 +131,7 @@ function getMediaPreference() {
 .opacity {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-items: center;
+  justify-items: start;
   align-content: space-evenly;
   animation: nav-list-appear 0.5s ease-in-out 0s 1 both;
   position: absolute;
@@ -138,7 +140,7 @@ function getMediaPreference() {
   right: 0;
   left: 0;
   margin: 0;
-  padding-inline-start: 0px;
+  padding-inline-start: 2rem;
   background-color: var(--h3-color);
   color: rgb(var(--bg-color));
   z-index: 1;
@@ -173,7 +175,7 @@ function getMediaPreference() {
   color: #fff;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 960px) {
   .nav__menu {
     display: none;
   }
