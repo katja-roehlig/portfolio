@@ -137,29 +137,29 @@ export const projectStore = defineStore("store", {
     serenitySlides: [
       <serenitySlideStructure>{
         id: 1,
-        src: "/img/serenity/Register.png",
+        src: "/img/serenity/Register.webp",
         caption: "Landing page and secure registration interface",
       },
       <serenitySlideStructure>{
         id: 2,
-        src: "/img/serenity/Chat.png",
+        src: "/img/serenity/Chat.webp",
         caption: "Serenity chat interface",
       },
       <serenitySlideStructure>{
         id: 3,
-        src: "/img/serenity/Dashboard.png",
+        src: "/img/serenity/Dashboard.webp",
         caption:
           "Insight Dashboard the AI's insights about the user are displayed",
       },
       <serenitySlideStructure>{
         id: 4,
-        src: "/img/serenity/Serenity_Core_Agent.png",
+        src: "/img/serenity/Serenity_Core_Agent.webp",
         caption:
           "Serenity is running with two ai-agents. The serenity-core-agent manages the chat",
       },
       <serenitySlideStructure>{
         id: 5,
-        src: "/img/serenity/Archivist_Agent.png",
+        src: "/img/serenity/Archivist_Agent.webp",
         caption:
           "The archivist-agent analyzes the chat based on seven categories and saves the important information",
       },
