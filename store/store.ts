@@ -148,8 +148,7 @@ export const projectStore = defineStore("store", {
       <serenitySlideStructure>{
         id: 3,
         src: "/img/serenity/Dashboard.webp",
-        caption:
-          "Insight Dashboard the AI's insights about the user are displayed",
+        caption: "The dashboard displays the AI's insights of the user",
       },
       <serenitySlideStructure>{
         id: 4,

@@ -20,7 +20,7 @@ function readMore(): void {
         <h4 class="about__subheading">Hey there,</h4>
         <p class="about__text text">
 
-          I'm Paula, I love building software that combines thoughtful user experiences with intelligent AI systems.
+          I'm Katja, I love building software that combines thoughtful user experiences with intelligent AI systems.
           <br /><br />
           I started my journey in frontend development because I loved building user interfaces.
           Over time, I became curious about everything that happens behind the scenes.
